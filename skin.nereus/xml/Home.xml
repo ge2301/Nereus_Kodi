@@ -31,15 +31,17 @@
 			<visible>!Player.HasMedia</visible>
 		</control>
 
-    <!--###########################################################################################################-->
-    <!--############################################## WIGET CONTENT# #############################################-->
-    <!--###########################################################################################################-->
-
     <control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+      
+      <!--###########################################################################################################-->
+      <!--############################################## WIDGET CONTENT ##############################################-->
+      <!--###########################################################################################################-->
+      
 			<control type="group" id="2000">
-        <animation effect="slide" end="-200,0" time="400" tween="sine" easing="inout" condition="!Control.HasFocus(9000)">Conditional</animation>
-				<left>200</left>
+        <animation effect="slide" end="200,0" time="400" tween="sine" easing="inout" condition="Control.HasFocus(9000)">Conditional</animation>
+        <backgroundcolor>0xff00ff00</backgroundcolor>
+				<left>10</left>
         <right>-200</right>
 				<animation type="Conditional" condition="Control.IsVisible(20000)">
 					<effect type="slide" end="0,20" time="60" tween="sine" />
@@ -834,30 +836,30 @@
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
 				<include content="ContentPanel">
-					<param name="width" value="260" />
+					<param name="width" value="230" />
 				</include>
         <left>-200</left>
-        <animation effect="slide" end="200,0" time="400" tween="sine" easing="inout">WindowOpen</animation>
-        <animation effect="slide" end="200,0" time="400" tween="sine" easing="inout">Focus</animation>
+        <animation effect="slide" start="0,0" end="200,0" time="400" tween="sine" easing="inout">WindowOpen</animation>
+        <animation effect="slide" start="0,0" end="200,0" time="400" tween="sine" easing="inout">Focus</animation>
         <animation effect="slide" start="200,0" end="0,0" time="400" tween="sine" easing="inout">Unfocus</animation>
         <control type="image">
           <left>0</left>
           <top>0</top>
-          <width>248</width>
+          <width>246</width>
           <height>1080</height>
           <texture>lists/home-menu-glow.png</texture>
         </control>
         <control type="image">
           <left>0</left>
           <top>0</top>
-          <width>260</width>
+          <width>258</width>
           <height>1080</height>
           <texture>lists/home-menu-background.png</texture>
         </control>
 				<control type="fixedlist" id="9000">
 					<left>0</left>
 					<top>0</top>
-					<width>300</width>
+					<width>200</width>
 					<bottom>-10</bottom>
 					<movement>1</movement>
 					<focusposition>3</focusposition>
@@ -868,7 +870,7 @@
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<focusedlayout height="180">
 						<control type="image">
-							<left>10</left>
+							<left>8</left>
               <top>0</top>
               <bottom>0</bottom>
 							<width>180</width>
@@ -881,7 +883,7 @@
             <control type="image">
               <left>10</left>
               <top>190</top>
-              <width>191</width>
+              <width>192</width>
               <height>1</height>
               <texture colordiffuse="FFFFFFFF">lists/menu-background.png</texture>
               <animation effect="zoom" start="100,100" end="100,-4300" time="500" delay="200">Focus</animation>
@@ -901,7 +903,7 @@
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
             <control type="image">
-              <left>2</left>
+              <left>0</left>
               <top>-10</top>
               <bottom>-10</bottom>
               <width>8</width>

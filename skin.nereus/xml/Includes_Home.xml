@@ -151,7 +151,7 @@
 							<visible>$PARAM[visible_1]</visible>
 						</control>
 						<control type="button" id="$PARAM[button_id]568">
-							<width>auto</width>
+							<width>110</width>
 							<height>110</height>
 							<label>$PARAM[button2_label]</label>
 							<textoffsetx>40</textoffsetx>
