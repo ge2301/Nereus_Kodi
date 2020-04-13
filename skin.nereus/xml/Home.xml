@@ -30,10 +30,15 @@
 			<imagepath background="true" colordiffuse="bg_overlay">$VAR[HomeFanartVar]</imagepath>
 			<visible>!Player.HasMedia</visible>
 		</control>
-		<control type="group">
+
+    <!--###########################################################################################################-->
+    <!--############################################## WIGET CONTENT# #############################################-->
+    <!--###########################################################################################################-->
+
+    <control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<control type="group" id="2000">
-        <animation effect="slide" end="-200,0" time="500" condition="!Control.HasFocus(9000)">Conditional</animation>
+        <animation effect="slide" end="-200,0" time="400" tween="sine" easing="inout" condition="!Control.HasFocus(9000)">Conditional</animation>
 				<left>200</left>
         <right>-200</right>
 				<animation type="Conditional" condition="Control.IsVisible(20000)">
@@ -45,6 +50,8 @@
 					<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
 				</animation>
 				<include>OpenClose_Right</include>
+        
+        <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Movie Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="5000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
 					<include content="Visible_Right_Delayed">
@@ -110,6 +117,8 @@
 						<param name="scrollbar_id" value="5010"/>
 					</include>
 				</control>
+        
+        <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Series Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="6000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
 					<include content="Visible_Right_Delayed">
@@ -172,6 +181,8 @@
 						<param name="scrollbar_id" value="6010"/>
 					</include>
 				</control>
+
+        <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Music Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="7000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
 					<include content="Visible_Right_Delayed">
@@ -242,6 +253,8 @@
 						<param name="scrollbar_id" value="7010"/>
 					</include>
 				</control>
+
+        <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Addon Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="8000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons)</visible>
 					<include content="Visible_Right_Delayed">
@@ -324,6 +337,8 @@
 						<param name="scrollbar_id" value="8010"/>
 					</include>
 				</control>
+
+        <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Video Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="11000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),video)</visible>
 					<include content="Visible_Right_Delayed">
@@ -364,6 +379,7 @@
 						<param name="scrollbar_id" value="11010"/>
 					</include>
 				</control>
+        <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< LiveTV Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="12000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),livetv)</visible>
 					<include content="Visible_Right_Delayed">
@@ -437,6 +453,8 @@
 						<param name="scrollbar_id" value="12010"/>
 					</include>
 				</control>
+
+        <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Radio Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="13000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),radio)</visible>
 					<include content="Visible_Right_Delayed">
@@ -510,6 +528,8 @@
 						<param name="scrollbar_id" value="13010"/>
 					</include>
 				</control>
+        
+        <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Favourite Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="14000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),favorites)</visible>
 					<include content="Visible_Right_Delayed">
@@ -565,6 +585,8 @@
 						<param name="scrollbar_id" value="14010"/>
 					</include>
 				</control>
+
+        <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Weather Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="15000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
 					<include content="Visible_Right_Delayed">
@@ -663,6 +685,8 @@
 						<param name="scrollbar_id" value="15010"/>
 					</include>
 				</control>
+
+        <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Music Video Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="16000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),musicvideos)</visible>
 					<include content="Visible_Right_Delayed">
@@ -734,6 +758,8 @@
 						<param name="scrollbar_id" value="16010"/>
 					</include>
 				</control>
+
+        <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Pictures Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="4000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
 					<include content="Visible_Right_Delayed">
@@ -811,9 +837,9 @@
 					<param name="width" value="260" />
 				</include>
         <left>-200</left>
-        <animation effect="slide" end="200,0" time="500" reversible="true">WindowOpen</animation>
-        <animation effect="slide" end="200,0" time="500" reversible="true">Focus</animation>
-        <animation effect="slide" start="200,0" end="0,0" time="500" reversible="true">Unfocus</animation>
+        <animation effect="slide" end="200,0" time="400" tween="sine" easing="inout">WindowOpen</animation>
+        <animation effect="slide" end="200,0" time="400" tween="sine" easing="inout">Focus</animation>
+        <animation effect="slide" start="200,0" end="0,0" time="400" tween="sine" easing="inout">Unfocus</animation>
         <control type="image">
           <left>0</left>
           <top>0</top>
@@ -852,17 +878,6 @@
               <animation effect="zoom" center="90,90" start="111,111" end="100,100" time="200">Unfocus</animation>
               <animation effect="fade" start="100" end="0" time="0">Unfocus</animation>
 						</control>
-            <!--control type="image">
-              <left>10</left>
-              <top>0</top>
-              <bottom>0</bottom>
-              <width>180</width>
-              <height>180</height>
-              <texture colordiffuse="77FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
-              <animation effect="zoom" center="90,90" start="111,111" end="100,100" time="500">Unfocus</animation>
-              <animation effect="fade" start="0" end="0" time="0">Focus</animation>
-              <animation effect="fade" start="0" end="100" time="0" >Unfocus</animation>
-            </control-->
             <control type="image">
               <left>10</left>
               <top>190</top>
@@ -892,8 +907,10 @@
               <width>8</width>
               <height>200</height>
               <texture colordiffuse="FFFFFFFF">lists/focus-menu.png</texture>
-              <animation effect="fade" start="0" end="100" time="500" delay="200">Focus</animation>
               <animation effect="fade" start="100" end="0" time="0">Unfocus</animation>
+              <animation effect="zoom" start="100,90" end="100,100" center="0,100" time="500" delay="200" reversible="false">Focus</animation>
+              <animation effect="fade" start="0" end="100" time="0" delay="100" reversible="false">Focus</animation>
+              <animation effect="zoom" start="100,100" end="100,90" center="0,100" time="0">Unfocus</animation>
             </control>
 					</focusedlayout>
 					<itemlayout height="180">
@@ -1081,7 +1098,7 @@
 
     <control type="grouplist" id="700">
       <orientation>horizontal</orientation>
-      <animation effect="slide" end="-200,0" time="500" condition="!Control.HasFocus(9000)">Conditional</animation>
+      <animation effect="slide" end="-200,0" time="400" tween="sine" easing="inout" condition="!Control.HasFocus(9000)">Conditional</animation>
       <left>220</left>
       <width>350</width>
       <height>110</height>
