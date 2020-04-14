@@ -878,6 +878,7 @@
 							<texture>$INFO[ListItem.Art(thumb)]</texture>
               <animation effect="zoom" center="90,90" start="100,100" end="111,111" time="500" delay="200">Focus</animation>
               <animation effect="zoom" center="90,90" start="111,111" end="100,100" time="200">Unfocus</animation>
+              <animation effect="fade" start="0" end="100" time="100">Focus</animation>
               <animation effect="fade" start="100" end="0" time="0">Unfocus</animation>
 						</control>
             <control type="image">
@@ -924,6 +925,7 @@
 							<height>170</height>
 							<texture colordiffuse="77FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
               <animation effect="fade" start="0" end="100" time="0">Focus</animation>
+              <animation effect="fade" start="100" end="0" time="0">Unfocus</animation>
 						</control>
 					</itemlayout>
 					<content>
@@ -1124,31 +1126,34 @@
       <left>220</left>
       <width>350</width>
       <height>110</height>
-      <top>-22</top>
+      <top>10</top>
       <onup>SetFocus(9000,99,absolute)</onup>
       <onleft>SetFocus(9000,0,absolute)</onleft>
       <ondown>2000</ondown>
       <onright>2000</onright>
-      <align>justify</align>
-      <include content="IconButton">
+      <align>justify</align> 
+      <include content="IconButton2">
         <param name="control_id" value="804" />
         <param name="onclick" value="ActivateWindow(shutdownmenu)" />
-        <param name="icon" value="icons/power.png" />
+        <param name="focus_icon" value="icons/power_focus.png" />
+        <param name="nofocus_icon" value="icons/power.png" />
         <param name="label" value="$LOCALIZE[33060]" />
       </include>
-      <include content="IconButton">
+      <include content="IconButton2">
         <param name="control_id" value="802" />
         <param name="onclick" value="ActivateWindow(settings)" />
-        <param name="icon" value="icons/settings.png" />
+        <param name="focus_icon" value="icons/settings_focus.png" />
+        <param name="nofocus_icon" value="icons/settings.png" />
         <param name="label" value="$LOCALIZE[21417]" />
       </include>
-      <include content="IconButton">
+      <include content="IconButton2">
         <param name="control_id" value="801" />
         <param name="onclick" value="ActivateWindow(1107)" />
-        <param name="icon" value="icons/search.png" />
+        <param name="focus_icon" value="icons/search_focus.png" />
+        <param name="nofocus_icon" value="icons/search.png" />
         <param name="label" value="$LOCALIZE[137]" />
       </include>
-      <include content="IconButton">
+      <include content="IconButton2">
         <param name="control_id" value="803" />
         <param name="onclick" value="Fullscreen" />
         <param name="icon" value="icons/now-playing/fullscreen.png" />

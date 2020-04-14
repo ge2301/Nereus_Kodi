@@ -142,6 +142,7 @@
 			</control>
 		</definition>
 	</include>
+  
 	<include name="IconButton">
 		<param name="height">120</param>
 		<param name="visible">true</param>
@@ -169,6 +170,27 @@
 			</control>
 		</definition>
 	</include>
+  
+  <include name="IconButton2">
+    <param name="height">60</param>
+    <param name="visible">true</param>
+    <definition>
+      <control type="button" id="$PARAM[control_id]">
+        <width>60</width>
+        <height>60</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <onclick>$PARAM[onclick]</onclick>
+        <onclick>$PARAM[onclick_2]</onclick>
+        <font></font>
+        <label>$PARAM[label]</label>
+        <texturefocus colordiffuse="FFFFFFFF">$PARAM[focus_icon]</texturefocus>
+        <texturenofocus colordiffuse="AACCCCCC">$PARAM[nofocus_icon]</texturenofocus>
+        <visible>$PARAM[visible]</visible>
+      </control>
+    </definition>
+  </include>
+  
 	<include name="BottomMainMenuToggleItem">
 		<param name="height">120</param>
 		<definition>
