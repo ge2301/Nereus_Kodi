@@ -866,7 +866,7 @@
 					<onfocus>ClearProperty(listposition,home)</onfocus>
 					<onright>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onright>
 					<onup>700</onup>
-					<ondown>90</ondown>
+					<ondown>700</ondown>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<focusedlayout height="180">
 						<control type="image">
@@ -887,7 +887,7 @@
               <height>1</height>
               <texture colordiffuse="FFFFFFFF">lists/menu-background.png</texture>
               <animation effect="zoom" start="100,100" end="100,-4300" time="500" delay="200">Focus</animation>
-              <animation effect="zoom" end="100,100" start="100,-4300" time="200">Unfocus</animation>
+              <animation effect="zoom" end="100,0" start="100,-4300" time="200">Unfocus</animation>
             </control>
 						<control type="label">
 							<left>10</left>
@@ -1038,7 +1038,27 @@
 						</item>
 					</content>
 				</control>
-			</control>   
+			</control>
+
+      <control type="image">
+        <left>0</left>
+        <top>0</top>
+        <aspectratio>stretch</aspectratio>
+        <width>100%</width>
+        <height>100</height>
+        <aligny>top</aligny>
+        <texture colordiffuse="DDFFFFFF">overlays/overlayfade_mirrored.png</texture>
+      </control>
+      <control type="image">
+        <left>0</left>
+        <bottom>0</bottom>
+        <aspectratio>stretch</aspectratio>
+        <width>100%</width>
+        <height>110</height>
+        <aligny>bottom</aligny>
+        <texture colordiffuse="DDFFFFFF">overlays/overlayfade.png</texture>
+      </control>
+      
 			<include>BottomBar</include>
 			<control type="group">
 				<depth>DepthBars</depth>
@@ -1104,9 +1124,10 @@
       <left>220</left>
       <width>350</width>
       <height>110</height>
-      <top>-2</top>
+      <top>-22</top>
       <onup>SetFocus(9000,99,absolute)</onup>
-      <ondown>SetFocus(9000,0,absolute)</ondown>
+      <onleft>SetFocus(9000,0,absolute)</onleft>
+      <ondown>2000</ondown>
       <onright>2000</onright>
       <align>justify</align>
       <include content="IconButton">
