@@ -1126,7 +1126,7 @@
       <left>220</left>
       <width>350</width>
       <height>110</height>
-      <top>10</top>
+      <top>5</top>
       <onup>SetFocus(9000,99,absolute)</onup>
       <onleft>SetFocus(9000,0,absolute)</onleft>
       <ondown>2000</ondown>
