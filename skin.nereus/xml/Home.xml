@@ -35,14 +35,14 @@
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
       
       <!--###########################################################################################################-->
-      <!--############################################## WIDGET CONTENT ##############################################-->
+      <!--############################################## WIDGET CONTENT #############################################-->
       <!--###########################################################################################################-->
       
 			<control type="group" id="2000">
         <animation effect="slide" end="200,0" time="400" tween="sine" easing="inout" condition="Control.HasFocus(9000)">Conditional</animation>
         <backgroundcolor>0xff00ff00</backgroundcolor>
 				<left>10</left>
-        <right>-200</right>
+        <right>-100</right>
 				<animation type="Conditional" condition="Control.IsVisible(20000)">
 					<effect type="slide" end="0,20" time="60" tween="sine" />
 					<effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />
@@ -1042,6 +1042,10 @@
 				</control>
 			</control>
 
+      <!--###########################################################################################################-->
+      <!--#################################### TOP AND BOTTOM GRADIENT OVERLAY ######################################-->
+      <!--###########################################################################################################-->
+      
       <control type="image">
         <left>0</left>
         <top>0</top>
@@ -1128,6 +1132,7 @@
       <height>110</height>
       <top>5</top>
       <onleft>SetFocus(9000)</onleft>
+      <onup>20000</onup>
       <ondown>2000</ondown>
       <onright>2000</onright>
       <align>justify</align> 
