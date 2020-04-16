@@ -24,7 +24,12 @@
 				<include>Visible_Left</include>
 				<include>ListThumbInfoPanel</include>
 			</control>
-			<control type="group">
+
+      <!--###########################################################################################################-->
+      <!--########################################### MEDIA ITEM DETAILS ############################################-->
+      <!--###########################################################################################################-->
+
+      <control type="group">
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
 				<visible>Control.IsVisible(50) | Control.Isvisible(54) | [Control.IsVisible(501) + String.IsEqual(Skin.AspectRatio,21:9)]</visible>
@@ -96,8 +101,10 @@
 			<include>MediaMenuMouseOverlay</include>
 			<control type="group">
 				<include>MediaMenuCommon</include>
+        <include>MediaMenuCommonBackground</include>
 				<control type="grouplist" id="9000">
 					<top>50</top>
+          <right>-40</right>
 					<include>MediaMenuListCommon</include>
 					<control type="button" id="10">
 						<description>Watched Toggle</description>

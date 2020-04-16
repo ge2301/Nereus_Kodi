@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
 	<include name="MediaMenuItemsCommon">
-		<width>470</width>
+		<width>520</width>
 		<textoffsetx>20</textoffsetx>
 		<top>0</top>
 		<height>80</height>
@@ -9,10 +9,35 @@
 		<aligny>center</aligny>
 		<invalidcolor>invalid</invalidcolor>
 		<texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
-		<texturenofocus />
+		<texturenofocus/>
 		<alttexturefocus colordiffuse="button_focus">lists/focus.png</alttexturefocus>
 		<alttexturenofocus></alttexturenofocus>
 	</include>
+  <include name="MediaMenuCommonBackground">
+  <control type="image">
+    <left>0</left>
+    <top>0</top>
+    <width>450</width>
+    <height>1080</height>
+    <texture>lists/home-menu-background.png</texture>
+  </control>
+  <control type="image">
+    <left>320</left>
+    <right>-40</right>
+    <top>0</top>
+    <width>246</width>
+    <height>1080</height>
+    <texture>lists/home-menu-glow.png</texture>
+  </control>
+  <control type="image">
+    <left>320</left>
+    <right>-40</right>
+    <top>0</top>
+    <width>258</width>
+    <height>1080</height>
+    <texture>lists/home-menu-background.png</texture>
+  </control>
+  </include>
 	<include name="PVRQuickNavItemsCommon">
 		<param name="height">110</param>
 		<definition>
@@ -333,7 +358,7 @@
 		<definition>
 			<left>0</left>
 			<top>100</top>
-			<width>470</width>
+			<width>520</width>
 			<height>100%</height>
 			<onleft>9000</onleft>
 			<onup>9000</onup>

@@ -171,13 +171,13 @@
 		</definition>
 	</include>
   
-  <include name="IconButton2">
-    <param name="height">70</param>
+  <include name="IconButton_glow">
+    <param name="height">65</param>
     <param name="visible">true</param>
     <definition>
       <control type="button" id="$PARAM[control_id]">
-        <width>70</width>
-        <height>70</height>
+        <width>65</width>
+        <height>65</height>
         <align>center</align>
         <aligny>center</aligny>
         <onclick>$PARAM[onclick]</onclick>
@@ -186,6 +186,37 @@
         <label>$PARAM[label]</label>
         <texturefocus colordiffuse="FFFFFFFF">$PARAM[focus_icon]</texturefocus>
         <texturenofocus colordiffuse="AACCCCCC">$PARAM[nofocus_icon]</texturenofocus>
+        <visible>$PARAM[visible]</visible>
+      </control>
+    </definition>
+  </include>
+
+  <include name="IconButton_playing">
+    <param name="height">65</param>
+    <param name="visible">true</param>
+    <definition>
+      <control type="button" id="$PARAM[control_id]">
+        <width>65</width>
+        <height>65</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <onclick>$PARAM[onclick]</onclick>
+        <onclick>$PARAM[onclick_2]</onclick>
+        <font></font>
+        <label>$PARAM[label]</label>
+        <texturefocus colordiffuse="FFFFFFFF">$PARAM[focus_icon]>
+					<animation effect="rotate" loop="true" start="0" end="360" center="32,5,32.5" time="500">Focus</animation>
+        </texturefocus>
+        <texturenofocus colordiffuse="AACCCCCC">$PARAM[nofocus_icon]>
+					<animation effect="rotate" loop="true" start="0" end="360" center="32,5,32.5" time="500">Nofocus</animation>
+        </texturenofocus>
+        <texturefocus colordiffuse="FFFFFFFF">$PARAM[icon]>
+          <animation effect="fade" start="100" end="100" time="10">Focus</animation>
+        </texturefocus>
+        <texturenofocus colordiffuse="AACCCCCC">$PARAM[icon]>
+          <animation effect="fade" start="100" end="100" time="10">Unfocus</animation>
+        </texturenofocus>
+        
         <visible>$PARAM[visible]</visible>
       </control>
     </definition>

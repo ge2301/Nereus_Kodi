@@ -925,7 +925,6 @@
 							<height>170</height>
 							<texture colordiffuse="77FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
               <animation effect="fade" start="0" end="100" time="0">Focus</animation>
-              <animation effect="fade" start="100" end="0" time="0">Unfocus</animation>
 						</control>
 					</itemlayout>
 					<content>
@@ -1053,7 +1052,7 @@
         <width>100%</width>
         <height>100</height>
         <aligny>top</aligny>
-        <texture colordiffuse="DDFFFFFF">overlays/overlayfade_mirrored.png</texture>
+        <texture colordiffuse="EEFFFFFF">overlays/overlayfade_mirrored.png</texture>
       </control>
       <control type="image">
         <left>0</left>
@@ -1062,7 +1061,7 @@
         <width>100%</width>
         <height>110</height>
         <aligny>bottom</aligny>
-        <texture colordiffuse="DDFFFFFF">overlays/overlayfade.png</texture>
+        <texture colordiffuse="EEFFFFFF">overlays/overlayfade.png</texture>
       </control>
       
 			<include>BottomBar</include>
@@ -1136,31 +1135,33 @@
       <ondown>2000</ondown>
       <onright>2000</onright>
       <align>justify</align> 
-      <include content="IconButton2">
+      <include content="IconButton_glow">
         <param name="control_id" value="804" />
         <param name="onclick" value="ActivateWindow(shutdownmenu)" />
         <param name="focus_icon" value="icons/power_focus.png" />
         <param name="nofocus_icon" value="icons/power.png" />
         <param name="label" value="$LOCALIZE[33060]" />
       </include>
-      <include content="IconButton2">
+      <include content="IconButton_glow">
         <param name="control_id" value="802" />
         <param name="onclick" value="ActivateWindow(settings)" />
         <param name="focus_icon" value="icons/settings_focus.png" />
         <param name="nofocus_icon" value="icons/settings.png" />
         <param name="label" value="$LOCALIZE[21417]" />
       </include>
-      <include content="IconButton2">
+      <include content="IconButton_glow">
         <param name="control_id" value="801" />
         <param name="onclick" value="ActivateWindow(1107)" />
         <param name="focus_icon" value="icons/search_focus.png" />
         <param name="nofocus_icon" value="icons/search.png" />
         <param name="label" value="$LOCALIZE[137]" />
       </include>
-      <include content="IconButton2">
+      <include content="IconButton_playing">
         <param name="control_id" value="803" />
         <param name="onclick" value="Fullscreen" />
-        <param name="icon" value="icons/now-playing/fullscreen.png" />
+        <param name="focus_icon" value="icons/active_focus.png" />
+        <param name="nofocus_icon" value="icons/active.png" />
+        <param name="icon" value="icons/now-playing/play.png" />
         <param name="label" value="$LOCALIZE[31000]" />
         <param name="visible" value="Player.HasMedia" />
       </include>
