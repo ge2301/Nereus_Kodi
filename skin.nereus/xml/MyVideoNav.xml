@@ -32,17 +32,25 @@
       <control type="group">
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
+        <left>880r</left>
 				<visible>Control.IsVisible(50) | Control.Isvisible(54) | [Control.IsVisible(501) + String.IsEqual(Skin.AspectRatio,21:9)]</visible>
 				<include>Visible_Left</include>
+        <control type="image">
+          <left>-48</left>
+          <top>0</top>
+          <width>30</width>
+          <height>1080</height>
+          <texture>lists/ContentGlow.png</texture>
+        </control>
 				<include content="ContentPanel">
-					<param name="width" value="656" />
+					<param name="width" value="940" />
 				</include>
 				<control type="group">
-					<width>550</width>
+          <width>800</width>
 					<control type="textbox">
 						<top>120</top>
 						<left>30</left>
-						<width>550</width>
+						<width>800</width>
 						<aligny>center</aligny>
 						<height>110</height>
 						<font>font36_title</font>
@@ -51,7 +59,7 @@
 					<control type="textbox">
 						<left>30</left>
 						<top>240</top>
-						<width>525</width>
+						<width>800</width>
 						<bottom>100</bottom>
 						<visible>![ListItem.IsCollection + String.IsEmpty(ListItem.Plot)]</visible>
 						<label>$INFO[ListItem.Tagline,[I],[/I][CR][CR]]$INFO[ListItem.Plot][CR][CR]</label>
@@ -60,7 +68,7 @@
 					<control type="textbox">
 						<left>30</left>
 						<top>360</top>
-						<width>530</width>
+						<width>800</width>
 						<height>413</height>
 						<align>center</align>
 						<aligny>center</aligny>
@@ -83,6 +91,30 @@
 					</control>
 				</control>
 			</control>
+
+      <!--###########################################################################################################-->
+      <!--#################################### TOP AND BOTTOM GRADIENT OVERLAY ######################################-->
+      <!--###########################################################################################################-->
+
+      <control type="image">
+        <left>0</left>
+        <top>0</top>
+        <aspectratio>stretch</aspectratio>
+        <width>100%</width>
+        <height>100</height>
+        <aligny>top</aligny>
+        <texture colordiffuse="EEFFFFFF">overlays/overlayfade_mirrored.png</texture>
+      </control>
+      <control type="image">
+        <left>0</left>
+        <bottom>0</bottom>
+        <aspectratio>stretch</aspectratio>
+        <width>100%</width>
+        <height>110</height>
+        <aligny>bottom</aligny>
+        <texture colordiffuse="EEFFFFFF">overlays/overlayfade.png</texture>
+      </control>
+      
 			<include content="TopBar">
 				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsVideoVar]" />
 			</include>
@@ -101,10 +133,9 @@
 			<include>MediaMenuMouseOverlay</include>
 			<control type="group">
 				<include>MediaMenuCommon</include>
-        <include>MediaMenuCommonBackground</include>
+        <include>MediaMenuCommonBackground</include>        
 				<control type="grouplist" id="9000">
 					<top>50</top>
-          <right>-40</right>
 					<include>MediaMenuListCommon</include>
 					<control type="button" id="10">
 						<description>Watched Toggle</description>

@@ -362,12 +362,13 @@
 	<include name="View_54_InfoWall">
 		<control type="group">
 			<include>OpenClose_Right</include>
-			<left>100</left>
+			<left>0</left>
+      <right>900</right>
 			<top>0</top>
 			<visible>Control.IsVisible(54)</visible>
 			<include>Visible_Right</include>
 			<control type="panel" id="54">
-				<left>490</left>
+				<left>0</left>
 				<top>0</top>
 				<right>15</right>
 				<height>100%</height>
