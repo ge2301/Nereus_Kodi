@@ -6,7 +6,7 @@
 			<visible>Control.IsVisible(55)</visible>
 			<include>Visible_Right</include>
 			<control type="fixedlist" id="55">
-				<left>594</left>
+        <right>900</right>
 				<top>list_y_offset</top>
 				<bottom>list_y_offset</bottom>
 				<right>0</right>

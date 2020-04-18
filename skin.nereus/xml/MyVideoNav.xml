@@ -8,6 +8,9 @@
 		<include>DefaultBackground</include>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+      <animation type="Conditional" condition="$EXP[sidebar_visible]" reversible="true">
+        <effect type="slide" start="0" end="520" time="600" tween="sine" easing="out" />
+      </animation>
 			<include>View_50_List</include>
 			<include>View_51_Poster</include>
 			<include>View_52_IconWall</include>
@@ -17,7 +20,14 @@
 			<include>View_500_Wall</include>
 			<include>View_501_Banner</include>
 			<include>View_502_FanArt</include>
-			<control type="group">
+
+      <!--###########################################################################################################-->
+      <!--########################################### MEDIA ITEM DETAILS ############################################-->
+      <!--###########################################################################################################-->
+
+      <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Info Wall >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+      <control type="group">
+        <left>880r</left>
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
 				<visible>Control.IsVisible(55)</visible>
@@ -25,10 +35,7 @@
 				<include>ListThumbInfoPanel</include>
 			</control>
 
-      <!--###########################################################################################################-->
-      <!--########################################### MEDIA ITEM DETAILS ############################################-->
-      <!--###########################################################################################################-->
-
+      <!--<<<<<<<<<<<<<<<<<<<<< Others than Info Wall >>>>>>>>>>>>>>>>>>>>>>>-->
       <control type="group">
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
@@ -39,7 +46,7 @@
           <left>-48</left>
           <top>0</top>
           <width>30</width>
-          <height>1080</height>
+          <height>100%</height>
           <texture>lists/ContentGlow.png</texture>
         </control>
 				<include content="ContentPanel">
@@ -47,6 +54,25 @@
 				</include>
 				<control type="group">
           <width>800</width>
+          <control type="image">
+            <left>-20</left>
+            <right>0</right>
+            <top>10</top>
+            <width>920</width>
+            <height>550</height>
+            <fadetime>300</fadetime>
+            <texture border="2" fallback="special://skin/extras/home-images/movie.jpg" >$VAR[FanartImageVar]</texture>
+            <aspectratio align="stretch" aligny="top">scale</aspectratio>
+          </control>
+          <control type="image">
+            <left>-20</left>
+            <right>0</right>
+            <top>10</top>
+            <width>920</width>
+            <height>100%</height>
+            <texture border="2">overlays/List_overlay.png</texture>
+            <aspectratio align="stretch" aligny="top">scale</aspectratio>
+          </control>
 					<control type="textbox">
 						<top>120</top>
 						<left>30</left>
@@ -118,9 +144,9 @@
 			<include content="TopBar">
 				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsVideoVar]" />
 			</include>
-			<include content="BottomBar">
+      <!--include content="BottomBar">
 				<param name="info_visible" value="true" />
-			</include>
+			</include-->
 			<control type="group">
 				<depth>DepthBars</depth>
 				<bottom>0</bottom>
