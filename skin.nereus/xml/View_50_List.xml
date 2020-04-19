@@ -165,7 +165,7 @@
 			<control type="group">
 				<depth>DepthContentPanel</depth>
         <control type="image">
-          <left>-48</left>
+          <left>-46</left>
           <top>0</top>
           <width>30</width>
           <height>100%</height>
