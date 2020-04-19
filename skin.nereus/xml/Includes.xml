@@ -1062,7 +1062,7 @@
 						<fadetime>400</fadetime>
 						<include>OpenClose_Left</include>
 						<animation effect="fade" time="400">VisibleChange</animation>
-						<texture background="true" colordiffuse="37FFFFFF">$VAR[MediaFanartVar]</texture>
+						<texture background="true" colordiffuse="1AFFFFFF">$VAR[MediaFanartVar]</texture>
             <!--visible>!Control.IsVisible(32111)</visible-->
 					</control>
 				</control>
