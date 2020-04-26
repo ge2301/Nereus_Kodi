@@ -335,10 +335,17 @@
 						<control type="image">
 							<width>316</width>
 							<height>200</height>
-							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<texture>dialogs/dialog-bg-nobo-grey.png</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
+            <control type="image">
+              <left>20</left>
+              <top>110</top>
+              <width>276</width>
+              <height>70</height>
+              <texture colordiffuse="4DFFFFFF">overlays/overlayfade.png</texture>
+            </control>
 						<control type="image">
 							<centertop>74</centertop>
 							<left>58</left>
@@ -373,14 +380,14 @@
 						<control type="image">
 							<width>316</width>
 							<height>200</height>
-							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<texture>dialogs/dialog-bg-nobo-grey.png</texture>
 							<bordertexture border="21">overlays/shadow.png</bordertexture>
 							<bordersize>20</bordersize>
 						</control>
 						<control type="image">
 							<width>316</width>
 							<height>200</height>
-							<texture colordiffuse="button_focus">colors/grey.png</texture>
+							<texture colordiffuse="4BFFFFFF">colors/grey.png</texture>
 							<bordersize>20</bordersize>
 							<include>Animation_FocusTextureFade</include>
 						</control>
@@ -392,6 +399,13 @@
 							<texture fallback="DefaultFolder.png">$PARAM[icon]</texture>
 							<aspectratio>keep</aspectratio>
 						</control>
+            <control type="image">
+              <left>20</left>
+              <top>110</top>
+              <width>276</width>
+              <height>70</height>
+              <texture colordiffuse="4DFFFFFF">overlays/overlayfade.png</texture>
+            </control>
 						<control type="textbox">
 							<left>38</left>
 							<top>106</top>
