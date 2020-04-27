@@ -282,7 +282,7 @@
 					<top>-14</top>
 					<width>298</width>
 					<height>408</height>
-					<texture colordiffuse="FFFFFFFF">colors/grey.png</texture>
+					<texture colordiffuse="FFFFFFFF">colors/white.png</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 					<visible>$PARAM[focused]</visible>

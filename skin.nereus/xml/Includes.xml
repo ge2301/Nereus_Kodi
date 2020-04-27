@@ -1016,7 +1016,7 @@
 			<include>FullScreenDimensions</include>
 			<aspectratio>scale</aspectratio>
       <!--texture colordiffuse="FF666666" fallback="special://skin/extras/backgrounds/primary.jpg">$INFO[Skin.String(background_overlay),special://skin/extras/backgrounds/pattern,.jpg]</texture-->
-      <texture colordiffuse="FF666666">special://skin/extras/backgrounds/primary.jpg</texture>
+      <texture colordiffuse="FF888888">special://skin/extras/backgrounds/primary.jpg</texture>
 		</control>
 	</include>
 	<include name="DefaultBackground">
