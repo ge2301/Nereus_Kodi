@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="OSDButton">
-		<textureradioonfocus colordiffuse="white">$PARAM[texture]</textureradioonfocus>
-		<textureradioonnofocus>$PARAM[texture]</textureradioonnofocus>
-		<textureradioofffocus colordiffuse="white">$PARAM[texture]</textureradioofffocus>
-		<textureradiooffnofocus>$PARAM[texture]</textureradiooffnofocus>
+    <texturefocus></texturefocus>
+    <texturenofocus></texturenofocus>
+		<textureradioonfocus colordiffuse="white">$PARAM[focustexture]</textureradioonfocus>
+		<textureradioonnofocus colordiffuse="AACCCCCC">$PARAM[texture]</textureradioonnofocus>
+		<textureradioofffocus colordiffuse="white">$PARAM[focustexture]</textureradioofffocus>
+		<textureradiooffnofocus colordiffuse="AACCCCCC">$PARAM[texture]</textureradiooffnofocus>
 		<textureradioondisabled colordiffuse="disabled">$PARAM[texture]</textureradioondisabled>
 		<textureradiooffdisabled colordiffuse="disabled">$PARAM[texture]</textureradiooffdisabled>
-		<texturefocus colordiffuse="button_focus">osd/fullscreen/buttons/button-fo.png</texturefocus>
-		<width>76</width>
-		<animation center="38,38" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back">Focus</animation>
-		<height>76</height>
-		<radiowidth>74</radiowidth>
-		<radioheight>74</radioheight>
+    <!--texturefocus colordiffuse="button_focus">osd/fullscreen/buttons/button-fo.png</texturefocus-->
+		<width>100</width>
+		<!--animation center="38,38" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back">Focus</animation-->
+		<height>100</height>
+		<radiowidth>98</radiowidth>
+		<radioheight>98</radioheight>
 		<font></font>
-		<texturenofocus />
+    <align>center</align>
+    <aligny>center</aligny>
 		<radioposx>1</radioposx>
 		<radioposy>0</radioposy>
 	</include>
