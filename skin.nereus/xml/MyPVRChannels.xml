@@ -39,15 +39,15 @@
 							<visible>Control.hasFocus(50)</visible>
 						</control>
 						<control type="image">
-							<right>20</right>
+							<left>110</left>
 							<top>10</top>
-							<width>80</width>
+							<width>150</width>
 							<height>70</height>
-							<aspectratio align="right">keep</aspectratio>
+							<aspectratio align="left">keep</aspectratio>
 							<texture>$INFO[listitem.icon]</texture>
 						</control>
 						<control type="progress">
-							<left>105</left>
+							<left>295</left>
 							<top>58</top>
 							<width>50</width>
 							<height>12</height>
@@ -63,7 +63,7 @@
 							<texture>$VAR[PVRStatusImageVar]</texture>
 						</control>
 						<control type="label">
-							<left>105</left>
+							<left>295</left>
 							<top>8</top>
 							<height>90</height>
 							<right>120</right>
@@ -74,7 +74,7 @@
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 						<control type="label">
-							<left>165</left>
+							<left>355</left>
 							<top>46</top>
 							<height>90</height>
 							<right>120</right>
@@ -96,16 +96,24 @@
 						</control>
 					</focusedlayout>
 					<itemlayout height="90">
+            <!--control type="image">
+              <left>0</left>
+              <top>2</top>
+              <right>0</right>
+              <bottom>2</bottom>
+              <texture colordiffuse="26FFFFFF">lists/focus.png</texture>
+              <visible>!Control.hasNoFocus(50)</visible>
+            </control-->
 						<control type="image">
-							<right>20</right>
+							<left>110</left>
 							<top>10</top>
-							<width>80</width>
+							<width>150</width>
 							<height>70</height>
-							<aspectratio align="right">keep</aspectratio>
+							<aspectratio align="left">keep</aspectratio>
 							<texture>$INFO[listitem.icon]</texture>
 						</control>
 						<control type="progress">
-							<left>105</left>
+							<left>295</left>
 							<top>58</top>
 							<width>50</width>
 							<height>12</height>
@@ -121,7 +129,7 @@
 							<texture>$VAR[PVRStatusImageVar]</texture>
 						</control>
 						<control type="label">
-							<left>105</left>
+							<left>295</left>
 							<top>8</top>
 							<height>90</height>
 							<right>120</right>
@@ -132,7 +140,7 @@
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 						<control type="label">
-							<left>165</left>
+							<left>355</left>
 							<top>46</top>
 							<height>90</height>
 							<right>120</right>
