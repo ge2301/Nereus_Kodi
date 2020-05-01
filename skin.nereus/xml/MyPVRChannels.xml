@@ -8,6 +8,9 @@
 		<include>DefaultBackground</include>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+      <animation type="Conditional" condition="$EXP[sidebar_visible]" reversible="true">
+        <effect type="slide" start="0" end="520" time="600" tween="sine" easing="out" />
+      </animation>
 			<control type="group">
 				<include>OpenClose_Left</include>
 				<control type="fixedlist" id="50">
@@ -281,30 +284,61 @@
 				<include>OpenClose_Right</include>
 				<width>870</width>
 				<right>0</right>
+        <control type="image">
+          <left>-78</left>
+          <top>0</top>
+          <width>30</width>
+          <height>100%</height>
+          <texture>lists/ContentGlow.png</texture>
+        </control>
 				<include content="ContentPanel">
 					<param name="left" value="-72" />
 					<param name="width" value="970" />
 					<param name="top" value="-20" />
 					<param name="flipx" value="true" />
 				</include>
-				<control type="scrollbar" id="73">
-					<left>-50</left>
-					<top>list_y_offset</top>
-					<width>12</width>
-					<bottom>list_y_offset</bottom>
-					<onleft>50</onleft>
-					<onright>50</onright>
-					<orientation>vertical</orientation>
-					<animation effect="zoom" start="100,100" end="50,100" center="-50,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(73)">conditional</animation>
-				</control>
 				<include>PVRInfoPanel</include>
+        <control type="scrollbar" id="73">
+          <right>0</right>
+          <top>list_y_offset</top>
+          <width>12</width>
+          <bottom>list_y_offset</bottom>
+          <onleft>50</onleft>
+          <onright>50</onright>
+          <orientation>vertical</orientation>
+          <animation effect="zoom" start="100,100" end="50,100" center="870,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(73)">conditional</animation>
+        </control>
 			</control>
-			<include content="TopBar">
+
+      <!--###########################################################################################################-->
+      <!--#################################### TOP AND BOTTOM GRADIENT OVERLAY ######################################-->
+      <!--###########################################################################################################-->
+
+      <control type="image">
+        <left>0</left>
+        <top>0</top>
+        <aspectratio>stretch</aspectratio>
+        <width>100%</width>
+        <height>100</height>
+        <aligny>top</aligny>
+        <texture colordiffuse="EEFFFFFF">overlays/overlayfade_mirrored.png</texture>
+      </control>
+      <control type="image">
+        <left>0</left>
+        <bottom>0</bottom>
+        <aspectratio>stretch</aspectratio>
+        <width>100%</width>
+        <height>110</height>
+        <aligny>bottom</aligny>
+        <texture colordiffuse="EEFFFFFF">overlays/overlayfade.png</texture>
+      </control>
+
+      <include content="TopBar">
 				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsPVRChannelsVar]" />
 			</include>
-			<include content="BottomBar">
+      <!--include content="BottomBar">
 				<param name="info_visible" value="true" />
-			</include>
+			</include-->
 			<control type="label">
 				<right>20</right>
 				<include>OpenClose_Right</include>
@@ -323,7 +357,8 @@
 			<include>MediaMenuMouseOverlay</include>
 			<control type="group">
 				<include>MediaMenuCommon</include>
-				<include>PVRSideBar</include>
+        <include>MediaMenuCommonBackground</include>
+        <include>PVRSideBar</include>
 			</control>
 		</control>
 		<control type="label" id="29">

@@ -27,17 +27,45 @@
       <!--###########################################################################################################-->     
       
 			<control type="group">
+        <left>880r</left>
+        <depth>DepthContentPanel</depth>
 				<include>OpenClose_Left</include>
 				<visible>Control.Isvisible(54)</visible>
 				<include>Visible_Left</include>
 				<visible>Container.Content(images)</visible>
+        <control type="image">
+          <left>-48</left>
+          <top>0</top>
+          <width>30</width>
+          <height>100%</height>
+          <texture>lists/ContentGlow.png</texture>
+        </control>
 				<include content="ContentPanel">
-					<param name="width" value="656" />
+					<param name="width" value="940" />
 				</include>
+          <control type="image">
+            <left>-20</left>
+            <right>0</right>
+            <top>10</top>
+            <width>920</width>
+            <height>550</height>
+            <fadetime>300</fadetime>
+            <texture border="2">$VAR[IconWallThumbVar]</texture>
+            <aspectratio align="stretch" aligny="top">scale</aspectratio>
+          </control>
+          <control type="image">
+            <left>-20</left>
+            <right>0</right>
+            <top>10</top>
+            <width>920</width>
+            <height>100%</height>
+            <texture border="2">overlays/List_overlay.png</texture>
+            <aspectratio align="stretch" aligny="top">scale</aspectratio>
+          </control>
 				<control type="textbox">
 					<left>40</left>
-					<top>360</top>
-					<width>529</width>
+					<top>10</top>
+					<width>920</width>
 					<height>413</height>
 					<align>center</align>
 					<aligny>center</aligny>
@@ -49,7 +77,7 @@
 				<control type="grouplist">
 					<left>20</left>
 					<top>152</top>
-					<width>570</width>
+					<width>920</width>
 					<height>760</height>
 					<orientation>vertical</orientation>
 					<include content="PicsInfoLine">

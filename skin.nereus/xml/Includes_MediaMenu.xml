@@ -74,7 +74,7 @@
 			<control type="grouplist" id="9000">
 				<top>50</top>
 				<left>0</left>
-				<width>470</width>
+				<width>520</width>
 				<height>100%</height>
 				<onleft>9000</onleft>
 				<onup>9000</onup>
@@ -88,7 +88,7 @@
 						<label>$LOCALIZE[31063]</label>
 					</control>
 					<control type="label">
-						<width>470</width>
+						<width>500</width>
 						<textoffsetx>20</textoffsetx>
 						<textoffsety>15</textoffsety>
 						<height>50</height>
