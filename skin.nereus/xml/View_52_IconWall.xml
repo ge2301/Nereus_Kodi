@@ -19,7 +19,7 @@
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<visible>Container.Content() | Container.Content(tags) | Container.Content(years) | Container.Content(roles) | Container.Content(sources) | Container.Content(genres) | Container.Content(countries) | Container.Content(studios) | Container.Content(playlists) | Container.Content(unknown)</visible>
 				<viewtype label="31099">icon</viewtype>
-				<itemlayout height="280" width="440" condition="Container.Content() | Container.Content(tags) | Container.Content(playlists) | [Container.Content(studios) + System.HasAddon(resource.images.studios.white)]">
+				<itemlayout height="280" width="440" condition="!Skin.HasSetting(alternative_genreicons) + Container.Content() | Container.Content(tags) | Container.Content(playlists) | [Container.Content(studios) + System.HasAddon(resource.images.studios.white)]">
 					<control type="group">
 						<top>150</top>
 						<control type="image">
@@ -57,7 +57,7 @@
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout height="280" width="440" condition="Container.Content() | Container.Content(tags) | Container.Content(playlists) | [Container.Content(studios) + System.HasAddon(resource.images.studios.white)]">
+				<focusedlayout height="280" width="440" condition="!Skin.HasSetting(alternative_genreicons) + Container.Content() | Container.Content(tags) | Container.Content(playlists) | [Container.Content(studios) + System.HasAddon(resource.images.studios.white)]">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<animation type="Focus">
@@ -109,7 +109,7 @@
 						</control>
 					</control>
 				</focusedlayout>
-				<itemlayout height="181" width="348" condition="Container.Content(genres) | Container.Content(sources) | Container.Content(years) | Container.Content(roles) | Container.Content(countries) | [Container.Content(studios) + !System.HasAddon(resource.images.studios.white)]">
+				<itemlayout height="181" width="348" condition="!Skin.HasSetting(alternative_genreicons) + Container.Content(genres) | Container.Content(sources) | Container.Content(years) | Container.Content(roles) | Container.Content(countries) | [Container.Content(studios) + !System.HasAddon(resource.images.studios.white)]">
 					<control type="group">
 						<top>120</top>
 						<control type="image">
@@ -130,7 +130,7 @@
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout height="181" width="348" condition="Container.Content(genres) | Container.Content(sources) | Container.Content(years) | Container.Content(roles) | Container.Content(countries) | [Container.Content(studios) + !System.HasAddon(resource.images.studios.white)]">
+				<focusedlayout height="181" width="348" condition="!Skin.HasSetting(alternative_genreicons) + Container.Content(genres) | Container.Content(sources) | Container.Content(years) | Container.Content(roles) | Container.Content(countries) | [Container.Content(studios) + !System.HasAddon(resource.images.studios.white)]">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<top>120</top>
@@ -165,6 +165,108 @@
 						</control>
 					</control>
 				</focusedlayout>
+
+        <itemlayout height="280" width="440" condition="Container.Content(genres) + Skin.HasSetting(alternative_genreicons)">
+          <control type="group">
+            <top>120</top>
+            <control type="image">
+              <width>396</width>
+              <height>245</height>
+              <texture>dialogs/dialog-bg-nobo.png</texture>
+              <bordertexture border="21">overlays/shadow.png</bordertexture>
+              <bordersize>20</bordersize>
+            </control>
+            <control type="image">
+              <top>20</top>
+              <left>20</left>
+              <width>356</width>
+              <height>205</height>
+              <texture fallback="special://skin/extras/genre-images/video/Default.jpg">$VAR[genre_poster]</texture>
+              <aspectratio>scale</aspectratio>
+              <align>center</align>
+            </control>
+            <control type="image">
+              <left>20</left>
+              <top>170</top>
+              <width>356</width>
+              <height>55</height>
+              <texture colordiffuse="border_alpha">colors/black.png</texture>
+            </control>
+            <!--control type="image">
+              <left>35</left>
+              <top>310</top>
+              <width>250</width>
+              <height>60</height>
+              <texture colordiffuse="FFFFFFFF">overlays/overlayfade.png</texture>
+            </control-->
+            <control type="label">
+              <left>25</left>
+              <top>168</top>
+              <width>350</width>
+              <height>54</height>
+              <label>$INFO[ListItem.Label]</label>
+              <align>center</align>
+              <aligny>center</aligny>
+            </control>            
+          </control>
+        </itemlayout>
+        <focusedlayout height="280" width="440" condition="Container.Content(genres) + Skin.HasSetting(alternative_genreicons)">
+          <control type="group">
+            <depth>DepthContentPopout</depth>
+            <top>120</top>
+            <animation type="Focus">
+              <effect type="zoom" start="100" end="112" time="200" tween="sine" easing="inout" center="auto" />
+            </animation>
+            <animation type="Unfocus">
+              <effect type="zoom" start="112" end="100" time="200" tween="sine" easing="inout" center="auto" />
+            </animation>
+            <control type="image">
+              <left>-4</left>
+              <top>-4</top>
+              <width>404</width>
+              <height>253</height>
+              <texture>dialogs/dialog-bg-nobo.png</texture>
+              <bordertexture border="21">overlays/shadow.png</bordertexture>
+              <include>Animation_FocusTextureFade</include>
+              <bordersize>20</bordersize>
+            </control>
+            <control type="image">
+              <left>-4</left>
+              <top>-4</top>
+              <width>404</width>
+              <height>253</height>
+              <texture colordiffuse="white">colors/white.png</texture>
+              <bordersize>20</bordersize>
+              <include>Animation_FocusTextureFade</include>
+            </control>
+            <control type="image">
+              <top>20</top>
+              <left>20</left>
+              <width>356</width>
+              <height>205</height>
+              <texture fallback="special://skin/extras/genre-images/video/Default.jpg">$VAR[genre_poster]</texture>
+              <aspectratio>scale</aspectratio>
+              <align>center</align>
+            </control>
+            <control type="image">
+              <left>20</left>
+              <top>170</top>
+              <width>356</width>
+              <height>55</height>
+              <texture colordiffuse="border_alpha">colors/black.png</texture>
+            </control>
+            <control type="label">
+              <left>25</left>
+              <top>168</top>
+              <width>350</width>
+              <height>54</height>
+              <label>$INFO[ListItem.Label]</label>
+              <align>center</align>
+              <aligny>center</aligny>
+            </control>
+          </control>
+        </focusedlayout>
+        
 			</control>
 		</control>
 	</include>

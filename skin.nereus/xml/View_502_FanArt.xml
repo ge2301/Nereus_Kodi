@@ -20,6 +20,13 @@
 			<control type="group">
 				<right>-20</right>
 				<width>1235</width>
+        <control type="image">
+          <left>-6</left>
+          <top>0</top>
+          <width>30</width>
+          <height>100%</height>
+          <texture>lists/ContentGlow.png</texture>
+        </control>
 				<include content="ContentPanel">
 					<param name="width" value="1235" />
 					<param name="left" value="0" />

@@ -230,6 +230,14 @@
 						<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
 						<visible>!String.IsEmpty(Container.PluginName)</visible>
 					</control>
+          <control type="radiobutton" id="802">
+            <description>alternatve Genre Icons</description>
+            <include>MediaMenuItemsCommon</include>
+            <label>Show Genre Images</label>
+            <onclick>Skin.ToggleSetting(alternative_genreicons)</onclick>
+            <selected>Skin.HasSetting(alternative_genreicons)</selected>
+            <visible>Container.Content(genres) + Control.isvisible(52)</visible>
+          </control>
 					<include>MediaMenuNowPlaying</include>
 				</control>
 			</control>

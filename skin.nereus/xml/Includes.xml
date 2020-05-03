@@ -1066,7 +1066,16 @@
 						<texture background="true" colordiffuse="1AFFFFFF">$VAR[MediaFanartVar]</texture>
             <!--visible>!Control.IsVisible(32111)</visible-->
 					</control>
-				</control>
+          <control type="image">
+            <include>FullScreenDimensions</include>
+            <aspectratio>scale</aspectratio>
+            <fadetime>400</fadetime>
+            <animation effect="fade" time="400">VisibleChange</animation>
+            <texture colordiffuse="1AFFFFFF" background="true">$VAR[genre_fanart]</texture>
+            <aspectratio aligny="center">stretch</aspectratio>
+            <!--visible>Control.hasfocus(52) + Control.isvisible(52)</visible-->
+          </control>
+        </control>
 			</control>
 		</definition>
 	</include>
