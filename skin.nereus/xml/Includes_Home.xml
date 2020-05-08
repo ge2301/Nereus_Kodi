@@ -200,42 +200,153 @@
 				<left>0</left>
 				<top>105</top>
 				<right>0</right>
-				<height>410</height>
+				<height>350</height>
 				<include content="WidgetListCommon">
 					<param name="list_id" value="$PARAM[list_id]"/>
 				</include>
 				<visible>$PARAM[visible]</visible>
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
-				<itemlayout width="310" height="500">
+        
+				<itemlayout width="310" height="350">
 					<control type="group">
 						<left>70</left>
 						<top>5</top>
-						<include content="InfoWallEpisodeLayout">
-							<param name="main_label" value="$PARAM[main_label]" />
-							<param name="sub_label" value="$PARAM[sub_label]" />
-							<param name="thumb_label" value="$PARAM[thumb_label]" />
-							<param name="focused" value="false" />
-						</include>
+            <control type="image">
+              <width>316</width>
+              <height>245</height>
+              <texture>dialogs/dialog-bg-nobo.png</texture>
+              <bordertexture border="21">overlays/shadow.png</bordertexture>
+              <bordersize>20</bordersize>
+              <align>center</align>
+            </control>
+            <control type="image">
+              <bordersize>20</bordersize>
+              <width>316</width>
+              <height>245</height>
+              <texture fallback="$PARAM[fallback_image]" background="true">$VAR[InfoWallThumbVar]</texture>
+              <aspectratio>scale</aspectratio>
+              <align>center</align>
+            </control>
+            <control type="image">
+              <left>20</left>
+              <top>155</top>
+              <width>277</width>
+              <height>70</height>
+              <texture>overlays/overlayfade.png</texture>
+            </control>
+            <control type="image">
+              <left>20</left>
+              <top>175</top>
+              <width>32</width>
+              <height>32</height>
+              <texture>$VAR[WallWatchedIconVar]</texture>
+            </control>
+            <control type="label">
+              <left>31</left>
+              <top>192</top>
+              <width>260</width>
+              <label>$PARAM[thumb_label]</label>
+              <font>font20_title</font>
+              <shadowcolor>text_shadow</shadowcolor>
+              <align>right</align>
+            </control>
+            <control type="progress">
+              <left>20</left>
+              <top>245</top>
+              <width>316</width>
+              <height>1</height>
+              <texturebg></texturebg>
+              <midtexture colordiffuse="button_focus" border="3">progress/texturebg_alt_white.png</midtexture>
+              <info>ListItem.PercentPlayed</info>
+              <visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+            </control>
+            <control type="group">
+              <left>134</left>
+              <top>8</top>
+              <include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
+            </control>
 					</control>
 				</itemlayout>
-				<focusedlayout width="310" height="500">
-					<control type="group">
-						<depth>DepthContentPopout</depth>
-						<left>70</left>
-						<top>5</top>
-						<animation type="Focus">
-							<effect type="zoom" start="100" end="112" time="200" tween="sine" easing="inout" center="230,120" />
-						</animation>
-						<animation type="Unfocus">
-							<effect type="zoom" start="112" end="100" time="200" tween="sine" easing="inout" center="230,120" />
-						</animation>
-						<include content="InfoWallEpisodeLayout">
-							<param name="main_label" value="$PARAM[main_label]" />
-							<param name="sub_label" value="$PARAM[sub_label]" />
-							<param name="thumb_label" value="$PARAM[thumb_label]" />
-							<param name="focused" value="true" />
-						</include>
-					</control>
+        
+				<focusedlayout width="310" height="350">
+          <control type="group">
+            <depth>DepthContentPopout</depth>
+            <left>70</left>
+            <top>5</top>
+            <animation type="Focus">
+              <effect type="zoom" start="100" end="112" time="200" tween="sine" easing="inout" center="195,115" />
+            </animation>
+            <animation type="Unfocus">
+              <effect type="zoom" start="112" end="100" time="200" tween="sine" easing="inout" center="195,115" />
+            </animation>
+            <control type="image">
+              <left>-4</left>
+              <top>-4</top>
+              <width>324</width>
+              <height>253</height>
+              <texture>dialogs/dialog-bg-nobo.png</texture>
+              <bordertexture border="21">overlays/shadow.png</bordertexture>
+              <include>Animation_FocusTextureFade</include>
+              <align>center</align>
+              <bordersize>20</bordersize>
+            </control>
+            <control type="image">
+              <left>-4</left>
+              <top>-4</top>
+              <width>324</width>
+              <height>253</height>
+              <texture colordiffuse="white">colors/white.png</texture>
+              <bordersize>20</bordersize>
+              <align>center</align>
+              <include>Animation_FocusTextureFade</include>
+            </control>
+            <control type="image">
+              <bordersize>20</bordersize>
+              <width>316</width>
+              <height>245</height>
+              <texture fallback="$PARAM[fallback_image]" background="true">$VAR[InfoWallThumbVar]</texture>
+              <aspectratio>scale</aspectratio>
+              <align>center</align>
+            </control>
+            <control type="image">
+              <left>20</left>
+              <top>155</top>
+              <width>277</width>
+              <height>70</height>
+              <texture>overlays/overlayfade.png</texture>
+            </control>
+            <control type="image">
+              <left>20</left>
+              <top>175</top>
+              <width>32</width>
+              <height>32</height>
+              <texture>$VAR[WallWatchedIconVar]</texture>
+            </control>
+            <control type="label">
+              <left>31</left>
+              <top>192</top>
+              <width>260</width>
+              <label>$PARAM[thumb_label]</label>
+              <font>font20_title</font>
+              <shadowcolor>text_shadow</shadowcolor>
+              <align>right</align>
+            </control>
+            <control type="progress">
+              <left>20</left>
+              <top>245</top>
+              <width>316</width>
+              <height>1</height>
+              <texturebg></texturebg>
+              <midtexture colordiffuse="button_focus" border="3">progress/texturebg_alt_white.png</midtexture>
+              <info>ListItem.PercentPlayed</info>
+              <visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+            </control>
+            <control type="group">
+              <left>134</left>
+              <top>8</top>
+              <include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
+            </control>
+          </control>
 				</focusedlayout>
 				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="$PARAM[widget_limit]">$PARAM[content_path]</content>
 			</control>

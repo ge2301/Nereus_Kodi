@@ -240,7 +240,7 @@
 	</include>
 	<include name="InfoFlag">
 		<control type="group">
-			<width>180</width>
+			<width>$PARAM[width]</width>
 			<visible>$PARAM[visible]</visible>
 			<control type="image">
 				<top>-3</top>
@@ -259,6 +259,29 @@
 			</control>
 		</control>
 	</include>
+
+  <include name="HelpFlag">
+    <control type="group">
+      <width>auto</width>
+      <visible>$PARAM[visible]</visible>
+      <control type="image">
+        <top>-3</top>
+        <left>0</left>
+        <width>40</width>
+        <height>40</height>
+        <texture colordiffuse="white">$PARAM[icon]</texture>
+      </control>
+      <control type="label">
+        <left>50</left>
+        <width>auto</width>
+        <height>35</height>
+        <aligny>center</aligny>
+        <font>font12</font>
+        <label>$PARAM[label]</label>
+      </control>
+    </control>
+  </include>
+
 	<include name="MediaFlag">
 		<param name="width">115</param>
 		<param name="height">60</param>
@@ -274,6 +297,122 @@
 			</control>
 		</definition>
 	</include>
+
+  <include name="HelpFlags">
+    <param name="infolabel_prefix"></param>
+    <param name="resolution_var">$VAR[ResolutionFlagVar]</param>
+    <definition>
+      <control type="grouplist">
+        <orientation>horizontal</orientation>
+        <left>-170</left>
+        <top>0</top>
+        <height>70</height>
+        <align>left</align>
+        <itemgap>28</itemgap>
+        <width>1900</width>
+        <usecontrolcoords>true</usecontrolcoords>
+        <animation effect="slide" start="0,0" end="200,0" time="400" tween="sine" easing="inout" condition="Control.HasFocus(9000)">Conditional</animation>
+        <animation effect="fade" start="0" end="100" time="300" delay="200" condition="Control.HasFocus(9000)">Conditional</animation>
+        <animation effect="slide" start="200,0" end="0,0" time="400" tween="sine" easing="inout" condition="!Control.HasFocus(9000)">Conditional"</animation>
+        <control type="group">
+          <top>10</top>
+          <align>left</align>
+          <width>1000</width>
+          <include content="HelpFlag">
+            <param name="visible" value="[String.IsEqual(Container(9000).ListItem.Property(id),movies) + Control.HasFocus(9000)]"/>
+            <param name="icon" value="lists/info.png" />
+            <param name="label" value="$LOCALIZE[31190]" />
+          </include>          
+          <include content="HelpFlag">
+            <param name="visible" value="[String.IsEqual(Container(9000).ListItem.Property(id),tvshows) + Control.HasFocus(9000)]"/>
+            <param name="icon" value="lists/info.png" />
+            <param name="label" value="$LOCALIZE[31191]" />
+          </include>
+          <include content="HelpFlag">
+            <param name="visible" value="[String.IsEqual(Container(9000).ListItem.Property(id),music) + Control.HasFocus(9000)]"/>
+            <param name="icon" value="lists/info.png" />
+            <param name="label" value="$LOCALIZE[31192]" />
+          </include>
+          <include content="HelpFlag">
+            <param name="visible" value="[String.IsEqual(Container(9000).ListItem.Property(id),livetv) + Control.HasFocus(9000)]"/>
+            <param name="icon" value="lists/info.png" />
+            <param name="label" value="$LOCALIZE[31193]" />
+          </include>
+        </control>
+      </control>
+    </definition>
+  </include>
+
+  <include name="TitleFlags">
+    <param name="infolabel_prefix"></param>
+    <param name="resolution_var">$VAR[ResolutionFlagVar]</param>
+    <definition>
+      <control type="grouplist">
+        <orientation>horizontal</orientation>
+        <left>50</left>
+        <top>10</top>
+        <height>70</height>
+        <align>left</align>
+        <itemgap>28</itemgap>
+        <width>1000</width>
+        <usecontrolcoords>false</usecontrolcoords>
+        <animation effect="slide" end="0,0" start="200,0" time="400" tween="sine" easing="inout" condition="!Control.HasFocus(9000)">Conditional</animation>
+        <animation effect="fade" start="0" end="100" time="300" delay="200" condition="!Control.HasFocus(9000)">Conditional</animation>
+        <animation effect="slide" end="200,0" start="0,0" time="400" tween="sine" easing="inout" condition="Control.HasFocus(9000)">Conditional"</animation>
+        <!--control type="group">
+          <width>500</width>
+          <include content="HelpFlag">
+            <param name="visible" value="[Window.Is(Home) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Title)]"/>
+            <param name="icon" value="lists/info.png" />
+            <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Title]"/>
+          </include>
+        </control-->
+        <control type="label">
+          <visible>[String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,episode) + Window.Is(Home) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Title)]</visible>
+          <left>50</left>
+          <width>auto</width>
+          <height>35</height>
+          <aligny>center</aligny>
+          <font>font12</font>
+          <label>$INFO[$PARAM[infolabel_prefix]ListItem.TVShowTitle]: $INFO[$PARAM[infolabel_prefix]ListItem.Title]</label>
+        </control>
+        <control type="label">
+          <visible>[!String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,episode) + Window.Is(Home) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Title)]</visible>
+          <left>50</left>
+          <width>auto</width>
+          <height>35</height>
+          <aligny>center</aligny>
+          <font>font12</font>
+          <label>$INFO[$PARAM[infolabel_prefix]ListItem.Title]</label>
+        </control>
+        <include content="InfoFlag">
+          <param name="width" value="160" />
+          <param name="visible" value="[!String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow) + String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,episode) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Premiered)]" />
+          <param name="icon" value="lists/year.png" />
+          <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Premiered]" />
+        </include>
+        <include content="InfoFlag">
+          <param name="width" value="110" />
+          <param name="visible" value="[String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,episode) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Year)]" />
+          <param name="icon" value="lists/year.png" />
+          <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Year]" />
+        </include>
+        <include content="InfoFlag">
+          <param name="width" value="110" />
+          <param name="visible" value="[String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,movie) | String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,album)] + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Year)" />
+          <param name="icon" value="lists/year.png" />
+          <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Year]" />
+        </include>
+        <include content="InfoFlag">
+          <param name="width" value="360" />
+          <param name="visible" value="String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,album) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Artist)" />
+          <param name="icon" value="lists/artist.png" />
+          <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Artist]" />
+        </include>
+      </control>
+    </definition>
+  </include>
+  
 	<include name="MediaFlags">
 		<param name="infolabel_prefix"></param>
 		<param name="resolution_var">$VAR[ResolutionFlagVar]</param>
@@ -287,31 +426,13 @@
 				<itemgap>28</itemgap>
 				<width>1900</width>
 				<usecontrolcoords>true</usecontrolcoords>
-				<control type="group">
+        <control type="group">
 					<width>150</width>
 					<visible>System.HasAddon(resource.images.studios.white) + String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow)</visible>
 					<include content="MediaFlag">
 						<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.Studio,resource://resource.images.studios.white/,.png]" />
 					</include>
-				</control>
-				<control type="group">
-					<top>10</top>
-					<width>110</width>
-					<include content="InfoFlag">
-						<param name="visible" value="[String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow) | String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,episode)] + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Premiered)" />
-						<param name="icon" value="lists/year.png" />
-						<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Premiered]" />
-					</include>
-				</control>
-        <control type="group">
-          <top>10</top>
-          <width>110</width>
-          <include content="InfoFlag">
-            <param name="visible" value="String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,movie) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Year)" />
-            <param name="icon" value="lists/year.png" />
-            <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Year]" />
-          </include>
-        </control>
+				</control>      
 				<control type="group">
 					<width>115</width>
 					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Duration)</visible>

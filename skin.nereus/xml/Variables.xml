@@ -475,7 +475,8 @@
   
    <variable name="genre_fanart">
     <value condition="String.Contains(Listitem.Label,Comedy) | String.Contains(Listitem.Label,Sitcom) | String.Contains(Listitem.Label,Komödie)">special://skin/extras/genre-images/backgrounds/Comedy.jpg</value>
-		<value condition="String.Contains(Listitem.Label,Family) | String.Contains(Listitem.Label,Familie) | String.Contains(Listitem.Label,Familien) | String.Contains(Listitem.Label,Kinder) | String.Contains(Listitem.Label,Kids)">special://skin/extras/genre-images/backgrounds/Family.jpg</value>
+		<value condition="String.Contains(Listitem.Label,Family) | String.Contains(Listitem.Label,Familie) | String.Contains(Listitem.Label,Familien)">special://skin/extras/genre-images/backgrounds/Family.jpg</value>
+     
 		<value condition="String.Contains(Listitem.Label,CSI) | String.Contains(Listitem.Label,Crime) | String.Contains(Listitem.Label,Krimi) | String.Contains(Listitem.Label,Agenten)">special://skin/extras/genre-images/backgrounds/Crime.jpg</value>
 		<value condition="String.Contains(Listitem.Label,Anwälte) | String.Contains(Listitem.Label,Law) | String.Contains(Listitem.Label,Lawyer)">special://skin/extras/genre-images/backgrounds/Crime.jpg</value>
 		<value condition="String.Contains(Listitem.Label,Sci-Fi) | String.Contains(Listitem.Label,fiction)  | String.Contains(Listitem.Label,Stargate) | String.Contains(Listitem.Label,Marvel)">special://skin/extras/genre-images/backgrounds/Science Fiction.jpg</value>
@@ -484,8 +485,9 @@
 		<value condition="String.Contains(Listitem.Label,Musik) | String.Contains(Listitem.Label,Music) | String.Contains(Listitem.Label,Musical)">special://skin/extras/genre-images/backgrounds/Music.jpg</value>
 		<value condition="String.Contains(Listitem.Label,Biografie) | String.Contains(Listitem.Label,Biography)">special://skin/extras/genre-images/backgrounds/Biografy.jpg</value>
 		<value condition="String.Contains(Listitem.Label,Mystic) | String.Contains(Listitem.Label,Thrill) | String.Contains(Listitem.Label,Mystery) | String.Contains(Listitem.Label,Thriller)">special://skin/extras/genre-images/backgrounds/Mystery.jpg</value>
-		<value condition="String.Contains(Listitem.Label,Action) | String.Contains(Listitem.Label,Kampfsport) | String.Contains(Listitem.Label,Martial) | String.Contains(Listitem.Label,Ninja)">special://skin/extras/genre-images/backgrounds/Action.jpg</value>
-		<value condition="String.Contains(Listitem.Label,Western) | String.Contains(Listitem.Label,Abenteuer) | String.Contains(Listitem.Label,Adventure)">special://skin/extras/genre-images/backgrounds/Adventure.jpg</value>
+		<value condition="String.Contains(Listitem.Label,Action) | String.Contains(Listitem.Label,Martial) | String.Contains(Listitem.Label,Ninja)">special://skin/extras/genre-images/backgrounds/Action.jpg</value>
+		<value condition="String.Contains(Listitem.Label,Abenteuer) | String.Contains(Listitem.Label,Adventure)">special://skin/extras/genre-images/backgrounds/Adventure.jpg</value>
+    <value condition="String.Contains(Listitem.Label,Western)">special://skin/extras/genre-images/backgrounds/Western.jpg</value>
 		<value condition="String.Contains(Listitem.Label,Dokumenation) | String.Contains(Listitem.Label,Doku) | String.Contains(Listitem.Label,Dokumentary) | String.Contains(Listitem.Label,National) | String.Contains(Listitem.Label,Nature)">special://skin/extras/genre-images/backgrounds/Documentation.jpg</value>
 		<value condition="String.Contains(Listitem.Label,Drama) | String.Contains(Listitem.Label,Love) | String.Contains(Listitem.Label,Romance)">special://skin/extras/genre-images/backgrounds/Drama.jpg</value>
 		<value condition="String.Contains(Listitem.Label,Sport) | String.Contains(Listitem.Label,Sports) | String.Contains(Listitem.Label,Boxer) | String.Contains(Listitem.Label,Boxing) | String.Contains(Listitem.Label,Football) | String.Contains(Listitem.Label,Basketball) | String.Contains(Listitem.Label,Baseball)">special://skin/extras/genre-images/backgrounds/Sport.jpg</value>
@@ -493,12 +495,13 @@
 		<value condition="String.Contains(Listitem.Label,Historie) | String.Contains(Listitem.Label,History) | String.Contains(Listitem.Label,Monumental) | String.Contains(Listitem.Label,Film-Noir)">special://skin/extras/genre-images/backgrounds/History.jpg</value>
 		<value condition="String.Contains(Listitem.Label,Horror) | String.Contains(Listitem.Label,Zombies) | String.Contains(Listitem.Label,Splatter)">special://skin/extras/genre-images/backgrounds/Horror.jpg</value>
 		<value condition="String.Contains(Listitem.Label,Christmas) | String.Contains(Listitem.Label,Weihnachten)">special://skin/extras/genre-images/backgrounds/Holiday.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) +  String.Contains(Listitem.Label,Fantasy)">special://skin/extras/genre-images/backgrounds/Fantasy.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,jazz) | String.Contains(Listitem.Label,big band) | String.Contains(Listitem.Label,fusion) | String.Contains(Listitem.Label,ragtime)]">special://skin/extras/genre-images/backgrounds/Jazz.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,new age) | String.Contains(Listitem.Label,environment) | String.Contains(Listitem.Label,healing) | String.Contains(Listitem.Label,meditation) | String.Contains(Listitem.Label,nature) | String.Contains(Listitem.Label,relax)]">special://skin/extras/genre-images/backgrounds/Newage.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,country) | String.Contains(Listitem.Label,americana) | String.Contains(Listitem.Label,bluegrass) | String.Contains(Listitem.Label,cowboy) | String.Contains(Listitem.Label,honky) | String.Contains(Listitem.Label,hokum)]">special://skin/extras/genre-images/backgrounds/Country.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,pop) | String.Contains(Listitem.Label,beat)]">special://skin/extras/genre-images/backgrounds/Pop.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,classic) | String.Contains(Listitem.Label,opera) | String.Contains(Listitem.Label,Orchestral) | String.Contains(Listitem.Label,Choral)]">special://skin/extras/genre-images/backgrounds/Classic.jpg</value>
+    <value condition="String.Contains(Listitem.Label,Fantasy)">special://skin/extras/genre-images/backgrounds/Fantasy.jpg</value>
+    <value condition="String.Contains(Listitem.Label,jazz) | String.Contains(Listitem.Label,big band) | String.Contains(Listitem.Label,fusion) | String.Contains(Listitem.Label,ragtime)">special://skin/extras/genre-images/backgrounds/Jazz.jpg</value>
+    <value condition="String.Contains(Listitem.Label,new age) | String.Contains(Listitem.Label,environment) | String.Contains(Listitem.Label,healing) | String.Contains(Listitem.Label,meditation) | String.Contains(Listitem.Label,nature) | String.Contains(Listitem.Label,relax)">special://skin/extras/genre-images/backgrounds/Newage.jpg</value>
+    <value condition="String.Contains(Listitem.Label,country) | String.Contains(Listitem.Label,americana) | String.Contains(Listitem.Label,bluegrass) | String.Contains(Listitem.Label,cowboy) | String.Contains(Listitem.Label,honky) | String.Contains(Listitem.Label,hokum)">special://skin/extras/genre-images/backgrounds/Country.jpg</value>
+    <value condition="String.Contains(Listitem.Label,pop) | String.Contains(Listitem.Label,beat)">special://skin/extras/genre-images/backgrounds/Pop.jpg</value>
+    <value condition="String.Contains(Listitem.Label,classic) | String.Contains(Listitem.Label,opera) | String.Contains(Listitem.Label,Orchestral) | String.Contains(Listitem.Label,Choral)">special://skin/extras/genre-images/backgrounds/Classic.jpg</value>
+    <value condition="String.Contains(Listitem.Label,alternative) | String.Contains(Listitem.Label,new wave) | String.Contains(Listitem.Label,progressive)">special://skin/extras/genre-images/backgrounds/Alternative.jpg</value>
   </variable>
   
 	<variable name="WeatherFanartVar">

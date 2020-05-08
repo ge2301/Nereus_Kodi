@@ -23,14 +23,14 @@
 						<param name="flipx" value="true" />
 					</include>
 					<control type="scrollbar" id="50600">
-						<left>20</left>
+						<right>20</right>
 						<top>list_y_offset</top>
 						<width>12</width>
 						<bottom>list_y_offset</bottom>
 						<onleft>50</onleft>
 						<onright>50</onright>
 						<orientation>vertical</orientation>
-						<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(50600)">conditional</animation>
+						<animation effect="zoom" end="50,100" time="300" tween="sine" center="auto" easing="inout" condition="!Control.HasFocus(50600)">conditional</animation>
 					</control>
 					<control type="image">
 						<depth>DepthContentPopout</depth>

@@ -880,17 +880,18 @@
 							<texture>$INFO[ListItem.Art(thumb)]</texture>
               <animation effect="zoom" center="90,90" start="100,100" end="111,111" time="500" delay="200">Focus</animation>
               <animation effect="zoom" center="90,90" start="111,111" end="100,100" time="200">Unfocus</animation>
-              <animation effect="fade" start="0" end="100" time="100">Focus</animation>
-              <animation effect="fade" start="100" end="0" time="0">Unfocus</animation>
+              <animation effect="fade" start="0" end="100" time="100" delay="0">Focus</animation>
+              <animation effect="fade" start="100" end="0" time="0" delay="0">Unfocus</animation>
 						</control>
             <control type="image">
               <left>10</left>
               <top>190</top>
+              <bottom>0</bottom>
               <width>192</width>
               <height>1</height>
               <texture colordiffuse="FFFFFFFF">lists/menu-background.png</texture>
-              <animation effect="zoom" start="100,100" end="100,-4300" time="500" delay="200">Focus</animation>
-              <animation effect="zoom" end="100,0" start="100,-4300" time="200">Unfocus</animation>
+              <animation effect="zoom" start="100,100" end="100,-4300" time="500" delay="200" tween="back" easing="out">Focus</animation>
+              <animation effect="zoom" end="100,0" start="100,-4300" time="200" delay="0">Unfocus</animation>
             </control>
 						<control type="label">
 							<left>10</left>
@@ -926,7 +927,7 @@
 							<width>180</width>
 							<height>170</height>
 							<texture colordiffuse="77FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
-              <animation effect="fade" start="0" end="100" time="0">Focus</animation>
+              <animation effect="fade" start="0" end="100" time="200">Focus</animation>
 						</control>
 					</itemlayout>
 					<content>
@@ -1073,6 +1074,14 @@
 				<height>70</height>
 				<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+        <include condition="!Skin.HasSetting(hide_helpflags)" content="HelpFlags">
+          <param name="infolabel_prefix" value="Container." />
+          <param name="resolution_var" value="$VAR[ContainerResolutionFlagVar]" />
+        </include>
+        <include condition="!Skin.HasSetting(hide_mediaflags)" content="TitleFlags">
+          <param name="infolabel_prefix" value="Container." />
+          <param name="resolution_var" value="$VAR[ContainerResolutionFlagVar]" />
+        </include>
 				<include condition="!Skin.HasSetting(hide_mediaflags)" content="MediaFlags">
 					<param name="infolabel_prefix" value="Container." />
 					<param name="resolution_var" value="$VAR[ContainerResolutionFlagVar]" />
