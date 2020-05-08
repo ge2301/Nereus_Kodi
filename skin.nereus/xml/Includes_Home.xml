@@ -234,13 +234,6 @@
               <height>70</height>
               <texture>overlays/overlayfade.png</texture>
             </control>
-            <control type="image">
-              <left>20</left>
-              <top>175</top>
-              <width>32</width>
-              <height>32</height>
-              <texture>$VAR[WallWatchedIconVar]</texture>
-            </control>
             <control type="label">
               <left>31</left>
               <top>192</top>
@@ -251,8 +244,18 @@
               <align>right</align>
             </control>
             <control type="progress">
-              <left>20</left>
-              <top>245</top>
+              <left>21</left>
+              <top>190</top>
+              <width>316</width>
+              <height>1</height>
+              <texturebg></texturebg>
+              <midtexture colordiffuse="button_focus" border="3">progress/texturebg_alt_white.png</midtexture>
+              <info>ListItem.PercentPlayed</info>
+              <visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+            </control>
+            <control type="progress">
+              <left>21</left>
+              <top>193</top>
               <width>316</width>
               <height>1</height>
               <texturebg></texturebg>
@@ -315,13 +318,6 @@
               <height>70</height>
               <texture>overlays/overlayfade.png</texture>
             </control>
-            <control type="image">
-              <left>20</left>
-              <top>175</top>
-              <width>32</width>
-              <height>32</height>
-              <texture>$VAR[WallWatchedIconVar]</texture>
-            </control>
             <control type="label">
               <left>31</left>
               <top>192</top>
@@ -332,8 +328,18 @@
               <align>right</align>
             </control>
             <control type="progress">
-              <left>20</left>
-              <top>245</top>
+              <left>20.5</left>
+              <top>189</top>
+              <width>316</width>
+              <height>1</height>
+              <texturebg></texturebg>
+              <midtexture colordiffuse="button_focus" border="3">progress/texturebg_alt_white.png</midtexture>
+              <info>ListItem.PercentPlayed</info>
+              <visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+            </control>
+            <control type="progress">
+              <left>20.5</left>
+              <top>192</top>
               <width>316</width>
               <height>1</height>
               <texturebg></texturebg>
