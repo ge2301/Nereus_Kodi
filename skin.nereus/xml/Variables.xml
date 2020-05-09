@@ -330,153 +330,125 @@
 
   <variable name="genre_poster">
     <!-- ACTION -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Action) | String.Contains(Listitem.Label,Ninja)]">special://skin/extras/genre-images/video/Action.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Action) | String.Contains(Listitem.Label,Ninja)]">special://skin/extras/genre-images/video/Action.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Action) | String.Contains(Listitem.Label,Ninja)]">special://skin/extras/genre-images/video/Action.jpg</value>
     <!-- ADVENTURE -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Abenteuer) | String.Contains(Listitem.Label,Adventure)]">special://skin/extras/genre-images/video/Adventure.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Abenteuer) | String.Contains(Listitem.Label,Adventure)]">special://skin/extras/genre-images/video/Adventure.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Abenteuer) | String.Contains(Listitem.Label,Adventure)]">special://skin/extras/genre-images/video/Adventure.jpg</value>
     <!-- FANTASY -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Fantasy) | String.Contains(Listitem.Label,Fantasie)]">special://skin/extras/genre-images/video/Fantasy.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) +  [String.Contains(Listitem.Label,Fantasy) | String.Contains(Listitem.Label,Fantasie)])">special://skin/extras/genre-images/video/Fantasy.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Fantasy) | String.Contains(Listitem.Label,Fantasie)]">special://skin/extras/genre-images/video/Fantasy.jpg</value>
     <!-- COMEDY -->
-		<value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Comedy) | String.Contains(Listitem.Label,Sitcom) | String.Contains(Listitem.Label,Komödie)]">special://skin/extras/genre-images/video/Comedy.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Comedy) | String.Contains(Listitem.Label,Sitcom) | String.Contains(Listitem.Label,Komödie)]">special://skin/extras/genre-images/video/Comedy.jpg</value>
+		<value condition="[String.Contains(Listitem.Label,Comedy) | String.Contains(Listitem.Label,Sitcom) | String.Contains(Listitem.Label,Komödie)]">special://skin/extras/genre-images/video/Comedy.jpg</value>
     <!-- WESTERN -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + String.Contains(Listitem.Label,Western)">special://skin/extras/genre-images/video/Western.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + String.Contains(Listitem.Label,Western)">special://skin/extras/genre-images/video/Western.jpg</value>
+    <value condition="String.Contains(Listitem.Label,Western)">special://skin/extras/genre-images/video/Western.jpg</value>
     <!-- EASTERN -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Eastern | String.Contains(Listitem.Label,Asia | String.Contains(Listitem.Label,Kung-Fu | String.Contains(Listitem.Label,Karate])">special://skin/extras/genre-images/video/Eastern.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Eastern | String.Contains(Listitem.Label,Asia | String.Contains(Listitem.Label,Kung-Fu | String.Contains(Listitem.Label,Karate])">special://skin/extras/genre-images/video/Eastern.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Eastern | String.Contains(Listitem.Label,Asia | String.Contains(Listitem.Label,Kung-Fu | String.Contains(Listitem.Label,Karate])">special://skin/extras/genre-images/video/Eastern.jpg</value>
     <!-- FAMILY -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Family) | String.Contains(Listitem.Label,Familie) | String.Contains(Listitem.Label,Familien) | String.Contains(Listitem.Label,Kinder) | String.Contains(Listitem.Label,Kids)]">special://skin/extras/genre-images/video/Family.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Family) | String.Contains(Listitem.Label,Familie) | String.Contains(Listitem.Label,Familien)]">special://skin/extras/genre-images/video/Family.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Family) | String.Contains(Listitem.Label,Familie) | String.Contains(Listitem.Label,Familien) | String.Contains(Listitem.Label,Kinder) | String.Contains(Listitem.Label,Kids)]">special://skin/extras/genre-images/video/Family.jpg</value>
     <!-- CRIME -->
-		<value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,CSI) | String.Contains(Listitem.Label,Crime) | String.Contains(Listitem.Label,Krimi) | String.Contains(Listitem.Label,Agenten)]">special://skin/extras/genre-images/video/Crime.jpg</value>
-		<value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Anwälte) | String.Contains(Listitem.Label,Law) | String.Contains(Listitem.Label,Lawyer)]">special://skin/extras/genre-images/video/Crime.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,CSI) | String.Contains(Listitem.Label,Crime) | String.Contains(Listitem.Label,Krimi) | String.Contains(Listitem.Label,Agenten)]">special://skin/extras/genre-images/video/Crime.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Anwälte) | String.Contains(Listitem.Label,Law) | String.Contains(Listitem.Label,Lawyer)]">special://skin/extras/genre-images/video/Crime.jpg</value>
+		<value condition="[String.Contains(Listitem.Label,CSI) | String.Contains(Listitem.Label,Crime) | String.Contains(Listitem.Label,Krimi) | String.Contains(Listitem.Label,Agenten)]">special://skin/extras/genre-images/video/Crime.jpg</value>
+		<value condition="[String.Contains(Listitem.Label,Anwälte) | String.Contains(Listitem.Label,Law) | String.Contains(Listitem.Label,Lawyer)]">special://skin/extras/genre-images/video/Crime.jpg</value>
     <!-- SCIENCE FICTION -->
-		<value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Science Fiction) | String.Contains(Listitem.Label,Science-Fiction) | String.Contains(Listitem.Label,Sci-Fi) | String.Contains(Listitem.Label,Stargate))]">special://skin/extras/genre-images/video/Science Fiction.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Science Fiction) | String.Contains(Listitem.Label,Science-Fiction) | String.Contains(Listitem.Label,Sci-Fi) | String.Contains(Listitem.Label,fiction)  | String.Contains(Listitem.Label,Stargate)]">special://skin/extras/genre-images/video/Science Fiction.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Science Fiction) | String.Contains(Listitem.Label,Science-Fiction) | String.Contains(Listitem.Label,Sci-Fi) | String.Contains(Listitem.Label,fiction)  | String.Contains(Listitem.Label,Stargate)]">special://skin/extras/genre-images/video/Science Fiction.jpg</value>
     <!-- SUPERHEROES -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Superhelden) | String.Contains(Listitem.Label,Superheros) | String.Contains(Listitem.Label,Comic Verfilmungen) | String.Contains(Listitem.Label,Marvel]">special://skin/extras/genre-images/video/Superheroes.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Superhelden) | String.Contains(Listitem.Label,Superheros) | String.Contains(Listitem.Label,Comic Verfilmungen) | String.Contains(Listitem.Label,Marvel]">special://skin/extras/genre-images/video/Superheroes.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Superhelden) | String.Contains(Listitem.Label,Superheros) | String.Contains(Listitem.Label,Comic Verfilmungen) | String.Contains(Listitem.Label,Marvel]">special://skin/extras/genre-images/video/Superheroes.jpg</value>
     <!-- ANIMATION -->
-		<value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Animation) | String.Contains(Listitem.Label,Anime)]">special://skin/extras/genre-images/video/Animation.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Animation) | String.Contains(Listitem.Label,Anime)]">special://skin/extras/genre-images/video/Animation.jpg</value>
+		<value condition="[String.Contains(Listitem.Label,Animation) | String.Contains(Listitem.Label,Anime)]">special://skin/extras/genre-images/video/Animation.jpg</value>
     <!-- KIDS -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Children) | String.Contains(Listitem.Label,Kids) | String.Contains(Listitem.Label,Kinder | String.Contains(Listitem.Label,Zeichentrick)]">special://skin/extras/genre-images/video/Kids.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Children) | String.Contains(Listitem.Label,Kids) | String.Contains(Listitem.Label,Kinder | String.Contains(Listitem.Label,Zeichentrick)]">special://skin/extras/genre-images/video/Kids.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Children) | String.Contains(Listitem.Label,Kids) | String.Contains(Listitem.Label,Kinder | String.Contains(Listitem.Label,Zeichentrick)]">special://skin/extras/genre-images/video/Kids.jpg</value>
     <!-- DRAMA -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + String.Contains(Listitem.Label,Drama)">special://skin/extras/genre-images/video/Drama.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + String.Contains(Listitem.Label,Drama)">special://skin/extras/genre-images/video/Drama.jpg</value>
+    <value condition="String.Contains(Listitem.Label,Drama)">special://skin/extras/genre-images/video/Drama.jpg</value>
     <!-- MYSTERY -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,suspense) | String.Contains(Listitem.Label,Mystic) | String.Contains(Listitem.Label,Mystery) | String.Contains(Listitem.Label,Mysterie)]">special://skin/extras/genre-images/video/Mystery.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,suspense) | String.Contains(Listitem.Label,Mystic) | String.Contains(Listitem.Label,Mystery) | String.Contains(Listitem.Label,Mysterie)]">special://skin/extras/genre-images/video/Mystery.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,suspense) | String.Contains(Listitem.Label,Mystic) | String.Contains(Listitem.Label,Mystery) | String.Contains(Listitem.Label,Mysterie)]">special://skin/extras/genre-images/video/Mystery.jpg</value>
     <!-- DOCUMENTARY -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Dokumenation) | String.Contains(Listitem.Label,Doku) | String.Contains(Listitem.Label,Documentary) | String.Contains(Listitem.Label,National) | String.Contains(Listitem.Label,Nature)]">special://skin/extras/genre-images/video/Documentary.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Dokumenation) | String.Contains(Listitem.Label,Doku) | String.Contains(Listitem.Label,Dokumentary) | String.Contains(Listitem.Label,National) | String.Contains(Listitem.Label,Nature)]">special://skin/extras/genre-images/video/Documentary.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Dokumenation) | String.Contains(Listitem.Label,Doku) | String.Contains(Listitem.Label,Documentary) | String.Contains(Listitem.Label,National) | String.Contains(Listitem.Label,Nature)]">special://skin/extras/genre-images/video/Documentary.jpg</value>
     <!-- ROMANCE -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Love) | String.Contains(Listitem.Label,Romance) | String.Contains(Listitem.Label,Romanze) | String.Contains(Listitem.Label,Romantik)]">special://skin/extras/genre-images/video/Romance.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Love) | String.Contains(Listitem.Label,Romance) | String.Contains(Listitem.Label,Romanze) | String.Contains(Listitem.Label,Romantik)]">special://skin/extras/genre-images/video/Romance.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Love) | String.Contains(Listitem.Label,Romance) | String.Contains(Listitem.Label,Romanze) | String.Contains(Listitem.Label,Romantik)]">special://skin/extras/genre-images/video/Romance.jpg</value>
     <!-- WAR -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Krieg) | String.Contains(Listitem.Label,War)]">special://skin/extras/genre-images/video/War.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Krieg) | String.Contains(Listitem.Label,War)]">special://skin/extras/genre-images/video/War.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Krieg) | String.Contains(Listitem.Label,War)]">special://skin/extras/genre-images/video/War.jpg</value>
     <!-- BIOGRAPHY -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Biografie) | String.Contains(Listitem.Label,Biography)]">special://skin/extras/genre-images/video/Biography.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Biografie) | String.Contains(Listitem.Label,Biography)]">special://skin/extras/genre-images/video/Biography.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Biografie) | String.Contains(Listitem.Label,Biography)]">special://skin/extras/genre-images/video/Biography.jpg</value>
     <!-- MUSIC -->  
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Musik) | String.Contains(Listitem.Label,Music) | String.Contains(Listitem.Label,Musical) | String.Contains(Listitem.Label,Opera) | String.Contains(Listitem.Label,Oper)]">special://skin/extras/genre-images/video/Music.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Musik) | String.Contains(Listitem.Label,Music) | String.Contains(Listitem.Label,Musical) | String.Contains(Listitem.Label,Opera) | String.Contains(Listitem.Label,Oper)]">special://skin/extras/genre-images/video/Music.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Musik) | String.Contains(Listitem.Label,Music) | String.Contains(Listitem.Label,Musical) | String.Contains(Listitem.Label,Opera) | String.Contains(Listitem.Label,Oper)]">special://skin/extras/genre-images/video/Music.jpg</value>
     <!-- THRILLER --> 
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) +  String.Contains(Listitem.Label,Thriller)">special://skin/extras/genre-images/video/Thriller.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) +  String.Contains(Listitem.Label,Thriller)">special://skin/extras/genre-images/video/Thriller.jpg</value>
+    <value condition="String.Contains(Listitem.Label,Thriller)">special://skin/extras/genre-images/video/Thriller.jpg</value>
     <!-- SPORT -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Sport) | String.Contains(Listitem.Label,Sports) | String.Contains(Listitem.Label,Boxer) | String.Contains(Listitem.Label,Boxing) | String.Contains(Listitem.Label,Football) | String.Contains(Listitem.Label,Baseball) | String.Contains(Listitem.Label,Basketball)]">special://skin/extras/genre-images/video/Sport.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Sport) | String.Contains(Listitem.Label,Sports) | String.Contains(Listitem.Label,Boxer) | String.Contains(Listitem.Label,Boxing) | String.Contains(Listitem.Label,Football) | String.Contains(Listitem.Label,Basketball) | String.Contains(Listitem.Label,Baseball)]">special://skin/extras/genre-images/video/Sport.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Sport) | String.Contains(Listitem.Label,Sports) | String.Contains(Listitem.Label,Boxer) | String.Contains(Listitem.Label,Boxing) | String.Contains(Listitem.Label,Football) | String.Contains(Listitem.Label,Baseball) | String.Contains(Listitem.Label,Basketball)]">special://skin/extras/genre-images/video/Sport.jpg</value>
     <!-- EROTIC -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Erotic)| String.Contains(Listitem.Label,Erotik) | String.Contains(Listitem.Label,Porn)| String.Contains(Listitem.Label,Porno)]">special://skin/extras/genre-images/video/Erotic.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Erotic)| String.Contains(Listitem.Label,Erotik) | String.Contains(Listitem.Label,Porn)| String.Contains(Listitem.Label,Porno)]">special://skin/extras/genre-images/video/Erotic.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Erotic)| String.Contains(Listitem.Label,Erotik) | String.Contains(Listitem.Label,Porn)| String.Contains(Listitem.Label,Porno)]">special://skin/extras/genre-images/video/Erotic.jpg</value>
     <!-- HORROR -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Horror) | String.Contains(Listitem.Label,Zombies) | String.Contains(Listitem.Label,Splatter) | String.Contains(Listitem.Label,Grusel)]">special://skin/extras/genre-images/video/Horror.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Horror) | String.Contains(Listitem.Label,Zombies) | String.Contains(Listitem.Label,Splatter)]">special://skin/extras/genre-images/video/Horror.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Horror) | String.Contains(Listitem.Label,Zombies) | String.Contains(Listitem.Label,Splatter) | String.Contains(Listitem.Label,Grusel)]">special://skin/extras/genre-images/video/Horror.jpg</value>
     <!-- HOLIDAY -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Christmas) | String.Contains(Listitem.Label,Weihnachten)]">special://skin/extras/genre-images/video/Holiday.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Christmas) | String.Contains(Listitem.Label,Weihnachten)]">special://skin/extras/genre-images/video/Holiday.jpg</value>
     <!-- HISTORY -->     
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Historie) | String.Contains(Listitem.Label,History) | String.Contains(Listitem.Label,Monumental)]">special://skin/extras/genre-images/video/History.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Historie) | String.Contains(Listitem.Label,History) | String.Contains(Listitem.Label,Monumental)]">special://skin/extras/genre-images/video/History.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Historie) | String.Contains(Listitem.Label,History) | String.Contains(Listitem.Label,Monumental)]">special://skin/extras/genre-images/video/History.jpg</value>
     <!-- NOIR -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Classic) | String.Contains(Listitem.Label,Klassik) | String.Contains(Listitem.Label,Film-Noir)]">special://skin/extras/genre-images/video/Noir.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Classic) | String.Contains(Listitem.Label,Klassik) | String.Contains(Listitem.Label,Film-Noir)]">special://skin/extras/genre-images/video/Noir.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Classic) | String.Contains(Listitem.Label,Klassik) | String.Contains(Listitem.Label,Film-Noir)]">special://skin/extras/genre-images/video/Noir.jpg</value>
     <!-- DOCTOR -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Ärzte) | String.Contains(Listitem.Label,Krankenhaus) | String.Contains(Listitem.Label,Doctor) | String.Contains(Listitem.Label,Hospital)]">special://skin/extras/genre-images/video/Doctor.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Ärzte) | String.Contains(Listitem.Label,Krankenhaus) | String.Contains(Listitem.Label,Doctor) | String.Contains(Listitem.Label,Hospital)]">special://skin/extras/genre-images/video/Doctor.jpg</value>
     <!-- GAME -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Game) | String.Contains(Listitem.Label,Spiel)]">special://skin/extras/genre-images/video/Game.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Game) | String.Contains(Listitem.Label,Spiel)]">special://skin/extras/genre-images/video/Game.jpg</value>
     <!-- NEWS -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,News) | String.Contains(Listitem.Label,Nachrichten)]">special://skin/extras/genre-images/video/News.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,News) | String.Contains(Listitem.Label,Nachrichten)]">special://skin/extras/genre-images/video/News.jpg</value>
     <!-- TALK -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Talk) | String.Contains(Listitem.Label,Diskussion)]">special://skin/extras/genre-images/video/Talk.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Talk) | String.Contains(Listitem.Label,Diskussion)]">special://skin/extras/genre-images/video/Talk.jpg</value>
     <!-- POLITICS -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Talk) | String.Contains(Listitem.Label,Diskussion)]">special://skin/extras/genre-images/video/Politics.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Talk) | String.Contains(Listitem.Label,Diskussion)]">special://skin/extras/genre-images/video/Politics.jpg</value>
      <!-- SERIES -->
-     <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Series) | String.Contains(Listitem.Label,Serie)]">special://skin/extras/genre-images/video/Series.jpg</value>
+     <value condition="[String.Contains(Listitem.Label,Series) | String.Contains(Listitem.Label,Serie)]">special://skin/extras/genre-images/video/Series.jpg</value>
     <!-- CATASTROPHE -->
-    <value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/) + [String.Contains(Listitem.Label,Catastrophe) | String.Contains(Listitem.Label,Katastrophe) | String.Contains(Listitem.Label,Disaster)]">special://skin/extras/genre-images/video/Catastrophe.jpg</value>
-    <value condition="String.StartsWith(Container.FolderPath,videodb://movies/) + [String.Contains(Listitem.Label,Catastrophe) | String.Contains(Listitem.Label,Katastrophe) | String.Contains(Listitem.Label,Disaster)]">special://skin/extras/genre-images/video/Catastrophe.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,Catastrophe) | String.Contains(Listitem.Label,Katastrophe) | String.Contains(Listitem.Label,Disaster)]">special://skin/extras/genre-images/video/Catastrophe.jpg</value>
 
 
     <!-- CLASSIC -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,classic) | String.Contains(Listitem.Label,opera) | String.Contains(Listitem.Label,Orchestral) | String.Contains(Listitem.Label,Choral)]">special://skin/extras/genre-images/audio/Classic.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,classic) | String.Contains(Listitem.Label,opera) | String.Contains(Listitem.Label,Orchestral) | String.Contains(Listitem.Label,Choral)]">special://skin/extras/genre-images/audio/Classic.jpg</value>
     <!-- SOUNDTRACK -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,soundtrack) | String.Contains(Listitem.Label,cinema) | String.Contains(Listitem.Label,musical) | String.Contains(Listitem.Label,score)]">special://skin/extras/genre-images/audio/Soundtrack.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,soundtrack) | String.Contains(Listitem.Label,cinema) | String.Contains(Listitem.Label,musical) | String.Contains(Listitem.Label,score)]">special://skin/extras/genre-images/audio/Soundtrack.jpg</value>
     <!-- NEWAGE -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,new age) | String.Contains(Listitem.Label,environment) | String.Contains(Listitem.Label,healing) | String.Contains(Listitem.Label,meditation) | String.Contains(Listitem.Label,nature) | String.Contains(Listitem.Label,relax)]">special://skin/extras/genre-images/audio/Newage.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,new age) | String.Contains(Listitem.Label,environment) | String.Contains(Listitem.Label,healing) | String.Contains(Listitem.Label,meditation) | String.Contains(Listitem.Label,nature) | String.Contains(Listitem.Label,relax)]">special://skin/extras/genre-images/audio/Newage.jpg</value>
     <!-- ROCK -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,rock) | String.Contains(Listitem.Label,grunge) | String.Contains(Listitem.Label,punk)]">special://skin/extras/genre-images/audio/Rock.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,rock) | String.Contains(Listitem.Label,grunge) | String.Contains(Listitem.Label,punk)]">special://skin/extras/genre-images/audio/Rock.jpg</value>
     <!-- METAL -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + String.Contains(Listitem.Label,metal)">special://skin/extras/genre-images/audio/Metal.jpg</value>
+    <value condition="String.Contains(Listitem.Label,metal)">special://skin/extras/genre-images/audio/Metal.jpg</value>
     <!-- COUNTRY -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,country) | String.Contains(Listitem.Label,americana) | String.Contains(Listitem.Label,bluegrass) | String.Contains(Listitem.Label,cowboy) | String.Contains(Listitem.Label,honky) | String.Contains(Listitem.Label,hokum)]">special://skin/extras/genre-images/audio/Country.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,country) | String.Contains(Listitem.Label,americana) | String.Contains(Listitem.Label,bluegrass) | String.Contains(Listitem.Label,cowboy) | String.Contains(Listitem.Label,honky) | String.Contains(Listitem.Label,hokum)]">special://skin/extras/genre-images/audio/Country.jpg</value>
     <!-- JAZZ -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,jazz) | String.Contains(Listitem.Label,big band) | String.Contains(Listitem.Label,fusion) | String.Contains(Listitem.Label,ragtime)]">special://skin/extras/genre-images/audio/Jazz.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,jazz) | String.Contains(Listitem.Label,big band) | String.Contains(Listitem.Label,fusion) | String.Contains(Listitem.Label,ragtime)]">special://skin/extras/genre-images/audio/Jazz.jpg</value>
     <!-- SOUL -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,soul) | String.Contains(Listitem.Label,rnb) | String.Contains(Listitem.Label,disco) | String.Contains(Listitem.Label,funk) | String.Contains(Listitem.Label,swing) | String.Contains(Listitem.Label,blues)]">special://skin/extras/genre-images/audio/Soul.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,soul) | String.Contains(Listitem.Label,rnb) | String.Contains(Listitem.Label,disco) | String.Contains(Listitem.Label,funk) | String.Contains(Listitem.Label,swing) | String.Contains(Listitem.Label,blues)]">special://skin/extras/genre-images/audio/Soul.jpg</value>
     <!-- RAP -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,rap) | String.Contains(Listitem.Label,hop) | String.Contains(Listitem.Label,bounce) | String.Contains(Listitem.Label,turntablism)]">special://skin/extras/genre-images/audio/Rap.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,rap) | String.Contains(Listitem.Label,hop) | String.Contains(Listitem.Label,bounce) | String.Contains(Listitem.Label,turntablism)]">special://skin/extras/genre-images/audio/Rap.jpg</value>
     <!-- RAGAE -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,raggae) | String.Contains(Listitem.Label,dancehall)]">special://skin/extras/genre-images/audio/Raggae.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,raggae) | String.Contains(Listitem.Label,dancehall)]">special://skin/extras/genre-images/audio/Raggae.jpg</value>
     <!-- POP -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,pop) | String.Contains(Listitem.Label,beat)]">special://skin/extras/genre-images/audio/Pop.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,pop) | String.Contains(Listitem.Label,beat)]">special://skin/extras/genre-images/audio/Pop.jpg</value>
     <!-- DANCE -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,dance) | String.Contains(Listitem.Label,club) | String.Contains(Listitem.Label,house) | String.Contains(Listitem.Label,step) | String.Contains(Listitem.Label,garage) | String.Contains(Listitem.Label,trance) | String.Contains(Listitem.Label,techno)]">special://skin/extras/genre-images/audio/DAnce.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,dance) | String.Contains(Listitem.Label,club) | String.Contains(Listitem.Label,house) | String.Contains(Listitem.Label,step) | String.Contains(Listitem.Label,garage) | String.Contains(Listitem.Label,trance) | String.Contains(Listitem.Label,techno)]">special://skin/extras/genre-images/audio/DAnce.jpg</value>
     <!-- ELECTRONIC -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,electro) | String.Contains(Listitem.Label,industrial) | String.Contains(Listitem.Label,experimental) | String.Contains(Listitem.Label,8bit) | String.Contains(Listitem.Label,chiptune) | String.Contains(Listitem.Label,downtempo)]">special://skin/extras/genre-images/audio/electronic.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,electro) | String.Contains(Listitem.Label,industrial) | String.Contains(Listitem.Label,experimental) | String.Contains(Listitem.Label,8bit) | String.Contains(Listitem.Label,chiptune) | String.Contains(Listitem.Label,downtempo)]">special://skin/extras/genre-images/audio/electronic.jpg</value>
     <!-- COMEDY -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,comedy) | String.Contains(Listitem.Label,novelty) | String.Contains(Listitem.Label,parody)]">special://skin/extras/genre-images/audio/Comedy.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,comedy) | String.Contains(Listitem.Label,novelty) | String.Contains(Listitem.Label,parody)]">special://skin/extras/genre-images/audio/Comedy.jpg</value>
     <!-- Folk -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + String.Contains(Listitem.Label,folk)">special://skin/extras/genre-images/audio/Folk.jpg</value>
+    <value condition="String.Contains(Listitem.Label,folk)">special://skin/extras/genre-images/audio/Folk.jpg</value>
     <!-- EASYLISTENING -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,easy) | String.Contains(Listitem.Label,launge) | String.Contains(Listitem.Label,background) | String.Contains(Listitem.Label,ambient)]">special://skin/extras/genre-images/audio/EasyListening.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,easy) | String.Contains(Listitem.Label,launge) | String.Contains(Listitem.Label,background) | String.Contains(Listitem.Label,ambient)]">special://skin/extras/genre-images/audio/EasyListening.jpg</value>
     <!-- HOLIDAY -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,holiday) | String.Contains(Listitem.Label,christmas) | String.Contains(Listitem.Label,easter) | String.Contains(Listitem.Label,halloween) | String.Contains(Listitem.Label,thanksgiving) | String.Contains(Listitem.Label,bayram) | String.Contains(Listitem.Label,new year)]">special://skin/extras/genre-images/audio/Holiday.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,holiday) | String.Contains(Listitem.Label,christmas) | String.Contains(Listitem.Label,easter) | String.Contains(Listitem.Label,halloween) | String.Contains(Listitem.Label,thanksgiving) | String.Contains(Listitem.Label,bayram) | String.Contains(Listitem.Label,new year)]">special://skin/extras/genre-images/audio/Holiday.jpg</value>
     <!-- ALTERNATIVE -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,alternative) | String.Contains(Listitem.Label,new wave) | String.Contains(Listitem.Label,progressive)]">special://skin/extras/genre-images/audio/Alternative.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,alternative) | String.Contains(Listitem.Label,new wave) | String.Contains(Listitem.Label,progressive)]">special://skin/extras/genre-images/audio/Alternative.jpg</value>
     <!-- COMPILATION -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,compilation) | String.Contains(Listitem.Label,misc)]">special://skin/extras/genre-images/audio/Compilation.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,compilation) | String.Contains(Listitem.Label,misc)]">special://skin/extras/genre-images/audio/Compilation.jpg</value>
     <!-- AUDIOBOOK -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + [String.Contains(Listitem.Label,audiobook) | String.Contains(Listitem.Label,book)]">special://skin/extras/genre-images/audio/Audiobook.jpg</value>
+    <value condition="[String.Contains(Listitem.Label,audiobook) | String.Contains(Listitem.Label,book)]">special://skin/extras/genre-images/audio/Audiobook.jpg</value>
     <!-- KARAOKE -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + String.Contains(Listitem.Label,karaoke)">special://skin/extras/genre-images/audio/Karaoke.jpg</value>
+    <value condition="String.Contains(Listitem.Label,karaoke)">special://skin/extras/genre-images/audio/Karaoke.jpg</value>
     <!-- VOCAL -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + String.Contains(Listitem.Label,vocal)">special://skin/extras/genre-images/audio/Vocal.jpg</value>
+    <value condition="String.Contains(Listitem.Label,vocal)">special://skin/extras/genre-images/audio/Vocal.jpg</value>
     <!-- VOCAL -->
-    <value condition="String.StartsWith(Container.FolderPath,musicdb://) + String.Contains(Listitem.Label,schlager)">special://skin/extras/genre-images/audio/Schlager.jpg</value>
+    <value condition="String.Contains(Listitem.Label,schlager)">special://skin/extras/genre-images/audio/Schlager.jpg</value>
   </variable>
   
    <variable name="genre_fanart">
     <value condition="String.Contains(Listitem.Label,Comedy) | String.Contains(Listitem.Label,Sitcom) | String.Contains(Listitem.Label,Komödie)">special://skin/extras/genre-images/backgrounds/Comedy.jpg</value>
-		<value condition="String.Contains(Listitem.Label,Family) | String.Contains(Listitem.Label,Familie) | String.Contains(Listitem.Label,Familien)">special://skin/extras/genre-images/backgrounds/Family.jpg</value>
-     
+		<value condition="String.Contains(Listitem.Label,Family) | String.Contains(Listitem.Label,Familie) | String.Contains(Listitem.Label,Familien)">special://skin/extras/genre-images/backgrounds/Family.jpg</value>   
 		<value condition="String.Contains(Listitem.Label,CSI) | String.Contains(Listitem.Label,Crime) | String.Contains(Listitem.Label,Krimi) | String.Contains(Listitem.Label,Agenten)">special://skin/extras/genre-images/backgrounds/Crime.jpg</value>
 		<value condition="String.Contains(Listitem.Label,Anwälte) | String.Contains(Listitem.Label,Law) | String.Contains(Listitem.Label,Lawyer)">special://skin/extras/genre-images/backgrounds/Crime.jpg</value>
 		<value condition="String.Contains(Listitem.Label,Sci-Fi) | String.Contains(Listitem.Label,fiction)  | String.Contains(Listitem.Label,Stargate) | String.Contains(Listitem.Label,Marvel)">special://skin/extras/genre-images/backgrounds/Science Fiction.jpg</value>
@@ -522,7 +494,7 @@
 		<value condition="ListItem.IsRecording">windows/pvr/record.png</value>
 		<value condition="ListItem.IsCollection">overlays/set.png</value>
 		<value condition="ListItem.IsPlaying">overlays/watched/OverlayPlaying-List.png</value>
-		<value condition="ListItem.IsResumable">overlays/watched/resume.png</value>
+    <!--value condition="ListItem.IsResumable">overlays/watched/resume.png</value-->
 		<value condition="Integer.IsGreater(ListItem.Playcount,0)">$INFO[ListItem.Overlay]</value>
 	</variable>
 	<!-- Breadcrumbs -->
