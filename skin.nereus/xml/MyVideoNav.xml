@@ -143,6 +143,18 @@
         <aligny>bottom</aligny>
         <texture colordiffuse="EEFFFFFF">overlays/overlayfade.png</texture>
       </control>
+
+      <include>BottomBar</include>
+      <control type="group">
+        <depth>DepthBars</depth>
+        <left>0</left>
+        <bottom>0</bottom>
+        <height>70</height>
+        <include condition="!Skin.HasSetting(hide_mediaflags)" content="TitleFlags">
+          <param name="infolabel_prefix" value="Container." />
+          <param name="resolution_var" value="$VAR[ContainerResolutionFlagVar]" />
+        </include>
+      </control>
       
 			<include content="TopBar">
 				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsVideoVar]" />

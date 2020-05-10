@@ -377,7 +377,7 @@
           <label>$INFO[$PARAM[infolabel_prefix]ListItem.TVShowTitle]: $INFO[$PARAM[infolabel_prefix]ListItem.Title]</label>
         </control>
         <control type="label">
-          <visible>[!String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,episode) + Window.Is(Home) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Title)]</visible>
+          <visible>[!String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,episode) + [Window.Is(Home) | Control.IsVisible(500)] + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Title)]</visible>
           <left>50</left>
           <width>auto</width>
           <height>35</height>
@@ -387,25 +387,25 @@
         </control>
         <include content="InfoFlag">
           <param name="width" value="160" />
-          <param name="visible" value="[!String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow) + String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,episode) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Premiered)]" />
+          <param name="visible" value="!String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow) + String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,episode) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Premiered) + Window.Is(Home)" />
           <param name="icon" value="lists/year.png" />
           <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Premiered]" />
         </include>
         <include content="InfoFlag">
           <param name="width" value="110" />
-          <param name="visible" value="[String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,episode) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Year)]" />
+          <param name="visible" value="String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,episode) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Year) + [Window.Is(Home) | Control.IsVisible(500)]" />
           <param name="icon" value="lists/year.png" />
           <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Year]" />
         </include>
         <include content="InfoFlag">
           <param name="width" value="110" />
-          <param name="visible" value="[String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,movie) | String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,album)] + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Year)" />
+          <param name="visible" value="[String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,movie) | String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,album)] + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Year) + [Window.Is(Home) | Control.IsVisible(500)]" />
           <param name="icon" value="lists/year.png" />
           <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Year]" />
         </include>
         <include content="InfoFlag">
           <param name="width" value="360" />
-          <param name="visible" value="String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,album) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Artist)" />
+          <param name="visible" value="String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,album) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Artist) + [Window.Is(Home) | Control.IsVisible(500)]" />
           <param name="icon" value="lists/artist.png" />
           <param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Artist]" />
         </include>
