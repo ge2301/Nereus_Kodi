@@ -141,6 +141,7 @@
 						<onleft>9000</onleft>
 						<control type="button" id="$PARAM[button_id]">
 							<width>auto</width>
+              <onup>700</onup>
 							<height>110</height>
 							<label>$PARAM[button_label]</label>
 							<textoffsetx>40</textoffsetx>
@@ -153,6 +154,7 @@
 						<control type="button" id="$PARAM[button_id]568">
 							<width>auto</width>
 							<height>110</height>
+              <onup>700</onup>
 							<label>$PARAM[button2_label]</label>
 							<textoffsetx>40</textoffsetx>
 							<onclick>$PARAM[button2_onclick]</onclick>
@@ -165,6 +167,7 @@
 						<control type="button" id="$PARAM[button_id]569">
 							<width>auto</width>
 							<height>110</height>
+              <onup>700</onup>
 							<label>$PARAM[button3_label]</label>
 							<textoffsetx>40</textoffsetx>
 							<onclick>$PARAM[button3_onclick]</onclick>
