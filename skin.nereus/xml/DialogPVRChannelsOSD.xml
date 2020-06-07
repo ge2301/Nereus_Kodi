@@ -16,6 +16,7 @@
 					<width>875</width>
 					<height>100%</height>
 					<onleft>PreviousChannelGroup</onleft>
+					<onright>NextChannelGroup</onright>
 					<onright>60</onright>
 					<onup>11</onup>
 					<ondown>11</ondown>
@@ -155,7 +156,7 @@
 					<height>100%</height>
 					<onleft>11</onleft>
 					<texturesliderbackground />
-					<onright>NextChannelGroup</onright>
+					<visible>false</visible>
 					<ondown>61</ondown>
 					<onup>61</onup>
 					<animation effect="zoom" start="100,100" end="50,100" center="881,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
@@ -185,7 +186,7 @@
 					<height>70</height>
 					<font>font45</font>
 					<aligny>center</aligny>
-					<label>&lt; $INFO[VideoPlayer.ChannelGroup] &gt;</label>
+					<label>[COLOR button_focus]$INFO[VideoPlayer.ChannelGroup][/COLOR]</label>
 					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
