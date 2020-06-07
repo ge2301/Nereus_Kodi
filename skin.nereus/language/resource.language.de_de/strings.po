@@ -575,3 +575,7 @@ msgstr "Profil-Avatar"
 msgctxt "#31167"
 msgid "Animate background"
 msgstr "Hintergrund animieren"
+
+msgctxt "#31168"
+msgid "Show Help flags"
+msgstr "Hilfe flags anzeigen"
