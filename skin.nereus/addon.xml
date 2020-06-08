@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.nereus" version="0.0.1" name="Nereus" provider-name="ge2301">
+<addon id="skin.nereus" version="0.0.3" name="Nereus" provider-name="ge2301">
 	<requires>
 		<import addon="xbmc.gui" version="5.14.0"/>
 	</requires>
