@@ -76,16 +76,16 @@
 							<param name="list_id" value="5100"/>
 						</include>
 						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
-							<param name="content_path" value="special://skin/playlists/recent_unwatched_movies.xsp"/>
-							<param name="widget_header" value="$LOCALIZE[20386]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5200"/>
-						</include>
-						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
 							<param name="content_path" value="special://skin/playlists/unwatched_movies.xsp"/>
 							<param name="widget_header" value="$LOCALIZE[31007]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5300"/>
+						</include>
+						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
+							<param name="content_path" value="special://skin/playlists/recent_unwatched_movies.xsp"/>
+							<param name="widget_header" value="$LOCALIZE[20386]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5200"/>
 						</include>
 						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
 							<param name="content_path" value="special://skin/playlists/random_movies.xsp"/>
@@ -93,8 +93,8 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5400"/>
 						</include>
-						<include content="WidgetListGenres" condition="Library.HasContent(movies)">
-							<param name="content_path" value="videodb://movies/genres/"/>
+<!--						<include content="WidgetListGenres" condition="Library.HasContent(movies)">
+							<param name="content_path" value="special://skin/playlists/genre.xsp"/>
 							<param name="widget_header" value="$LOCALIZE[135]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5500"/>
@@ -102,17 +102,18 @@
 							<param name="icon_height" value="70"/>
 						</include>
 						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
-							<param name="content_path" value="videodb://movies/sets/"/>
+							<param name="content_path" value="special://skin/playlists/set.xsp"/>
 							<param name="widget_header" value="$LOCALIZE[31075]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="sortby" value="random"/>
 							<param name="list_id" value="5600"/>
 						</include>
-					</control>
+-->
+						</control>
 					<include content="ImageWidget" condition="!Library.HasContent(movies)">
 						<param name="text_label" value="$LOCALIZE[31104]" />
 						<param name="button_label" value="$LOCALIZE[31110]" />
-						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
+						<param name="button_onclick" value="ActivateWindow(special://skin/playlists/_filme.xsp,return)"/>
 						<param name="button_id" value="5500"/>
 						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMovieButton)"/>
 					</include>
@@ -120,7 +121,59 @@
 						<param name="scrollbar_id" value="5010"/>
 					</include>
 				</control>
-        
+
+        <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Kid Movie Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+				<control type="group" id="5020">
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),kidmovies)</visible>
+					<include content="Visible_Right_Delayed">
+						<param name="id" value="kidmovies"/>
+					</include>
+					<control type="grouplist" id="5021">
+						<include>WidgetGroupListCommon</include>
+						<pagecontrol>5010</pagecontrol>
+						<include content="WidgetListCategories" condition="Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget)">
+							<param name="content_path" value="library://video/movies/"/>
+							<param name="widget_header" value="$LOCALIZE[31148]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5920"/>
+						</include>
+						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
+							<param name="content_path" value="special://skin/playlists/inprogress_kidmovies.xsp"/>
+							<param name="widget_header" value="$LOCALIZE[31010]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5120"/>
+						</include>
+						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
+							<param name="content_path" value="special://skin/playlists/unwatched_kidmovies.xsp"/>
+							<param name="widget_header" value="$LOCALIZE[31007]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5320"/>
+						</include>
+						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
+							<param name="content_path" value="special://skin/playlists/recent_unwatched_kidmovies.xsp"/>
+							<param name="widget_header" value="$LOCALIZE[20386]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5220"/>
+						</include>
+						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
+							<param name="content_path" value="special://skin/playlists/random_kidmovies.xsp"/>
+							<param name="widget_header" value="$LOCALIZE[31006]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5420"/>
+						</include>
+					</control>
+					<include content="ImageWidget" condition="!Library.HasContent(movies)">
+						<param name="text_label" value="$LOCALIZE[31104]" />
+						<param name="button_label" value="$LOCALIZE[31110]" />
+						<param name="button_onclick" value="ActivateWindow(special://skin/playlists/_filme.xsp,return)"/>
+						<param name="button_id" value="5520"/>
+						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMovieButton)"/>
+					</include>
+					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+						<param name="scrollbar_id" value="5020"/>
+					</include>
+				</control>
+
         <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Series Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="6000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
@@ -787,6 +840,7 @@
 						</include>
 					</control>
 				</control>
+		<!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Game Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="17000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),games)</visible>
 					<include content="Visible_Right_Delayed">
@@ -817,6 +871,7 @@
 						<param name="scrollbar_id" value="17010"/>
 					</include>
 				</control>
+	
 				<control type="group" id="21000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),disc)</visible>
 					<include content="Visible_Right_Delayed">
@@ -841,216 +896,226 @@
       <!--############################################## HOME MENU LEFT #############################################-->
       <!--###########################################################################################################-->
 
-      <control type="group">
-				<depth>DepthContentPanel</depth>
-				<include>OpenClose_Left</include>
-				<include content="ContentPanel">
-					<param name="width" value="230" />
-				</include>
-        <left>-200</left>
-        <animation effect="slide" start="0,0" end="200,0" time="400" tween="sine" easing="inout">WindowOpen</animation>
-        <animation effect="slide" start="200,0" end="0,0" time="400" tween="sine" easing="inout">WindowClose</animation>
-        <animation effect="slide" start="0,0" end="200,0" time="400" tween="sine" easing="inout">Focus</animation>
-        <animation effect="slide" start="200,0" end="0,0" time="400" tween="sine" easing="inout">Unfocus</animation>
-        <control type="image">
-          <left>0</left>
-          <top>0</top>
-          <width>246</width>
-          <height>1080</height>
-          <texture>lists/home-menu-glow.png</texture>
-        </control>
-        <control type="image">
-          <left>0</left>
-          <top>0</top>
-          <width>258</width>
-          <height>1080</height>
-          <texture>lists/home-menu-background.png</texture>
-        </control>
-				<control type="fixedlist" id="9000">
-					<left>0</left>
-					<top>0</top>
-					<width>200</width>
-					<bottom>-10</bottom>
-					<movement>1</movement>
-					<focusposition>3</focusposition>
-					<onfocus>ClearProperty(listposition,home)</onfocus>
-					<onright>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onright>
-					<onup>700</onup>
-					<ondown>700</ondown>
-					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<focusedlayout height="180">
-						<control type="image">
-							<left>8</left>
-              <top>0</top>
-              <bottom>0</bottom>
-							<width>180</width>
-							<height>180</height>
-							<texture>$INFO[ListItem.Art(thumb)]</texture>
-              <animation effect="zoom" center="90,90" start="100,100" end="111,111" time="500" delay="200">Focus</animation>
-              <animation effect="zoom" center="90,90" start="111,111" end="100,100" time="200">Unfocus</animation>
-              <animation effect="fade" start="0" end="100" time="100" delay="0">Focus</animation>
-              <animation effect="fade" start="100" end="0" time="0" delay="0">Unfocus</animation>
-						</control>
-            <control type="image">
-              <left>10</left>
-              <top>190</top>
-              <bottom>0</bottom>
-              <width>192</width>
-              <height>1</height>
-              <texture colordiffuse="FFFFFFFF">lists/menu-background.png</texture>
-              <animation effect="zoom" start="100,100" end="100,-4300" time="500" delay="200" tween="back" easing="out">Focus</animation>
-              <animation effect="zoom" end="100,0" start="100,-4300" time="200" delay="0">Unfocus</animation>
-            </control>
-						<control type="label">
-							<left>10</left>
-              <bottom>-5</bottom>
-							<height>45</height>
-							<width>190</width>
-              <align>center</align>
-							<aligny>bottom</aligny>
-							<font>font37</font>
-							<label>$INFO[ListItem.Label]</label>
-              <animation effect="fade" start="0" end="100" time="500" delay="200">Focus</animation>
-              <animation effect="fade" start="100" end="0" time="0" >Unfocus</animation>
-							<shadowcolor>text_shadow</shadowcolor>
-						</control>
-            <control type="image">
-              <left>0</left>
-              <top>-10</top>
-              <bottom>-10</bottom>
-              <width>8</width>
-              <height>200</height>
-              <texture colordiffuse="FFFFFFFF">lists/focus-menu.png</texture>
-              <animation effect="fade" start="100" end="0" time="0">Unfocus</animation>
-              <animation effect="zoom" start="100,90" end="100,100" center="0,100" time="500" delay="200" reversible="false">Focus</animation>
-              <animation effect="fade" start="0" end="100" time="0" delay="100" reversible="false">Focus</animation>
-              <animation effect="zoom" start="100,100" end="100,90" center="0,100" time="0">Unfocus</animation>
-            </control>
-					</focusedlayout>
-					<itemlayout height="180">
-						<control type="image">
-							<left>10</left>
-							<top>5</top>
-              <bottom>5</bottom>
-							<width>180</width>
-							<height>170</height>
-							<texture colordiffuse="77FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
-              <animation effect="fade" start="0" end="100" time="200">Focus</animation>
-						</control>
-					</itemlayout>
-					<content>
-            <item>
-              <label>$LOCALIZE[24001]</label>
-              <property name="menu_id">$NUMBER[8000]</property>
-              <onclick>ActivateWindow(1100)</onclick>
-              <thumb>icons/sidemenu/addons.png</thumb>
-              <property name="id">addons</property>
-              <visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
-            </item>
-            <item>
-              <label>$LOCALIZE[3]</label>
-              <onclick>ActivateWindow(Videos,root)</onclick>
-              <property name="menu_id">$NUMBER[11000]</property>
-              <thumb>icons/sidemenu/videos.png</thumb>
-              <property name="id">video</property>
-              <visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
-            </item>
-						<item>
-							<label>$LOCALIZE[342]</label>
-							<onclick condition="Library.HasContent(movies) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://movies/,return)</onclick>
-							<onclick condition="Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
-							<onclick condition="!Library.HasContent(movies)">ActivateWindow(Videos,sources://video/,return)</onclick>
-							<property name="menu_id">$NUMBER[5000]</property>
-							<thumb>icons/sidemenu/movies.png</thumb>
-							<property name="id">movies</property>
-							<visible>!Skin.HasSetting(HomeMenuNoMovieButton)</visible>
-						</item>
-						<item>
-							<label>$LOCALIZE[20343]</label>
-							<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
-							<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
-							<onclick condition="!Library.HasContent(tvshows)">ActivateWindow(Videos,sources://video/,return)</onclick>
-							<property name="menu_id">$NUMBER[6000]</property>
-							<thumb>icons/sidemenu/tv.png</thumb>
-							<property name="id">tvshows</property>
-							<visible>!Skin.HasSetting(HomeMenuNoTVShowButton)</visible>
-						</item>
-						<item>
-							<label>$LOCALIZE[2]</label>
-							<onclick>ActivateWindow(Music,root,return)</onclick>
-							<property name="menu_id">$NUMBER[7000]</property>
-							<thumb>icons/sidemenu/music.png</thumb>
-							<property name="id">music</property>
-							<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
-						</item>
-						<item>
-							<label>$LOCALIZE[427]</label>
-							<onclick>PlayDisc</onclick>
-							<property name="menu_id">$NUMBER[21000]</property>
-							<thumb>icons/sidemenu/disc.png</thumb>
-							<property name="id">disc</property>
-							<visible>System.HasMediaDVD</visible>
-						</item>
-						<item>
-							<label>$LOCALIZE[20389]</label>
-							<property name="menu_id">$NUMBER[16000]</property>
-							<onclick>ActivateWindow(Videos,musicvideos,return)</onclick>
-							<thumb>icons/sidemenu/musicvideos.png</thumb>
-							<property name="id">musicvideos</property>
-							<visible>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</visible>
-						</item>
-						<item>
-							<label>$LOCALIZE[19020]</label>
-							<property name="menu_id">$NUMBER[12000]</property>
-							<onclick>ActivateWindow(TVChannels)</onclick>
-							<thumb>icons/sidemenu/livetv.png</thumb>
-							<property name="id">livetv</property>
-							<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
-						</item>
-						<item>
-							<label>$LOCALIZE[19021]</label>
-							<property name="menu_id">$NUMBER[13000]</property>
-							<onclick>ActivateWindow(RadioChannels)</onclick>
-							<thumb>icons/sidemenu/radio.png</thumb>
-							<property name="id">radio</property>
-							<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
-						</item>
-						<item>
-							<label>$LOCALIZE[15016]</label>
-							<property name="menu_id">$NUMBER[17000]</property>
-							<onclick>ActivateWindow(Games)</onclick>
-							<thumb>icons/sidemenu/games.png</thumb>
-							<property name="id">games</property>
-							<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton)</visible>
-						</item>
-						<item>
-							<label>$LOCALIZE[1]</label>
-							<onclick>ActivateWindow(Pictures)</onclick>
-							<property name="menu_id">$NUMBER[4000]</property>
-							<thumb>icons/sidemenu/pictures.png</thumb>
-							<property name="id">pictures</property>
-							<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
-						</item>
-						<item>
-							<label>$LOCALIZE[10134]</label>
-							<onclick>ActivateWindow(favourites)</onclick>
-							<property name="menu_id">$NUMBER[14000]</property>
-							<thumb>icons/sidemenu/favourites.png</thumb>
-							<property name="id">favorites</property>
-							<visible>!Skin.HasSetting(HomeMenuNoFavButton)</visible>
-						</item>
-						<item>
-							<label>$LOCALIZE[8]</label>
-							<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
-							<onclick condition="String.IsEmpty(Weather.Plugin)">ReplaceWindow(servicesettings,weather)</onclick>
-							<property name="menu_id">$NUMBER[15000]</property>
-							<thumb>icons/sidemenu/weather.png</thumb>
-							<property name="id">weather</property>
-							<visible>!Skin.HasSetting(HomeMenuNoWeatherButton)</visible>
-						</item>
-					</content>
-				</control>
+		<control type="group">
+			<depth>DepthContentPanel</depth>
+			<include>OpenClose_Left</include>
+			<include content="ContentPanel">
+				<param name="width" value="230" />
+			</include>
+			<left>-200</left>
+			<animation effect="slide" start="0,0" end="200,0" time="400" tween="sine" easing="inout">WindowOpen</animation>
+			<animation effect="slide" start="200,0" end="0,0" time="400" tween="sine" easing="inout">WindowClose</animation>
+			<animation effect="slide" start="0,0" end="200,0" time="400" tween="sine" easing="inout">Focus</animation>
+			<animation effect="slide" start="200,0" end="0,0" time="400" tween="sine" easing="inout">Unfocus</animation>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>246</width>
+				<height>1080</height>
+				<texture>lists/home-menu-glow.png</texture>
 			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>258</width>
+				<height>1080</height>
+				<texture>lists/home-menu-background.png</texture>
+			</control>
+			<control type="fixedlist" id="9000">
+				<left>0</left>
+				<top>100</top>
+				<width>200</width>
+				<bottom>-10</bottom>
+				<movement>1</movement>
+				<focusposition>1</focusposition>
+				<onfocus>ClearProperty(listposition,home)</onfocus>
+				<onright>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onright>
+				<onup>700</onup>
+				<ondown>700</ondown>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<focusedlayout height="180">
+				<control type="image">
+					<left>8</left>
+					<top>0</top>
+					<bottom>0</bottom>
+					<width>180</width>
+					<height>180</height>
+					<texture>$INFO[ListItem.Art(thumb)]</texture>
+					<animation effect="zoom" center="90,90" start="100,100" end="111,111" time="500" delay="200">Focus</animation>
+					<animation effect="zoom" center="90,90" start="111,111" end="100,100" time="200">Unfocus</animation>
+					<animation effect="fade" start="0" end="100" time="100" delay="0">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="0" delay="0">Unfocus</animation>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>190</top>
+					<bottom>0</bottom>
+					<width>192</width>
+					<height>1</height>
+					<texture colordiffuse="FFFFFFFF">lists/menu-background.png</texture>
+					<animation effect="zoom" start="100,100" end="100,-4300" time="500" delay="200" tween="back" easing="out">Focus</animation>
+					<animation effect="zoom" end="100,0" start="100,-4300" time="200" delay="0">Unfocus</animation>
+				</control>
+				<control type="label">
+					<left>10</left>
+					<bottom>-5</bottom>
+					<height>45</height>
+					<width>190</width>
+					<align>center</align>
+					<aligny>bottom</aligny>
+					<font>font37</font>
+					<label>$INFO[ListItem.Label]</label>
+					<animation effect="fade" start="0" end="100" time="500" delay="200">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="0" >Unfocus</animation>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+				<control type="image">
+				  <left>0</left>
+				  <top>-10</top>
+				  <bottom>-10</bottom>
+				  <width>8</width>
+				  <height>200</height>
+				  <texture colordiffuse="FFFFFFFF">lists/focus-menu.png</texture>
+				  <animation effect="fade" start="100" end="0" time="0">Unfocus</animation>
+				  <animation effect="zoom" start="100,90" end="100,100" center="0,100" time="500" delay="200" reversible="false">Focus</animation>
+				  <animation effect="fade" start="0" end="100" time="0" delay="100" reversible="false">Focus</animation>
+				  <animation effect="zoom" start="100,100" end="100,90" center="0,100" time="0">Unfocus</animation>
+				</control>
+				</focusedlayout>
+				<itemlayout height="180">
+					<control type="image">
+						<left>10</left>
+						<top>5</top>
+						<bottom>5</bottom>
+						<width>180</width>
+						<height>170</height>
+						<texture colordiffuse="77FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
+						<animation effect="fade" start="0" end="100" time="200">Focus</animation>
+					</control>
+				</itemlayout>
+				<content>
+					<item>
+						<label>$LOCALIZE[10134]</label>
+						<onclick>ActivateWindow(favourites)</onclick>
+						<property name="menu_id">$NUMBER[14000]</property>
+						<thumb>icons/sidemenu/favourites.png</thumb>
+						<property name="id">favorites</property>
+						<visible>!Skin.HasSetting(HomeMenuNoFavButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[19020]</label>
+						<property name="menu_id">$NUMBER[12000]</property>
+						<onclick>ActivateWindow(TVChannels)</onclick>
+						<thumb>icons/sidemenu/livetv.png</thumb>
+						<property name="id">livetv</property>
+						<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[3]</label>
+						<onclick>ActivateWindow(Videos,root)</onclick>
+						<property name="menu_id">$NUMBER[11000]</property>
+						<thumb>icons/sidemenu/videos.png</thumb>
+						<property name="id">video</property>
+						<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[342]</label>
+						<onclick condition="Library.HasContent(movies) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,special://skin/playlists/_filme.xsp,return)</onclick>
+						<onclick condition="Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,special://skin/playlists/_filme.xsp,return)</onclick>
+						<onclick condition="!Library.HasContent(movies)">ActivateWindow(Videos,special://skin/playlists/_filme.xsp,return)</onclick>
+						<property name="menu_id">$NUMBER[5000]</property>
+						<thumb>icons/sidemenu/movies.png</thumb>
+						<property name="id">movies</property>
+						<visible>!Skin.HasSetting(HomeMenuNoMovieButton)</visible>
+					</item>
+					<item>
+						<label>Kids</label>
+						<onclick condition="Library.HasContent(movies) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,special://skin/playlists/_filme_kinder.xsp,return)</onclick>
+						<onclick condition="Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,special://skin/playlists/_filme_kinder.xsp,return)</onclick>
+						<onclick condition="!Library.HasContent(movies)">ActivateWindow(Videos,special://skin/playlists/_filme_kinder.xsp,return)</onclick>
+						<property name="menu_id">$NUMBER[5020]</property>
+						<thumb>icons/sidemenu/kidmovies.png</thumb>
+						<property name="id">kidmovies</property>
+						<visible>!Skin.HasSetting(HomeMenuNoMovieButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[20343]</label>
+						<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
+						<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
+						<onclick condition="!Library.HasContent(tvshows)">ActivateWindow(Videos,sources://video/,return)</onclick>
+						<property name="menu_id">$NUMBER[6000]</property>
+						<thumb>icons/sidemenu/tv.png</thumb>
+						<property name="id">tvshows</property>
+						<visible>!Skin.HasSetting(HomeMenuNoTVShowButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[2]</label>
+						<onclick>ActivateWindow(Music,root,return)</onclick>
+						<property name="menu_id">$NUMBER[7000]</property>
+						<thumb>icons/sidemenu/music.png</thumb>
+						<property name="id">music</property>
+						<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[427]</label>
+						<onclick>PlayDisc</onclick>
+						<property name="menu_id">$NUMBER[21000]</property>
+						<thumb>icons/sidemenu/disc.png</thumb>
+						<property name="id">disc</property>
+						<visible>System.HasMediaDVD</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[20389]</label>
+						<property name="menu_id">$NUMBER[16000]</property>
+						<onclick>ActivateWindow(Videos,musicvideos,return)</onclick>
+						<thumb>icons/sidemenu/musicvideos.png</thumb>
+						<property name="id">musicvideos</property>
+						<visible>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[19021]</label>
+						<property name="menu_id">$NUMBER[13000]</property>
+						<onclick>ActivateWindow(RadioChannels)</onclick>
+						<thumb>icons/sidemenu/radio.png</thumb>
+						<property name="id">radio</property>
+						<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[15016]</label>
+						<property name="menu_id">$NUMBER[17000]</property>
+						<onclick>ActivateWindow(Games)</onclick>
+						<thumb>icons/sidemenu/games.png</thumb>
+						<property name="id">games</property>
+						<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[1]</label>
+						<onclick>ActivateWindow(Pictures)</onclick>
+						<property name="menu_id">$NUMBER[4000]</property>
+						<thumb>icons/sidemenu/pictures.png</thumb>
+						<property name="id">pictures</property>
+						<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
+					</item>
+					<item>
+					<label>$LOCALIZE[24001]</label>
+						<property name="menu_id">$NUMBER[8000]</property>
+						<onclick>ActivateWindow(1100)</onclick>
+						<thumb>icons/sidemenu/addons.png</thumb>
+						<property name="id">addons</property>
+						<visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[8]</label>
+						<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
+						<onclick condition="String.IsEmpty(Weather.Plugin)">ReplaceWindow(servicesettings,weather)</onclick>
+						<property name="menu_id">$NUMBER[15000]</property>
+						<thumb>icons/sidemenu/weather.png</thumb>
+						<property name="id">weather</property>
+						<visible>!Skin.HasSetting(HomeMenuNoWeatherButton)</visible>
+					</item>
+				</content>
+			</control>
+		</control>
 
       <!--###########################################################################################################-->
       <!--#################################### TOP AND BOTTOM GRADIENT OVERLAY ######################################-->
