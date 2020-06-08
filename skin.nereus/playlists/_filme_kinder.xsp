@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Kinderfilme</name>
+    <match>all</match>
+    <rule field="path" operator="startswith">
+        <value>nfs://192.168.1.3/export/Video/filme/</value>
+    </rule>
+</smartplaylist>

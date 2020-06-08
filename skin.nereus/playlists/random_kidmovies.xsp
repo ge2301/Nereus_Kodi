@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <smartplaylist type="movies">
-    <name>In-progress movies</name>
+    <name>Random Kid movies</name>
     <match>all</match>
 	<rule field="path" operator="startswith">
-    <value>nfs://192.168.1.3/export/Video/videos/</value>
+    <value>nfs://192.168.1.3/export/Video/filme/</value>
     </rule>
-    <rule field="inprogress" operator="true" />
     <limit>15</limit>
-    <order direction="descending">lastplayed</order>
+    <order direction="descending">random</order>
 </smartplaylist>
