@@ -229,7 +229,7 @@
 			<visible>Player.ShowInfo + VideoPlayer.Content(LiveTV)</visible>
 			<animation effect="fade" time="400">VisibleChange</animation>
 			<animation effect="slide" end="0,-20" time="150" condition="VideoPlayer.Content(LiveTV)">conditional</animation>
-			<bottom>0</bottom>
+			<bottom>-38</bottom>
 			<height>380</height>
 			<control type="image">
 				<left>0</left>
@@ -247,7 +247,7 @@
 			</control>
 			<control type="label">
 				<left>250</left>
-				<width>50</width>
+				<width>90</width>
 				<font>font45</font>
 				<top>0</top>
 				<height>20</height>
@@ -274,7 +274,7 @@
 				<shadowcolor>text_shadow</shadowcolor>
 				<top>0</top>
 				<height>100</height>
-				<left>300</left>
+				<left>320</left>
 				<right>0</right>
 			</control>
 			<control type="label"><!-- Episode - Name -->
@@ -284,7 +284,7 @@
 				<label>$VAR[OSDSubLabelPVRVar]</label>
 				<shadowcolor>text_shadow</shadowcolor>
 				<height>100</height>
-				<left>335</left>
+				<left>358</left>
 				<right>0</right>
 			</control>
 			<control type="textbox"><!-- Plot -->
