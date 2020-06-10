@@ -2,9 +2,6 @@
 <smartplaylist type="movies">
     <name>In-progress movies</name>
     <match>all</match>
-	<rule field="path" operator="startswith">
-    <value>nfs://192.168.1.3/export/Video/videos/</value>
-    </rule>
     <rule field="inprogress" operator="true" />
     <limit>15</limit>
     <order direction="descending">lastplayed</order>
