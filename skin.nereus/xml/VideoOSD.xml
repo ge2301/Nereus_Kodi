@@ -96,10 +96,10 @@
 					</control>
 					<control type="radiobutton" id="606">
 						<textureradioonfocus colordiffuse="white">osd/fullscreen/buttons/record.focus.png</textureradioonfocus>
-            <textureradioonnofocus colordiffuse="AACCCCCC">osd/fullscreen/buttons/record.nofocus.png</textureradioonnofocus>
+						<textureradioonnofocus colordiffuse="AACCCCCC">osd/fullscreen/buttons/record.nofocus.png</textureradioonnofocus>
 						<textureradioofffocus colordiffuse="white">osd/fullscreen/buttons/recording.focus.png</textureradioofffocus>
 						<textureradiooffnofocus colordiffuse="AACCCCCC">osd/fullscreen/buttons/recording.nofocus.png</textureradiooffnofocus>
-            <texturefocus></texturefocus>
+						<texturefocus></texturefocus>
 						<width>100</width>
 						<height>100</height>
 						<radiowidth>98</radiowidth>
@@ -201,7 +201,7 @@
 			</control>
 			<control type="group" id="6000">
 				<top>60</top>
-				<visible>Player.SeekEnabled</visible>
+				<visible>Player.SeekEnabled + !VideoPlayer.Content(LiveTV)</visible>
 				<control type="button" id="87">
 					<include>HiddenObject</include>
 					<onup>200</onup>
@@ -234,30 +234,6 @@
 					<info>Player.Progress</info>
 					<action>seek</action>
 					<visible>Control.HasFocus(87) + !VideoPlayer.Content(LiveTV)</visible>
-				</control>
-				<control type="slider">
-					<top>-5</top>
-					<left>0</left>
-					<width>100%</width>
-					<height>26</height>
-					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
-					<textureslidernib>osd/progress/nub_leftright.png</textureslidernib>
-					<textureslidernibfocus colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernibfocus>
-					<info>PVR.TimeshiftProgressPlayPos</info>
-					<action>pvr.seek</action>
-					<visible>!Control.HasFocus(87) + VideoPlayer.Content(LiveTV)</visible>
-				</control>
-				<control type="slider">
-					<top>-5</top>
-					<left>0</left>
-					<width>100%</width>
-					<height>26</height>
-					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
-					<textureslidernib colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernib>
-					<textureslidernibfocus colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernibfocus>
-					<info>PVR.TimeshiftProgressPlayPos</info>
-					<action>pvr.seek</action>
-					<visible>Control.HasFocus(87) + VideoPlayer.Content(LiveTV)</visible>
 				</control>
 			</control>
 		</control>
