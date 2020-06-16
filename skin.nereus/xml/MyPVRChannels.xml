@@ -64,22 +64,22 @@
 						</control>
 						<control type="label">
 							<left>295</left>
-							<top>8</top>
+							<top>0</top>
 							<height>90</height>
 							<right>120</right>
 							<aligny>top</aligny>
-							<font>font14</font>
+							<font>font45</font>
 							<animation effect="slide" start="0,0" end="0,14" time="0" condition="String.IsEmpty(ListItem.Title)">Conditional</animation>
 							<label>$INFO[ListItem.Label]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 						<control type="label">
 							<left>355</left>
-							<top>46</top>
+							<top>42</top>
 							<height>90</height>
 							<right>120</right>
 							<aligny>top</aligny>
-							<font>font12</font>
+							<font>font37</font>
 							<label>$INFO[ListItem.Title]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
@@ -90,7 +90,7 @@
 							<width>82</width>
 							<align>center</align>
 							<aligny>center</aligny>
-							<font>font32_title</font>
+							<font>font52_title</font>
 							<label>$INFO[ListItem.ChannelNumberLabel]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
@@ -130,22 +130,22 @@
 						</control>
 						<control type="label">
 							<left>295</left>
-							<top>8</top>
+							<top>0</top>
 							<height>90</height>
 							<right>120</right>
 							<aligny>top</aligny>
-							<font>font14</font>
+							<font>font45</font>
 							<label>$INFO[ListItem.Label]</label>
 							<animation effect="slide" start="0,0" end="0,14" time="0" condition="String.IsEmpty(ListItem.Title)">Conditional</animation>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 						<control type="label">
 							<left>355</left>
-							<top>46</top>
+							<top>42</top>
 							<height>90</height>
 							<right>120</right>
 							<aligny>top</aligny>
-							<font>font12</font>
+							<font>font37</font>
 							<label>$INFO[ListItem.Title]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 							<textcolor>grey</textcolor>
@@ -157,7 +157,7 @@
 							<width>82</width>
 							<align>center</align>
 							<aligny>center</aligny>
-							<font>font32_title</font>
+							<font>font52_title</font>
 							<label>$INFO[ListItem.ChannelNumberLabel]</label>
 							<textcolor>grey</textcolor>
 							<shadowcolor>text_shadow</shadowcolor>
@@ -292,13 +292,13 @@
 				<include>OpenClose_Right</include>
 				<width>870</width>
 				<right>0</right>
-        <control type="image">
-          <left>-78</left>
-          <top>0</top>
-          <width>30</width>
-          <height>100%</height>
-          <texture>lists/ContentGlow.png</texture>
-        </control>
+				<control type="image">
+					<left>-78</left>
+					<top>0</top>
+					<width>30</width>
+					<height>100%</height>
+					<texture>lists/ContentGlow.png</texture>
+				</control>
 				<include content="ContentPanel">
 					<param name="left" value="-72" />
 					<param name="width" value="970" />
@@ -306,16 +306,16 @@
 					<param name="flipx" value="true" />
 				</include>
 				<include>PVRInfoPanel</include>
-        <control type="scrollbar" id="73">
-          <right>0</right>
-          <top>list_y_offset</top>
-          <width>12</width>
-          <bottom>list_y_offset</bottom>
-          <onleft>50</onleft>
-          <onright>50</onright>
-          <orientation>vertical</orientation>
-          <animation effect="zoom" start="100,100" end="50,100" center="870,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(73)">conditional</animation>
-        </control>
+				<control type="scrollbar" id="73">
+				  <right>0</right>
+				  <top>list_y_offset</top>
+				  <width>12</width>
+				  <bottom>list_y_offset</bottom>
+				  <onleft>50</onleft>
+				  <onright>50</onright>
+				  <orientation>vertical</orientation>
+				  <animation effect="zoom" start="100,100" end="50,100" center="870,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(73)">conditional</animation>
+				</control>
 			</control>
 
       <!--###########################################################################################################-->

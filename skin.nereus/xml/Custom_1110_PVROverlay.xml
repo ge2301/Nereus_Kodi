@@ -20,6 +20,7 @@
 			</control>
 			<control type="group">
 				<visible>!Window.IsVisible(videoosd) + !Window.IsVisible(musicosd)</visible>
+				<visible>Player.ShowInfo</visible>
 				<animation effect="fade" time="200">VisibleChange</animation>
 				<control type="image">
 					<left>200</left>
@@ -130,10 +131,11 @@
 				<font>font45</font>
 				<shadowcolor>black</shadowcolor>
 				<visible>!Player.ChannelPreviewActive | VideoPlayer.HasEpg</visible>
+				<visible>Player.ShowInfo</visible>
 			</control>
 			<control type="label" id="40000"> <!-- unter Zeit unten -->
 				<centerleft>50%</centerleft>
-				<top>134</top>
+				<top>-500</top>
 				<width>50%</width>
 				<height>60</height>
 				<align>center</align>
@@ -141,54 +143,10 @@
 				<label>$VAR[SeekLabel]</label>
 				<shadowcolor>black</shadowcolor>
 			</control>
-<!-- processbar
-			<control type="group">
-				<visible>VideoPlayer.Content(LiveTV)</visible>
-				<control type="group">
-					<visible>Player.SeekEnabled + VideoPlayer.HasEPG</visible>
-					<include content="PVRProgress">
-						<param name="ts_bar_top" value="70"/>
-						<param name="epg_bar_top" value="78"/>
-						<param name="ts_bar_height" value="8"/>
-						<param name="epg_bar_height" value="8"/>
-					</include>
-				</control>
-				<control type="group">
-					<visible>Player.SeekEnabled + !VideoPlayer.HasEPG</visible>
-					<include content="PVRProgress">
-						<param name="ts_bar_top" value="70"/>
-						<param name="ts_bar_height" value="16"/>
-					</include>
-				</control>
-				<control type="group">
-					<visible>!Player.SeekEnabled + VideoPlayer.HasEPG</visible>
-					<include content="PVRProgress">
-						<param name="epg_bar_top" value="70"/>
-						<param name="epg_bar_height" value="16"/>
-					</include>
-				</control>
-				<control type="group">
-					<visible>!Player.SeekEnabled + !VideoPlayer.HasEPG</visible>
-					<include content="PVRProgress"/>
-				</control>
-				<control type="slider" id="403">
-					<left>0</left>
-					<top>65</top>
-					<width>100%</width>
-					<height>26</height>
-					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_bar.png</texturesliderbar>
-					<textureslidernib colordiffuse="button_focus">osd/progress/nub_bar.png</textureslidernib>
-					<textureslidernibfocus colordiffuse="button_focus">colors/white.png</textureslidernibfocus>
-					<visible>Player.SeekEnabled + !Player.ChannelPreviewActive</visible>
-				</control>
-			</control>
- -->
-
- 
 		</control>
 		<control type="group">
 			<visible>!Window.IsVisible(playerprocessinfo)</visible>
-			<visible>Player.ShowInfo + VideoPlayer.Content(LiveTV)</visible>
+			<visible>Player.ShowInfo</visible>
 			<animation effect="fade" time="400">VisibleChange</animation>
 			<animation effect="slide" end="0,-20" time="150" condition="VideoPlayer.Content(LiveTV)">conditional</animation>
 			<bottom>-38</bottom>
@@ -271,35 +229,7 @@
 				<visible>!String.IsEmpty(PVR.EpgEventIcon)</visible>
 			</control>
 -->
-				<control type="group">
-					<visible>Player.SeekEnabled + VideoPlayer.HasEPG</visible>
-					<include content="PVRProgress2">
-						<param name="ts_bar_top" value="155"/>
-						<param name="epg_bar_top" value="78"/>
-						<param name="ts_bar_height" value="8"/>
-						<param name="epg_bar_height" value="8"/>
-					</include>
-				</control>
-				<control type="group">
-					<visible>Player.SeekEnabled + !VideoPlayer.HasEPG</visible>
-					<include content="PVRProgress2">
-						<param name="ts_bar_top" value="155"/>
-						<param name="ts_bar_height" value="16"/>
-					</include>
-				</control>
-				<control type="group">
-					<visible>!Player.SeekEnabled + VideoPlayer.HasEPG</visible>
-					<include content="PVRProgress2">
-						<param name="epg_bar_top" value="155"/>
-						<param name="epg_bar_height" value="16"/>
-					</include>
-				</control>
-				<control type="group">
-					<visible>!Player.SeekEnabled + !VideoPlayer.HasEPG</visible>
-					<include content="PVRProgress2"/>
-				</control>
-
-				<control type="image">
+			<control type="image">
 				<right>30</right>
 				<top>20</top>
 				<width>200</width>
@@ -323,10 +253,98 @@
 				<visible>RDS.HasRadioText</visible>
 			</control>
 		</control>
+
+		<!-- Timeshift -->
+		<control type="group">
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<visible>!Player.ChannelPreviewActive</visible>
+			<visible>Player.ShowInfo</visible>
+			<control type="group">
+				<visible>Player.SeekEnabled | VideoPlayer.HasEPG</visible>
+				<control type="label">
+					<bottom>205</bottom>
+					<right>300</right>
+					<width>400</width>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<label>$INFO[PVR.TimeshiftProgressEndTime]</label>
+				</control>
+				<control type="label">
+					<bottom>205</bottom>
+					<left>280</left>
+					<width>400</width>
+					<height>50</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<label>$INFO[PVR.TimeshiftProgressStartTime]</label>
+				</control>
+				<control type="label">
+					<bottom>205</bottom>
+					<left>280</left>
+					<right>280</right>
+					<height>50</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<label>[B]$LOCALIZE[31026][/B] $INFO[PVR.TimeshiftCur] (-$INFO[PVR.TimeshiftOffset])</label>
+					<visible>PVR.IsTimeShift</visible>
+				</control>
+			</control>
+			<control type="group">
+				<visible>VideoPlayer.HasEPG</visible>
+				<control type="progress">
+					<left>280</left>
+					<bottom>190</bottom>
+					<width>70%</width>
+					<height>16</height>
+					<info2>PVR.TimeshiftProgressEpgStart</info2>
+					<info>PVR.TimeshiftProgressPlayPos</info>
+					<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
+					<midtexture colordiffuse="button_focus">colors/white.png</midtexture>
+				</control>
+				<control type="progress">
+					<left>280</left>
+					<bottom>190</bottom>
+					<width>70%</width>
+					<height>16</height>
+					<info2>PVR.TimeshiftProgressPlayPos</info2>
+					<info>PVR.TimeshiftProgressEpgEnd</info>
+					<texturebg border="3" colordiffuse="00FFFFFF">colors/white50.png</texturebg>
+					<midtexture>colors/white50.png</midtexture>
+				</control>
+			</control>
+			<control type="progress">
+				<left>280</left>
+				<bottom>190</bottom>
+				<width>70%</width>
+				<height>16</height>
+				<info2>PVR.TimeshiftProgressBufferStart</info2>
+				<info>PVR.TimeshiftProgressBufferEnd</info>
+				<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
+				<midtexture>colors/white70.png</midtexture>
+				<visible>Player.SeekEnabled</visible>
+			</control>
+		</control>
+		<control type="group">
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<visible>Player.ShowInfo</visible>
+			<visible>Player.ChannelPreviewActive</visible>
+			<control type="progress">
+				<left>280</left>
+				<bottom>190</bottom>
+				<width>70%</width>
+				<height>16</height>
+				<info>PVR.EpgEventProgress</info>
+				<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
+				<midtexture colordiffuse="button_focus">colors/white.png</midtexture>
+			</control>
+		</control>
 		<control type="group" id="6001">
-			<bottom>0</bottom>
 			<visible>!Window.IsVisible(playerprocessinfo)</visible>
-			<visible>Player.ShowInfo + VideoPlayer.Content(LiveTV)</visible>
+			<visible>Player.ShowInfo</visible>
 			<visible>Player.SeekEnabled</visible>
 			<control type="button" id="87">
 				<include>HiddenObject</include>
@@ -338,44 +356,33 @@
 				<onclick condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onclick>
 			</control>
 			<control type="slider">
-				<top>984</top>
-				<left>300</left>
+				<bottom>185</bottom>
+				<left>280</left>
 				<width>70%</width>
 				<height>26</height>
-				<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
-				<textureslidernib>osd/progress/nub_leftright.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernibfocus>
+				<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_bar.png</texturesliderbar>
+				<textureslidernib>osd/progress/nub_bar.png</textureslidernib>
+				<textureslidernibfocus colordiffuse="button_focus">osd/progress/nub_bar.png</textureslidernibfocus>
 				<info>PVR.TimeshiftProgressPlayPos</info>
 				<action>pvr.seek</action>
-				<visible>!Control.HasFocus(87) + VideoPlayer.Content(LiveTV)</visible>
+				<visible>!Control.HasFocus(87)</visible>
 			</control>
 			<control type="slider">
-				<top>984</top>
-				<left>300</left>
-				<width>70%</width>
-				<height>26</height>
-				<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
-				<textureslidernib colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernibfocus>
-				<info>PVR.TimeshiftProgressPlayPos</info>
-				<action>pvr.seek</action>
-				<visible>Control.HasFocus(87) + VideoPlayer.Content(LiveTV)</visible>
-			</control>
-			
-			<control type="slider" id="403">
-				<top>984</top>
-				<left>300</left>
+				<bottom>185</bottom>
+				<left>280</left>
 				<width>70%</width>
 				<height>26</height>
 				<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_bar.png</texturesliderbar>
 				<textureslidernib colordiffuse="button_focus">osd/progress/nub_bar.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="button_focus">colors/white.png</textureslidernibfocus>
-				<info>PVR.TimeshiftProgressBufferStart</info>
-				<visible>Player.SeekEnabled + !Player.ChannelPreviewActive</visible>
+				<textureslidernibfocus colordiffuse="button_focus">osd/progress/nub_bar.png</textureslidernibfocus>
+				<info>PVR.TimeshiftProgressPlayPos</info>
+				<action>pvr.seek</action>
+				<visible>Control.HasFocus(87)</visible>
 			</control>
-			<control type="slider" id="404">
-				<top>984</top>
-				<left>300</left>
+
+			<control type="slider">
+				<bottom>185</bottom>
+				<left>280</left>
 				<width>70%</width>
 				<height>26</height>
 				<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_bar.png</texturesliderbar>
@@ -384,7 +391,6 @@
 				<info>PVR.TimeshiftProgressBufferEnd</info>
 				<visible>Player.SeekEnabled + !Player.ChannelPreviewActive</visible>
 			</control>				
-			
 		</control>
 	</controls>
 </window>
