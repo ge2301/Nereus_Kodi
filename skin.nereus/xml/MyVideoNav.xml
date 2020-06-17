@@ -108,7 +108,7 @@
           </control>
 					<control type="group">
 						<left>20</left>
-						<top>245</top>
+						<top>345</top>
 						<visible>ListItem.IsCollection + String.IsEmpty(ListItem.Plot)</visible>
 						<include content="InfoList">
 							<param name="bottom" value="108" />

@@ -227,6 +227,7 @@
 		<value condition="Control.HasFocus(606)+ PVR.IsRecordingPlayingChannel">$LOCALIZE[19059]</value>
 		<value condition="Control.HasFocus(606)">$LOCALIZE[264]</value>
 		<value condition="ControlGroup(6000).HasFocus + Player.SeekEnabled">$LOCALIZE[31054]</value>
+		<value condition="ControlGroup(6001).HasFocus + Player.SeekEnabled">$LOCALIZE[31054]</value>
 	</variable>
 	<variable name="MusicOSDHelpTextVar">
 		<value condition="Control.HasFocus(620)">$LOCALIZE[31033]$INFO[MusicPlayer.UserRating, : ]</value>
@@ -292,9 +293,18 @@
 	<variable name="OSDSubLabelVar">
 		<value condition="Window.IsActive(visualisation) + Integer.IsGreater(Playlist.Length,1) + Integer.IsGreater(Playlist.Position,0)">$LOCALIZE[554] $INFO[Playlist.Position] / $INFO[Playlist.Length]</value>
 		<value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.Artist]$INFO[VideoPlayer.Album, - ]</value>
-		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Season,[COLOR button_focus]S,[/COLOR]]$INFO[VideoPlayer.Episode,[COLOR button_focus]E,: [/COLOR]]$INFO[VideoPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(episodes) + Integer.IsLessOrEqual(VideoPlayer.Season,9) + Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,[COLOR button_focus]S0,[/COLOR]]$INFO[VideoPlayer.Episode,[COLOR button_focus]E0, : [/COLOR]]$INFO[VideoPlayer.Title]</value> 
+		<value condition="VideoPlayer.Content(episodes) + Integer.IsLessOrEqual(VideoPlayer.Season,9)">$INFO[VideoPlayer.Season,[COLOR button_focus]S0,[/COLOR]]$INFO[VideoPlayer.Episode,[COLOR button_focus]E, : [/COLOR]]$INFO[VideoPlayer.Title]</value> 
+		<value condition="VideoPlayer.Content(episodes) + Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,[COLOR button_focus]S,[/COLOR]]$INFO[VideoPlayer.Episode,[COLOR button_focus]E0, : [/COLOR]]$INFO[VideoPlayer.Title]</value> 
+		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Season,[COLOR button_focus]S,[/COLOR]]$INFO[VideoPlayer.Episode,[COLOR button_focus]E, : [/COLOR]]$INFO[VideoPlayer.Title]</value>
 		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording | PVR.IsPlayingEpgTag">$INFO[VideoPlayer.ChannelNumberLabel,([COLOR button_focus],[/COLOR]) ]$INFO[VideoPlayer.ChannelName] $INFO[VideoPlayer.EpisodeName, - ]</value>
 		<value>$INFO[VideoPlayer.Genre]</value>
+	</variable>
+	<variable name="OSDSubLabelPVRVar">
+		<value condition="Integer.IsLessOrEqual(VideoPlayer.Season,9) + Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,[COLOR button_focus]S0,[/COLOR]]$INFO[VideoPlayer.Episode,[COLOR button_focus]E0, : [/COLOR]]$INFO[VideoPlayer.EpisodeName]</value> 
+		<value condition="Integer.IsLessOrEqual(VideoPlayer.Season,9)">$INFO[VideoPlayer.Season,[COLOR button_focus]S0,[/COLOR]]$INFO[VideoPlayer.Episode,[COLOR button_focus]E, : [/COLOR]]$INFO[VideoPlayer.EpisodeName]</value> 
+		<value condition="Integer.IsLessOrEqual(VideoPlayer.Episode,9)">$INFO[VideoPlayer.Season,[COLOR button_focus]S,[/COLOR]]$INFO[VideoPlayer.Episode,[COLOR button_focus]E0, : [/COLOR]]$INFO[VideoPlayer.EpisodeName]</value> 
+		<value>$INFO[VideoPlayer.Season,[COLOR button_focus]S,[/COLOR]]$INFO[VideoPlayer.Episode,[COLOR button_focus]E, : [/COLOR]]$INFO[VideoPlayer.EpisodeName]</value>
 	</variable>
 	<variable name="PlayerClearLogoVar">
 		<value condition="!String.IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearlogo)]</value>
@@ -588,8 +598,12 @@
 		<value condition="ListItem.HasTimer">icons/pvr/PVR-HasTimer.png</value>
 	</variable>
 	<variable name="SeasonEpisodeLabel">
-		<value condition="String.IsEmpty(ListItem.EpisodeName)">$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E]</value>
-		<value>$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E,: ]</value>
+		<value condition="Integer.IsEqual(ListItem.Season,0) + Integer.IsGreater(ListItem.Episode,9)">$INFO[ListItem.Episode,E, : ,]</value>
+		<value condition="Integer.IsEqual(ListItem.Season,0) + !Integer.IsGreater(ListItem.Episode,9)">$INFO[ListItem.Episode,E0, : ,]</value>
+		<value condition="Integer.IsLessOrEqual(ListItem.Season,9) + Integer.IsLessOrEqual(ListItem.Episode,9)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E0, : ,]</value> 
+		<value condition="Integer.IsLessOrEqual(ListItem.Season,9)">$INFO[ListItem.Season,S0,]$INFO[ListItem.Episode,E, : ,]</value> 
+		<value condition="Integer.IsLessOrEqual(ListItem.Episode,9)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E0, : ,]</value> 
+		<value>$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E, : ,]</value>
 	</variable>
 	<variable name="ExpirationDateTimeLabel">
 		<value condition="!String.IsEmpty(ListItem.ExpirationDate)">[COLOR grey]$LOCALIZE[19299]:[/COLOR] $INFO[ListItem.ExpirationDate] $INFO[ListItem.ExpirationTime][CR]</value>
