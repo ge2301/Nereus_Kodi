@@ -867,7 +867,7 @@
           <texture>lists/home-menu-background.png</texture>
         </control>
 				<control type="fixedlist" id="9000">
-					<left>0</left>
+					<left>3</left>
 					<top>0</top>
 					<width>200</width>
 					<bottom>-10</bottom>
@@ -887,14 +887,14 @@
               <height>180</height>
               <texture>$INFO[ListItem.Art(thumb)]</texture>
               <animation condition="true" effect="fade" start="100" end="60" time="0" delay="0">Conditional</animation>
-              <animation condition="true" effect="zoom" center="90,90" start="100,100" end="100,95" time="0" tween="sine" easing="inout">Conditional</animation>
+              <animation condition="true" effect="zoom" center="95,90" start="100,100" end="100,95" time="0" tween="sine" easing="inout">Conditional</animation>
             </control>
           </itemlayout>
           
 					<focusedlayout height="180">
             <control type="group">
-              <animation effect="zoom" center="90,90" start="100,100" end="111,111" time="500">Focus</animation>
-              <animation effect="zoom" center="90,90" end="100,95" start="111,111" time="500">Unfocus</animation>
+              <animation effect="zoom" center="95,90" start="100,100" end="111,111" time="500">Focus</animation>
+              <animation effect="zoom" center="95,90" end="100,95" start="111,111" time="500">Unfocus</animation>
 						<control type="image">
 							<left>8</left>
               <top>0</top>
