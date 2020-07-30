@@ -878,7 +878,23 @@
 					<onup>700</onup>
 					<ondown>700</ondown>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
+          <itemlayout height="180">
+            <control type="image">
+              <left>8</left>
+              <top>0</top>
+              <bottom>0</bottom>
+              <width>180</width>
+              <height>180</height>
+              <texture>$INFO[ListItem.Art(thumb)]</texture>
+              <animation condition="true" effect="fade" start="100" end="60" time="0" delay="0">Conditional</animation>
+              <animation condition="true" effect="zoom" center="90,90" start="100,100" end="100,95" time="0" tween="sine" easing="inout">Conditional</animation>
+            </control>
+          </itemlayout>
+          
 					<focusedlayout height="180">
+            <control type="group">
+              <animation effect="zoom" center="90,90" start="100,100" end="111,111" time="500">Focus</animation>
+              <animation effect="zoom" center="90,90" end="100,95" start="111,111" time="500">Unfocus</animation>
 						<control type="image">
 							<left>8</left>
               <top>0</top>
@@ -886,58 +902,42 @@
 							<width>180</width>
 							<height>180</height>
 							<texture>$INFO[ListItem.Art(thumb)]</texture>
-              <animation effect="zoom" center="90,90" start="100,100" end="111,111" time="500" delay="200">Focus</animation>
-              <animation effect="zoom" center="90,90" start="111,111" end="100,100" time="200">Unfocus</animation>
-              <animation effect="fade" start="0" end="100" time="100" delay="0">Focus</animation>
-              <animation effect="fade" start="100" end="0" time="0" delay="0">Unfocus</animation>
+              <animation effect="fade" start="60" end="100" time="100">Focus</animation>
+              <animation effect="fade" start="100" end="60" time="100">Unfocus</animation>
 						</control>
             <control type="image">
-              <left>10</left>
-              <top>190</top>
+              <left>8</left>
               <bottom>0</bottom>
-              <width>192</width>
-              <height>1</height>
+              <width>180</width>
+              <height>45</height>
               <texture colordiffuse="FFFFFFFF">lists/menu-background.png</texture>
-              <animation effect="zoom" start="100,100" end="100,-4300" time="500" delay="200" tween="back" easing="out">Focus</animation>
-              <animation effect="zoom" end="100,0" start="100,-4300" time="200" delay="0">Unfocus</animation>
+              <animation effect="zoom" center="90,180" start="100,0" end="100,100" time="700" tween="back" easing="out">Focus</animation>
+              <animation effect="zoom" center="90,180" end="100,0" start="100,100" time="50" delay="0">Unfocus</animation>
             </control>
 						<control type="label">
-							<left>10</left>
-              <bottom>-5</bottom>
+							<left>16</left>
+              <bottom>0</bottom>
 							<height>45</height>
-							<width>190</width>
+							<width>172</width>
               <align>center</align>
 							<aligny>bottom</aligny>
-							<font>font37</font>
+							<font>font35</font>
 							<label>$INFO[ListItem.Label]</label>
-              <animation effect="fade" start="0" end="100" time="500" delay="200">Focus</animation>
-              <animation effect="fade" start="100" end="0" time="0" >Unfocus</animation>
+              <animation effect="fade" start="0" end="100" time="300" delay="200">Focus</animation>
+              <animation effect="fade" start="100" end="0" time="50">Unfocus</animation>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
             <control type="image">
-              <left>0</left>
-              <top>-10</top>
-              <bottom>-10</bottom>
+              <left>8</left>
               <width>8</width>
-              <height>200</height>
+              <height>180</height>
               <texture colordiffuse="FFFFFFFF">lists/focus-menu.png</texture>
               <animation effect="fade" start="100" end="0" time="0">Unfocus</animation>
-              <animation effect="zoom" start="100,90" end="100,100" center="0,100" time="500" delay="200" reversible="false">Focus</animation>
-              <animation effect="fade" start="0" end="100" time="0" delay="100" reversible="false">Focus</animation>
-              <animation effect="zoom" start="100,100" end="100,90" center="0,100" time="0">Unfocus</animation>
+              <animation effect="fade" start="0" end="100" time="0">Focus</animation>
+            </control>
             </control>
 					</focusedlayout>
-					<itemlayout height="180">
-						<control type="image">
-							<left>10</left>
-							<top>5</top>
-              <bottom>5</bottom>
-							<width>180</width>
-							<height>170</height>
-							<texture colordiffuse="77FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
-              <animation effect="fade" start="0" end="100" time="200">Focus</animation>
-						</control>
-					</itemlayout>
+
 					<content>
             <item>
               <label>$LOCALIZE[24001]</label>
