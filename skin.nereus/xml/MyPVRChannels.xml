@@ -39,7 +39,7 @@
 							<visible>Control.hasFocus(50)</visible>
 						</control>
 						<control type="image">
-							<left>110</left>
+							<left>130</left>
 							<top>10</top>
 							<width>150</width>
 							<height>70</height>
@@ -47,7 +47,7 @@
 							<texture>$INFO[listitem.icon]</texture>
 						</control>
 						<control type="progress">
-							<left>295</left>
+							<left>315</left>
 							<top>58</top>
 							<width>50</width>
 							<height>12</height>
@@ -56,14 +56,14 @@
 							<info>ListItem.Progress</info>
 						</control>
 						<control type="image">
-							<right>110</right>
+							<right>130</right>
 							<top>25</top>
 							<width>40</width>
 							<height>40</height>
 							<texture>$VAR[PVRStatusImageVar]</texture>
 						</control>
 						<control type="label">
-							<left>295</left>
+							<left>315</left>
 							<top>0</top>
 							<height>90</height>
 							<right>120</right>
@@ -74,7 +74,7 @@
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 						<control type="label">
-							<left>355</left>
+							<left>375</left>
 							<top>42</top>
 							<height>90</height>
 							<right>120</right>
@@ -87,7 +87,7 @@
 							<left>10</left>
 							<top>0</top>
 							<height>90</height>
-							<width>82</width>
+							<width>100</width>
 							<align>center</align>
 							<aligny>center</aligny>
 							<font>font52_title</font>
@@ -105,7 +105,7 @@
               <visible>!Control.hasNoFocus(50)</visible>
             </control-->
 						<control type="image">
-							<left>110</left>
+							<left>130</left>
 							<top>10</top>
 							<width>150</width>
 							<height>70</height>
@@ -113,7 +113,7 @@
 							<texture>$INFO[listitem.icon]</texture>
 						</control>
 						<control type="progress">
-							<left>295</left>
+							<left>315</left>
 							<top>58</top>
 							<width>50</width>
 							<height>12</height>
@@ -122,14 +122,14 @@
 							<info>ListItem.Progress</info>
 						</control>
 						<control type="image">
-							<right>110</right>
+							<right>130</right>
 							<top>25</top>
 							<width>40</width>
 							<height>40</height>
 							<texture>$VAR[PVRStatusImageVar]</texture>
 						</control>
 						<control type="label">
-							<left>295</left>
+							<left>315</left>
 							<top>0</top>
 							<height>90</height>
 							<right>120</right>
@@ -140,7 +140,7 @@
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>
 						<control type="label">
-							<left>355</left>
+							<left>375</left>
 							<top>42</top>
 							<height>90</height>
 							<right>120</right>
@@ -154,7 +154,7 @@
 							<left>10</left>
 							<top>0</top>
 							<height>90</height>
-							<width>82</width>
+							<width>100</width>
 							<align>center</align>
 							<aligny>center</aligny>
 							<font>font52_title</font>
@@ -227,7 +227,7 @@
 							<left>10</left>
 							<top>0</top>
 							<bottom>0</bottom>
-							<width>82</width>
+							<width>100</width>
 							<align>center</align>
 							<aligny>center</aligny>
 							<font>font32_title</font>
@@ -276,7 +276,7 @@
 							<left>10</left>
 							<top>0</top>
 							<bottom>0</bottom>
-							<width>82</width>
+							<width>100</width>
 							<align>center</align>
 							<aligny>center</aligny>
 							<font>font32_title</font>
