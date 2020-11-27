@@ -52,7 +52,7 @@
 		<font>font13</font>
 	</default>
 	<default type="progress">
-		<texturebg border="3">progress/texturebg_border_white.png</texturebg>
+		<texturebg colordiffuse="20FFFFFF" border="3">progress/texturebg_white.png</texturebg>
 		<midtexture colordiffuse="button_focus" border="3">progress/texturebg_white.png</midtexture>
 		<lefttexture></lefttexture>
 		<righttexture></righttexture>
