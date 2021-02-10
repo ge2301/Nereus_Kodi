@@ -579,3 +579,16 @@ msgstr "Hintergrund animieren"
 msgctxt "#31168"
 msgid "Show Help flags"
 msgstr "Hilfe flags anzeigen"
+
+msgctxt "#40315"
+msgid "create own menue"
+msgstr "Eigenes Menu erstellen"
+
+msgctxt "#40316"
+msgid "use Skin Shortcuts"
+msgstr "nutze Skin Shortcuts"
+
+msgctxt "#40317"
+msgid "  ∟ Reset Shortcuts"
+msgstr "  ∟ Standarteinstellung Wiederherstellen"
+

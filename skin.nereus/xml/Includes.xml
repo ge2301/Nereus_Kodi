@@ -7,6 +7,8 @@
 	<include file="Includes_Buttons.xml" />
 	<include file="Includes_DialogSelect.xml" />
 	<include file="Includes_PVR.xml" />
+	<include file="Includes_Mod.xml" />
+	<include file="script-skinshortcuts-includes.xml"/>
 	<include file="View_50_List.xml" />
 	<include file="View_51_Poster.xml" />
 	<include file="View_52_IconWall.xml" />

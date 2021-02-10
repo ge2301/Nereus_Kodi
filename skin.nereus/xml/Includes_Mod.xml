@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include file="script-skinshortcuts-includes.xml"/>
+	<include file="Custom_1111_PVROverlay.xml"/>
+	<include file="Custom_1120_Overlay1080.xml/>
+</includes>
