@@ -58,7 +58,7 @@
 				<include>skinshortcuts-template-PersonalWidgetPanel</include>       
         <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Movie Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="5000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),MoviesWidget)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="movies"/>
 					</include>
@@ -125,7 +125,7 @@
         
         <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Series Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="6000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),tvshows)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),tvshowswidget)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="tvshows"/>
 					</include>
@@ -189,7 +189,7 @@
 
         <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Music Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="7000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),musicwidget)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="music"/>
 					</include>
@@ -269,7 +269,7 @@
 
         <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Addon Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="8000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),addonswidget)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="addons"/>
 					</include>
@@ -353,7 +353,7 @@
 
         <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Video Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="11000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),video)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),videowidget)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="video"/>
 					</include>
@@ -394,7 +394,7 @@
 				</control>
         <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< LiveTV Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="12000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),livetv)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),livetvwidget)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="livetv"/>
 					</include>
@@ -469,7 +469,7 @@
 
         <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Radio Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="13000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),radio)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),radiowidget)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="radio"/>
 					</include>
@@ -544,7 +544,7 @@
         
         <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Favourite Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="14000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),favorites)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),favoriteswidget)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="favorites"/>
 					</include>
@@ -601,7 +601,7 @@
 
         <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Weather Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="15000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),weatherwidget)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="weather"/>
 					</include>
@@ -701,7 +701,7 @@
 
         <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Music Video Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="16000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),musicvideos)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),musicvideoswidget)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="musicvideos"/>
 					</include>
@@ -774,7 +774,7 @@
 
         <!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Pictures Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 				<control type="group" id="4000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),pictureswidget)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="pictures"/>
 					</include>
@@ -789,8 +789,9 @@
 						</include>
 					</control>
 				</control>
+		<!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Games Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->		
 				<control type="group" id="17000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),games)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),gameswidget)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="games"/>
 					</include>
@@ -819,8 +820,9 @@
 						<param name="scrollbar_id" value="17010"/>
 					</include>
 				</control>
+		<!--<<<<<<<<<<<<<<<<<<<<<<<<<<< Disc Widget >>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->	
 				<control type="group" id="21000">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),disc)</visible>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(widget),discwidget)</visible>
 					<include content="Visible_Right_Delayed">
 						<param name="id" value="disc"/>
 					</include>
@@ -877,7 +879,8 @@
 			<focusposition>3</focusposition>
 			<onfocus>ClearProperty(listposition,home)</onfocus>
 			<onfocus>ClearProperty(SkinHelper.WidgetContainer,home)</onfocus>
-			<onright>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onright>
+			<!-- <onright>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onright> -->
+			<onright>2000</onright>
 			<onup>700</onup>
 			<ondown>700</ondown>
 			<scrolltime tween="cubic" easing="out">500</scrolltime>
