@@ -26,14 +26,14 @@
 							<top>0</top>
 							<width>462</width>
 							<height>95</height>
-							<texture colordiffuse="$VAR[SkinColorVar]">lists/focus.png</texture>
+							<texture colordiffuse="button_focus">lists/focus.png</texture>
 							<animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(211)">Conditional</animation>
 							<animation effect="fade" start="100" end="50" time="0" condition="String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)">Conditional</animation>
 							<animation effect="fade" start="50" end="100" time="0" condition="!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)">Conditional</animation>
 						</control>
 						<control type="image">
 							<left>-3</left>
-							<top>1</top>
+							<top>0</top>
 							<width>95</width>
 							<height>95</height>
 							<texture colordiffuse="$VAR[SkinColorVar]">$INFO[ListItem.Icon]</texture>
@@ -111,32 +111,37 @@
 			</control>
 			<control type="grouplist" id="700">
 				<orientation>vertical</orientation>
-				<itemgap>-16</itemgap>
-				<left>452</left>
-				<top>295</top>
+				<itemgap>20</itemgap>
+				<left>468</left>
+				<top>265</top>
 				<onup>700</onup>
 				<ondown>700</ondown>
 				<onleft>211</onleft>
-				<onright>90001</onright>
-				<include content="IconButton">
+        <onright>90001</onright>
+				<include content="IconButton_glow_large">
 					<param name="control_id" value="303" />
-					<param name="icon" value="up.png" />
+          <param name="focus_icon" value="up.focus.png" />
+          <param name="nofocus_icon" value="up.nofocus.png" />
 				</include>
-				<include content="IconButton">
+				<include content="IconButton_glow_large">
 					<param name="control_id" value="304" />
-					<param name="icon" value="down.png" />
+          <param name="focus_icon" value="down.focus.png" />
+          <param name="nofocus_icon" value="down.nofocus.png" />
 				</include>
-				<include content="IconButton">
+				<include content="IconButton_glow_large">
 					<param name="control_id" value="313" />
-					<param name="icon" value="disable.png" />
+          <param name="focus_icon" value="disable.focus.png" />
+          <param name="nofocus_icon" value="disable.nofocus.png" />
 				</include>
-				<include content="IconButton">
+				<include content="IconButton_glow_large">
 					<param name="control_id" value="301" />
-					<param name="icon" value="add.png" />
+          <param name="focus_icon" value="add.focus.png" />
+          <param name="nofocus_icon" value="add.nofocus.png" />
 				</include>
-				<include content="IconButton">
+				<include content="IconButton_glow_large">
 					<param name="control_id" value="302" />
-					<param name="icon" value="delete.png" />
+          <param name="focus_icon" value="delete.focus.png" />
+          <param name="nofocus_icon" value="delete.nofocus.png" />
 				</include>
 			</control>
 		</control>

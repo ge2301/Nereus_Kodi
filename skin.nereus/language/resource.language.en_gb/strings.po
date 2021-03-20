@@ -2309,4 +2309,4 @@ msgstr ""
 #: /xml/Skinsettings.xml
 msgctxt "#40317"
 msgid "  ∟ Reset Shortcuts"
-msgstr ""
+msgstr "Reset Shortcuts"

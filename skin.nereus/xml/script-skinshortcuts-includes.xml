@@ -29,7 +29,7 @@
 			<label>$LOCALIZE[342]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/movies.png</icon>
-			<thumb>special://skin/extras/icons/sidemenu/movies.png</thumb>
+			<thumb />
 			<property name="labelID">movies</property>
 			<property name="defaultID">movies</property>
 			<property name="widget">MoviesWidget</property>
@@ -103,7 +103,7 @@
 			<label>$LOCALIZE[20343]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/tv.png</icon>
-			<thumb>special://skin/extras/icons/sidemenu/tv.png</thumb>
+			<thumb />
 			<property name="labelID">tvshows</property>
 			<property name="defaultID">tvshows</property>
 			<property name="widget">TVShowsWidget</property>
@@ -227,7 +227,7 @@
 			<label>$LOCALIZE[2]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/music.png</icon>
-			<thumb>special://skin/extras/icons/sidemenu/music.png</thumb>
+			<thumb />
 			<property name="labelID">music--1</property>
 			<property name="defaultID">music</property>
 			<property name="widget">MusicWidget</property>
@@ -301,7 +301,7 @@
 			<label>$LOCALIZE[20389]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/musicvideos.png</icon>
-			<thumb>special://skin/extras/icons/sidemenu/musicvideos.png</thumb>
+			<thumb />
 			<property name="labelID">musicvideos--1</property>
 			<property name="defaultID">musicvideos</property>
 			<property name="widget">MusicVideosWidget</property>
@@ -325,7 +325,7 @@
 			<label>$LOCALIZE[19020]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/livetv.png</icon>
-			<thumb>special://skin/extras/icons/sidemenu/livetv.png</thumb>
+			<thumb />
 			<property name="labelID">19020</property>
 			<property name="defaultID">livetv</property>
 			<property name="widget">LiveTVWidget</property>
@@ -349,7 +349,7 @@
 			<label>$LOCALIZE[19021]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/radio.png</icon>
-			<thumb>special://skin/extras/icons/sidemenu/radio.png</thumb>
+			<thumb />
 			<property name="labelID">19021</property>
 			<property name="defaultID">radio</property>
 			<property name="widget">RadioWidget</property>
@@ -373,7 +373,7 @@
 			<label>$LOCALIZE[15016]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/games.png</icon>
-			<thumb>special://skin/extras/icons/sidemenu/games.png</thumb>
+			<thumb />
 			<property name="labelID">15016</property>
 			<property name="defaultID">games</property>
 			<property name="widget">GamesWidget</property>
@@ -397,7 +397,7 @@
 			<label>$LOCALIZE[24001]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/addons.png</icon>
-			<thumb>special://skin/extras/icons/sidemenu/addons.png</thumb>
+			<thumb />
 			<property name="labelID">24001</property>
 			<property name="defaultID">addons</property>
 			<property name="widget">AddonsWidget</property>
@@ -420,7 +420,7 @@
 			<label>$LOCALIZE[1]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/pictures.png</icon>
-			<thumb>special://skin/extras/icons/sidemenu/pictures.png</thumb>
+			<thumb />
 			<property name="labelID">1</property>
 			<property name="defaultID">pictures</property>
 			<property name="widget">PicturesWidget</property>
@@ -440,10 +440,33 @@
 		</item>
 		<item id="19">
 			<property name="id">$NUMBER[19]</property>
+			<label>$LOCALIZE[3]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultAddonVideo.png</icon>
+			<thumb />
+			<property name="labelID">videos</property>
+			<property name="defaultID">video</property>
+			<property name="widget">VideoWidget</property>
+			<property name="widgetName">3</property>
+			<property name="background">special://skin/extras/home-images/video.jpg</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(Videos,root))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(Videos,root))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(Videos,root))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Videos,root)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="submenuVisibility">videos</property>
+			<property name="group">mainmenu</property>
+			<property name="hasSubmenu">True</property>
+		</item>
+		<item id="20">
+			<property name="id">$NUMBER[20]</property>
 			<label>$LOCALIZE[10134]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/favourites.png</icon>
-			<thumb>special://skin/extras/icons/sidemenu/favourites.png</thumb>
+			<thumb />
 			<property name="labelID">10134</property>
 			<property name="defaultID">favorites</property>
 			<property name="widget">FavoritesWidget</property>
@@ -461,8 +484,8 @@
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="20">
-			<property name="id">$NUMBER[20]</property>
+		<item id="21">
+			<property name="id">$NUMBER[21]</property>
 			<label>$LOCALIZE[8]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/weather.png</icon>
@@ -486,12 +509,12 @@
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="21">
-			<property name="id">$NUMBER[21]</property>
+		<item id="22">
+			<property name="id">$NUMBER[22]</property>
 			<label>$LOCALIZE[8]</label>
 			<label2>Common Shortcut</label2>
 			<icon>icons/sidemenu/weather.png</icon>
-			<thumb>special://skin/extras/icons/sidemenu/weather.png</thumb>
+			<thumb />
 			<property name="labelID">8--0</property>
 			<property name="defaultID">weather</property>
 			<property name="widget">WeatherWidget</property>
@@ -510,8 +533,8 @@
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
-		<item id="22">
-			<property name="id">$NUMBER[22]</property>
+		<item id="23">
+			<property name="id">$NUMBER[23]</property>
 			<label>LibreELEC</label>
 			<label2>Common Shortcut</label2>
 			<icon>special://skin/extras/icons/addtile.png</icon>
@@ -3784,6 +3807,149 @@
 			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Pictures,Addons,return)</onclick>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-1)</visible>
 			<property name="group">1</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[342]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultMovies.png</icon>
+			<thumb />
+			<property name="labelID">movies</property>
+			<property name="defaultID">movies</property>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/movies/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/movies/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/movies/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(videos,library://video/movies/,return)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[20343]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultTVShows.png</icon>
+			<thumb />
+			<property name="labelID">tvshows</property>
+			<property name="defaultID">tvshows</property>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/tvshows/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/tvshows/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/tvshows/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(videos,library://video/tvshows/,return)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[20389]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultMusicVideos.png</icon>
+			<thumb />
+			<property name="labelID">musicvideos</property>
+			<property name="defaultID">musicvideos</property>
+			<visible>[Library.HasContent(MusicVideos)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/musicvideos/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/musicvideos/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/musicvideos/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(videos,library://video/musicvideos/,return)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[744]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultFolder.png</icon>
+			<thumb />
+			<property name="labelID">744</property>
+			<property name="defaultID">744</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(Videos,Files,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(Videos,Files,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(Videos,Files,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Videos,Files,return)</onclick>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[136]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultVideoPlaylists.png</icon>
+			<thumb />
+			<property name="labelID">136</property>
+			<property name="defaultID">136</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(Videos,special://videoplaylists/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(Videos,special://videoplaylists/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(Videos,special://videoplaylists/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[1037]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultAddonVideo.png</icon>
+			<thumb />
+			<property name="labelID">1037</property>
+			<property name="defaultID">1037</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(Videos,addons://sources/video/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(Videos,addons://sources/video/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(Videos,addons://sources/video/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Videos,addons://sources/video/,return)</onclick>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[20314]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">20314</property>
+			<property name="defaultID">20314</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(Videos,root,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(Videos,root,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(Videos,root,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Videos,root,return)</onclick>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
+			<property name="group">videos</property>
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
@@ -10365,6 +10531,296 @@
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
+	<include name="skinshortcuts-group-videos">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[342]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultMovies.png</icon>
+			<thumb />
+			<property name="labelID">movies</property>
+			<property name="defaultID">movies</property>
+			<visible>Library.HasContent(Movies)</visible>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/movies/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/movies/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/movies/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(videos,library://video/movies/,return)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[20343]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultTVShows.png</icon>
+			<thumb />
+			<property name="labelID">tvshows</property>
+			<property name="defaultID">tvshows</property>
+			<visible>Library.HasContent(TVShows)</visible>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/tvshows/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/tvshows/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/tvshows/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(videos,library://video/tvshows/,return)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[20389]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultMusicVideos.png</icon>
+			<thumb />
+			<property name="labelID">musicvideos</property>
+			<property name="defaultID">musicvideos</property>
+			<visible>Library.HasContent(MusicVideos)</visible>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/musicvideos/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/musicvideos/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/musicvideos/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(videos,library://video/musicvideos/,return)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[744]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultFolder.png</icon>
+			<thumb />
+			<property name="labelID">744</property>
+			<property name="defaultID">744</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(Videos,Files,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(Videos,Files,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(Videos,Files,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Videos,Files,return)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[136]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultVideoPlaylists.png</icon>
+			<thumb />
+			<property name="labelID">136</property>
+			<property name="defaultID">136</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(Videos,special://videoplaylists/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(Videos,special://videoplaylists/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(Videos,special://videoplaylists/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[1037]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultAddonVideo.png</icon>
+			<thumb />
+			<property name="labelID">1037</property>
+			<property name="defaultID">1037</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(Videos,addons://sources/video/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(Videos,addons://sources/video/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(Videos,addons://sources/video/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Videos,addons://sources/video/,return)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[20314]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">20314</property>
+			<property name="defaultID">20314</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(Videos,root,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(Videos,root,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(Videos,root,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Videos,root,return)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-videos">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[342]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultMovies.png</icon>
+			<thumb />
+			<property name="labelID">movies</property>
+			<property name="defaultID">movies</property>
+			<visible>[Library.HasContent(Movies)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/movies/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/movies/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/movies/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(videos,library://video/movies/,return)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[20343]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultTVShows.png</icon>
+			<thumb />
+			<property name="labelID">tvshows</property>
+			<property name="defaultID">tvshows</property>
+			<visible>[Library.HasContent(TVShows)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/tvshows/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/tvshows/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/tvshows/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(videos,library://video/tvshows/,return)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[20389]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultMusicVideos.png</icon>
+			<thumb />
+			<property name="labelID">musicvideos</property>
+			<property name="defaultID">musicvideos</property>
+			<visible>[Library.HasContent(MusicVideos)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/musicvideos/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/musicvideos/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(videos,library://video/musicvideos/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(videos,library://video/musicvideos/,return)</onclick>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[744]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultFolder.png</icon>
+			<thumb />
+			<property name="labelID">744</property>
+			<property name="defaultID">744</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(Videos,Files,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(Videos,Files,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(Videos,Files,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Videos,Files,return)</onclick>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[136]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultVideoPlaylists.png</icon>
+			<thumb />
+			<property name="labelID">136</property>
+			<property name="defaultID">136</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(Videos,special://videoplaylists/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(Videos,special://videoplaylists/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(Videos,special://videoplaylists/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[1037]</label>
+			<label2>Common Shortcut</label2>
+			<icon>DefaultAddonVideo.png</icon>
+			<thumb />
+			<property name="labelID">1037</property>
+			<property name="defaultID">1037</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(Videos,addons://sources/video/,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(Videos,addons://sources/video/,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(Videos,addons://sources/video/,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Videos,addons://sources/video/,return)</onclick>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">19</property>
+			<label>$LOCALIZE[20314]</label>
+			<label2>Common Shortcut</label2>
+			<icon>special://skin/extras/icons/addtile.png</icon>
+			<thumb />
+			<property name="labelID">20314</property>
+			<property name="defaultID">20314</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">Skin.SetString(dialog_action,ActivateWindow(Videos,root,return))</onclick>
+			<property name="path">Skin.SetString(dialog_action,ActivateWindow(Videos,root,return))</property>
+			<property name="list">Skin.SetString(dialog_action,ActivateWindow(Videos,root,return))</property>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(1133)</onclick>
+			<onclick condition="String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">AlarmClock(parental,Skin.Reset(mypassword),$VAR[password_time],silent)</onclick>
+			<onclick condition="[String.IsEmpty(Container(9000).ListItem.Property(ParentalControl)) | String.IsEqual(Container(9000).ListItem.Property(ParentalControl),no)] | String.IsEqual(Skin.String(mypassword),Skin.String(passcode))">ActivateWindow(Videos,root,return)</onclick>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),videos)</visible>
+			<property name="group">videos</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
 	<include name="skinshortcuts-group-num-10134">
 		<description>No items</description>
 	</include>
@@ -12273,7 +12729,7 @@
 			</include>
 			<control type="grouplist" id="22001">
 				<include>WidgetGroupListCommon</include>
-				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-10134)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 				<pagecontrol>22010</pagecontrol>
 				<include condition="!Skin.HasSetting(UseSmallerCategories)">PersonalWidgetListCategoriesBig</include>
 				<include condition="Skin.HasSetting(UseSmallerCategories)">PersonalWidgetListCategoriesSmall</include>
@@ -12377,7 +12833,7 @@
 			</include>
 			<control type="grouplist" id="22001">
 				<include>WidgetGroupListCommon</include>
-				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-8)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-10134)</visible>
 				<pagecontrol>22010</pagecontrol>
 				<include condition="!Skin.HasSetting(UseSmallerCategories)">PersonalWidgetListCategoriesBig</include>
 				<include condition="Skin.HasSetting(UseSmallerCategories)">PersonalWidgetListCategoriesSmall</include>
@@ -12481,7 +12937,7 @@
 			</include>
 			<control type="grouplist" id="22001">
 				<include>WidgetGroupListCommon</include>
-				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),8-0)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-8)</visible>
 				<pagecontrol>22010</pagecontrol>
 				<include condition="!Skin.HasSetting(UseSmallerCategories)">PersonalWidgetListCategoriesBig</include>
 				<include condition="Skin.HasSetting(UseSmallerCategories)">PersonalWidgetListCategoriesSmall</include>
@@ -12585,7 +13041,7 @@
 			</include>
 			<control type="grouplist" id="22001">
 				<include>WidgetGroupListCommon</include>
-				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),libreelec)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),8-0)</visible>
 				<pagecontrol>22010</pagecontrol>
 				<include condition="!Skin.HasSetting(UseSmallerCategories)">PersonalWidgetListCategoriesBig</include>
 				<include condition="Skin.HasSetting(UseSmallerCategories)">PersonalWidgetListCategoriesSmall</include>
@@ -12660,6 +13116,110 @@
 					<param name="sortby" value="" />
 					<param name="sortorder" value="" />
 					<param name="list_id" value="2280022" />
+				</include>
+			</control>
+			<include content="ImageWidget">
+				<param name="text_label" value="$LOCALIZE[40194]" />
+				<param name="button_id" value="45000" />
+				<param name="visible_1" value="false" />
+				<param name="visible_2" value="false" />
+				<param name="visible" value="!Skin.HasSetting(HideMainMenuWithWidgets) + [String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))]" />
+			</include>
+			<include content="ImageWidget">
+				<param name="text_label" value="$LOCALIZE[40194]" />
+				<param name="button_id" value="45000" />
+				<param name="visible_1" value="false" />
+				<param name="visible_2" value="false" />
+				<param name="right" value="555" />
+				<param name="visible" value="Skin.HasSetting(HideMainMenuWithWidgets) + [String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))]" />
+			</include>
+			<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+				<param name="scrollbar_id" value="22010" />
+			</include>
+		</control>
+		<control type="group" id="22000">
+			<animation effect="slide" end="502,0" time="300" tween="sine" easing="out" condition="[Control.HasFocus(9000) | ControlGroup(700).HasFocus] + Skin.HasSetting(HideMainMenuWithWidgets)">Conditional</animation>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(widget),PersonalWidgetList)</visible>
+			<include content="Visible_Right_Delayed_Home">
+				<param name="id" value="PersonalWidgetList" />
+			</include>
+			<control type="grouplist" id="22001">
+				<include>WidgetGroupListCommon</include>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),libreelec)</visible>
+				<pagecontrol>22010</pagecontrol>
+				<include condition="!Skin.HasSetting(UseSmallerCategories)">PersonalWidgetListCategoriesBig</include>
+				<include condition="Skin.HasSetting(UseSmallerCategories)">PersonalWidgetListCategoriesSmall</include>
+				<include content="Widget">
+					<param name="content_path" value="" />
+					<param name="widget_header" value="" />
+					<param name="widget_header_focus" value="$VAR[WidgetLabelFocus2210023]" />
+					<param name="widget_target" value="" />
+					<param name="sortby" value="" />
+					<param name="sortorder" value="" />
+					<param name="list_id" value="2210023" />
+				</include>
+				<include content="Widget">
+					<param name="content_path" value="" />
+					<param name="widget_header" value="" />
+					<param name="widget_header_focus" value="$VAR[WidgetLabelFocus2220023]" />
+					<param name="widget_target" value="" />
+					<param name="sortby" value="" />
+					<param name="sortorder" value="" />
+					<param name="list_id" value="2220023" />
+				</include>
+				<include content="Widget">
+					<param name="content_path" value="" />
+					<param name="widget_header" value="" />
+					<param name="widget_header_focus" value="$VAR[WidgetLabelFocus2230023]" />
+					<param name="widget_target" value="" />
+					<param name="sortby" value="" />
+					<param name="sortorder" value="" />
+					<param name="list_id" value="2230023" />
+				</include>
+				<include content="Widget">
+					<param name="content_path" value="" />
+					<param name="widget_header" value="" />
+					<param name="widget_header_focus" value="$VAR[WidgetLabelFocus2240023]" />
+					<param name="widget_target" value="" />
+					<param name="sortby" value="" />
+					<param name="sortorder" value="" />
+					<param name="list_id" value="2240023" />
+				</include>
+				<include content="Widget">
+					<param name="content_path" value="" />
+					<param name="widget_header" value="" />
+					<param name="widget_header_focus" value="$VAR[WidgetLabelFocus2250023]" />
+					<param name="widget_target" value="" />
+					<param name="sortby" value="" />
+					<param name="sortorder" value="" />
+					<param name="list_id" value="2250023" />
+				</include>
+				<include content="Widget">
+					<param name="content_path" value="" />
+					<param name="widget_header" value="" />
+					<param name="widget_header_focus" value="$VAR[WidgetLabelFocus2260023]" />
+					<param name="widget_target" value="" />
+					<param name="sortby" value="" />
+					<param name="sortorder" value="" />
+					<param name="list_id" value="2260023" />
+				</include>
+				<include content="Widget">
+					<param name="content_path" value="" />
+					<param name="widget_header" value="" />
+					<param name="widget_header_focus" value="$VAR[WidgetLabelFocus2270023]" />
+					<param name="widget_target" value="" />
+					<param name="sortby" value="" />
+					<param name="sortorder" value="" />
+					<param name="list_id" value="2270023" />
+				</include>
+				<include content="Widget">
+					<param name="content_path" value="" />
+					<param name="widget_header" value="" />
+					<param name="widget_header_focus" value="$VAR[WidgetLabelFocus2280023]" />
+					<param name="widget_target" value="" />
+					<param name="sortby" value="" />
+					<param name="sortorder" value="" />
+					<param name="list_id" value="2280023" />
 				</include>
 			</control>
 			<include content="ImageWidget">
@@ -13432,7 +13992,7 @@
 			</include>
 			<control type="grouplist" id="23001">
 				<include>WidgetGroupListCommon</include>
-				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-10134)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),videos)</visible>
 				<pagecontrol>23010</pagecontrol>
 				<include condition="!Skin.HasSetting(UseSmallerCategories)">PersonalWidgetPanelCategoriesBig</include>
 				<include condition="Skin.HasSetting(UseSmallerCategories)">PersonalWidgetPanelCategoriesSmall</include>
@@ -13473,7 +14033,7 @@
 			</include>
 			<control type="grouplist" id="23001">
 				<include>WidgetGroupListCommon</include>
-				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-8)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-10134)</visible>
 				<pagecontrol>23010</pagecontrol>
 				<include condition="!Skin.HasSetting(UseSmallerCategories)">PersonalWidgetPanelCategoriesBig</include>
 				<include condition="Skin.HasSetting(UseSmallerCategories)">PersonalWidgetPanelCategoriesSmall</include>
@@ -13514,7 +14074,7 @@
 			</include>
 			<control type="grouplist" id="23001">
 				<include>WidgetGroupListCommon</include>
-				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),8-0)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),num-8)</visible>
 				<pagecontrol>23010</pagecontrol>
 				<include condition="!Skin.HasSetting(UseSmallerCategories)">PersonalWidgetPanelCategoriesBig</include>
 				<include condition="Skin.HasSetting(UseSmallerCategories)">PersonalWidgetPanelCategoriesSmall</include>
@@ -13555,7 +14115,7 @@
 			</include>
 			<control type="grouplist" id="23001">
 				<include>WidgetGroupListCommon</include>
-				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),libreelec)</visible>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),8-0)</visible>
 				<pagecontrol>23010</pagecontrol>
 				<include condition="!Skin.HasSetting(UseSmallerCategories)">PersonalWidgetPanelCategoriesBig</include>
 				<include condition="Skin.HasSetting(UseSmallerCategories)">PersonalWidgetPanelCategoriesSmall</include>
@@ -13567,6 +14127,47 @@
 					<param name="sortby" value="" />
 					<param name="sortorder" value="" />
 					<param name="list_id" value="2310022" />
+				</include>
+			</control>
+			<include content="ImageWidget">
+				<param name="text_label" value="$LOCALIZE[40194]" />
+				<param name="button_id" value="45000" />
+				<param name="visible_1" value="false" />
+				<param name="visible_2" value="false" />
+				<param name="visible" value="!Skin.HasSetting(HideMainMenuWithWidgets) + [String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))]" />
+			</include>
+			<include content="ImageWidget">
+				<param name="text_label" value="$LOCALIZE[40194]" />
+				<param name="button_id" value="45000" />
+				<param name="visible_1" value="false" />
+				<param name="visible_2" value="false" />
+				<param name="right" value="555" />
+				<param name="visible" value="Skin.HasSetting(HideMainMenuWithWidgets) + [String.IsEqual(Container(9000).ListItem.Property(ParentalControl),yes) + !String.IsEqual(Skin.String(mypassword),Skin.String(passcode))]" />
+			</include>
+			<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+				<param name="scrollbar_id" value="23010" />
+			</include>
+		</control>
+		<control type="group" id="23000">
+			<animation effect="slide" end="502,0" time="300" tween="sine" easing="out" condition="[Control.HasFocus(9000) | ControlGroup(700).HasFocus] + Skin.HasSetting(HideMainMenuWithWidgets)">Conditional</animation>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(widget),PersonalWidgetPanel)</visible>
+			<include content="Visible_Right_Delayed_Home">
+				<param name="id" value="PersonalWidgetPanel" />
+			</include>
+			<control type="grouplist" id="23001">
+				<include>WidgetGroupListCommon</include>
+				<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),libreelec)</visible>
+				<pagecontrol>23010</pagecontrol>
+				<include condition="!Skin.HasSetting(UseSmallerCategories)">PersonalWidgetPanelCategoriesBig</include>
+				<include condition="Skin.HasSetting(UseSmallerCategories)">PersonalWidgetPanelCategoriesSmall</include>
+				<include content="Widget">
+					<param name="content_path" value="" />
+					<param name="widget_header" value="" />
+					<param name="widget_header_focus" value="$VAR[WidgetLabelFocus2310023]" />
+					<param name="widget_target" value="" />
+					<param name="sortby" value="" />
+					<param name="sortorder" value="" />
+					<param name="list_id" value="2310023" />
 				</include>
 			</control>
 			<include content="ImageWidget">
@@ -15766,5 +16367,104 @@
 		<value condition="String.IsEqual(Container(2310022).ListItem.dbtype,album)">$INFO[Container(2310022).ListItem.Artist, | , - ]$INFO[Container(2310022).ListItem.Title]$INFO[Container(2310022).ListItem.Year, (,)]</value>
 		<value condition="String.IsEqual(Container(2310022).ListItem.dbtype,artist)">$INFO[Container(2310022).ListItem.Artist, | , ]($VAR[AlbumsCount])</value>
 		<value condition="!String.IsEmpty(Container(2310022).ListItem.Label)">$INFO[Container(2310022).ListItem.Label, | ]</value>
+	</variable>
+	<variable name="WidgetLabelFocus2210023">
+		<value condition="String.IsEqual(Container(2210023).ListItem.dbtype,set)">$INFO[Container(2210023).ListItem.Title, | ]$INFO[Window(Home).Property(SkinHelper.ListItem.Years), (,)]</value>
+		<value condition="String.IsEqual(Container(2210023).ListItem.dbtype,movie)">$INFO[Container(2210023).ListItem.Title, | ]$INFO[Container(2210023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2210023).ListItem.dbtype,episode)">$INFO[Container(2210023).ListItem.TVShowTitle, | , - ]$INFO[Container(2210023).ListItem.Season,,x]$INFO[Container(2210023).ListItem.Episode,,. ]$INFO[Container(2210023).ListItem.Title]$INFO[Container(2210023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2210023).ListItem.dbtype,tvshow)">$INFO[Container(2210023).ListItem.Title, | ]$INFO[Container(2210023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2210023).ListItem.dbtype,musicvideo)">$INFO[Container(2210023).ListItem.Artist, | , - ]$INFO[Container(2210023).ListItem.Title]$INFO[Container(2210023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2210023).ListItem.dbtype,song)">$INFO[Container(2210023).ListItem.Artist, | , - ]$INFO[Container(2210023).ListItem.Album,, - ]$INFO[Container(2210023).ListItem.Title]$INFO[Container(2210023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2210023).ListItem.dbtype,album)">$INFO[Container(2210023).ListItem.Artist, | , - ]$INFO[Container(2210023).ListItem.Title]$INFO[Container(2210023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2210023).ListItem.dbtype,artist)">$INFO[Container(2210023).ListItem.Artist, | , ]($VAR[AlbumsCount])</value>
+		<value condition="!String.IsEmpty(Container(2210023).ListItem.Label)">$INFO[Container(2210023).ListItem.Label, | ]</value>
+	</variable>
+	<variable name="WidgetLabelFocus2220023">
+		<value condition="String.IsEqual(Container(2220023).ListItem.dbtype,set)">$INFO[Container(2220023).ListItem.Title, | ]$INFO[Window(Home).Property(SkinHelper.ListItem.Years), (,)]</value>
+		<value condition="String.IsEqual(Container(2220023).ListItem.dbtype,movie)">$INFO[Container(2220023).ListItem.Title, | ]$INFO[Container(2220023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2220023).ListItem.dbtype,episode)">$INFO[Container(2220023).ListItem.TVShowTitle, | , - ]$INFO[Container(2220023).ListItem.Season,,x]$INFO[Container(2220023).ListItem.Episode,,. ]$INFO[Container(2220023).ListItem.Title]$INFO[Container(2220023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2220023).ListItem.dbtype,tvshow)">$INFO[Container(2220023).ListItem.Title, | ]$INFO[Container(2220023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2220023).ListItem.dbtype,musicvideo)">$INFO[Container(2220023).ListItem.Artist, | , - ]$INFO[Container(2220023).ListItem.Title]$INFO[Container(2220023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2220023).ListItem.dbtype,song)">$INFO[Container(2220023).ListItem.Artist, | , - ]$INFO[Container(2220023).ListItem.Album,, - ]$INFO[Container(2220023).ListItem.Title]$INFO[Container(2220023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2220023).ListItem.dbtype,album)">$INFO[Container(2220023).ListItem.Artist, | , - ]$INFO[Container(2220023).ListItem.Title]$INFO[Container(2220023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2220023).ListItem.dbtype,artist)">$INFO[Container(2220023).ListItem.Artist, | , ]($VAR[AlbumsCount])</value>
+		<value condition="!String.IsEmpty(Container(2220023).ListItem.Label)">$INFO[Container(2220023).ListItem.Label, | ]</value>
+	</variable>
+	<variable name="WidgetLabelFocus2230023">
+		<value condition="String.IsEqual(Container(2230023).ListItem.dbtype,set)">$INFO[Container(2230023).ListItem.Title, | ]$INFO[Window(Home).Property(SkinHelper.ListItem.Years), (,)]</value>
+		<value condition="String.IsEqual(Container(2230023).ListItem.dbtype,movie)">$INFO[Container(2230023).ListItem.Title, | ]$INFO[Container(2230023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2230023).ListItem.dbtype,episode)">$INFO[Container(2230023).ListItem.TVShowTitle, | , - ]$INFO[Container(2230023).ListItem.Season,,x]$INFO[Container(2230023).ListItem.Episode,,. ]$INFO[Container(2230023).ListItem.Title]$INFO[Container(2230023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2230023).ListItem.dbtype,tvshow)">$INFO[Container(2230023).ListItem.Title, | ]$INFO[Container(2230023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2230023).ListItem.dbtype,musicvideo)">$INFO[Container(2230023).ListItem.Artist, | , - ]$INFO[Container(2230023).ListItem.Title]$INFO[Container(2230023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2230023).ListItem.dbtype,song)">$INFO[Container(2230023).ListItem.Artist, | , - ]$INFO[Container(2230023).ListItem.Album,, - ]$INFO[Container(2230023).ListItem.Title]$INFO[Container(2230023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2230023).ListItem.dbtype,album)">$INFO[Container(2230023).ListItem.Artist, | , - ]$INFO[Container(2230023).ListItem.Title]$INFO[Container(2230023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2230023).ListItem.dbtype,artist)">$INFO[Container(2230023).ListItem.Artist, | , ]($VAR[AlbumsCount])</value>
+		<value condition="!String.IsEmpty(Container(2230023).ListItem.Label)">$INFO[Container(2230023).ListItem.Label, | ]</value>
+	</variable>
+	<variable name="WidgetLabelFocus2240023">
+		<value condition="String.IsEqual(Container(2240023).ListItem.dbtype,set)">$INFO[Container(2240023).ListItem.Title, | ]$INFO[Window(Home).Property(SkinHelper.ListItem.Years), (,)]</value>
+		<value condition="String.IsEqual(Container(2240023).ListItem.dbtype,movie)">$INFO[Container(2240023).ListItem.Title, | ]$INFO[Container(2240023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2240023).ListItem.dbtype,episode)">$INFO[Container(2240023).ListItem.TVShowTitle, | , - ]$INFO[Container(2240023).ListItem.Season,,x]$INFO[Container(2240023).ListItem.Episode,,. ]$INFO[Container(2240023).ListItem.Title]$INFO[Container(2240023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2240023).ListItem.dbtype,tvshow)">$INFO[Container(2240023).ListItem.Title, | ]$INFO[Container(2240023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2240023).ListItem.dbtype,musicvideo)">$INFO[Container(2240023).ListItem.Artist, | , - ]$INFO[Container(2240023).ListItem.Title]$INFO[Container(2240023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2240023).ListItem.dbtype,song)">$INFO[Container(2240023).ListItem.Artist, | , - ]$INFO[Container(2240023).ListItem.Album,, - ]$INFO[Container(2240023).ListItem.Title]$INFO[Container(2240023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2240023).ListItem.dbtype,album)">$INFO[Container(2240023).ListItem.Artist, | , - ]$INFO[Container(2240023).ListItem.Title]$INFO[Container(2240023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2240023).ListItem.dbtype,artist)">$INFO[Container(2240023).ListItem.Artist, | , ]($VAR[AlbumsCount])</value>
+		<value condition="!String.IsEmpty(Container(2240023).ListItem.Label)">$INFO[Container(2240023).ListItem.Label, | ]</value>
+	</variable>
+	<variable name="WidgetLabelFocus2250023">
+		<value condition="String.IsEqual(Container(2250023).ListItem.dbtype,set)">$INFO[Container(2250023).ListItem.Title, | ]$INFO[Window(Home).Property(SkinHelper.ListItem.Years), (,)]</value>
+		<value condition="String.IsEqual(Container(2250023).ListItem.dbtype,movie)">$INFO[Container(2250023).ListItem.Title, | ]$INFO[Container(2250023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2250023).ListItem.dbtype,episode)">$INFO[Container(2250023).ListItem.TVShowTitle, | , - ]$INFO[Container(2250023).ListItem.Season,,x]$INFO[Container(2250023).ListItem.Episode,,. ]$INFO[Container(2250023).ListItem.Title]$INFO[Container(2250023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2250023).ListItem.dbtype,tvshow)">$INFO[Container(2250023).ListItem.Title, | ]$INFO[Container(2250023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2250023).ListItem.dbtype,musicvideo)">$INFO[Container(2250023).ListItem.Artist, | , - ]$INFO[Container(2250023).ListItem.Title]$INFO[Container(2250023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2250023).ListItem.dbtype,song)">$INFO[Container(2250023).ListItem.Artist, | , - ]$INFO[Container(2250023).ListItem.Album,, - ]$INFO[Container(2250023).ListItem.Title]$INFO[Container(2250023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2250023).ListItem.dbtype,album)">$INFO[Container(2250023).ListItem.Artist, | , - ]$INFO[Container(2250023).ListItem.Title]$INFO[Container(2250023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2250023).ListItem.dbtype,artist)">$INFO[Container(2250023).ListItem.Artist, | , ]($VAR[AlbumsCount])</value>
+		<value condition="!String.IsEmpty(Container(2250023).ListItem.Label)">$INFO[Container(2250023).ListItem.Label, | ]</value>
+	</variable>
+	<variable name="WidgetLabelFocus2260023">
+		<value condition="String.IsEqual(Container(2260023).ListItem.dbtype,set)">$INFO[Container(2260023).ListItem.Title, | ]$INFO[Window(Home).Property(SkinHelper.ListItem.Years), (,)]</value>
+		<value condition="String.IsEqual(Container(2260023).ListItem.dbtype,movie)">$INFO[Container(2260023).ListItem.Title, | ]$INFO[Container(2260023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2260023).ListItem.dbtype,episode)">$INFO[Container(2260023).ListItem.TVShowTitle, | , - ]$INFO[Container(2260023).ListItem.Season,,x]$INFO[Container(2260023).ListItem.Episode,,. ]$INFO[Container(2260023).ListItem.Title]$INFO[Container(2260023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2260023).ListItem.dbtype,tvshow)">$INFO[Container(2260023).ListItem.Title, | ]$INFO[Container(2260023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2260023).ListItem.dbtype,musicvideo)">$INFO[Container(2260023).ListItem.Artist, | , - ]$INFO[Container(2260023).ListItem.Title]$INFO[Container(2260023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2260023).ListItem.dbtype,song)">$INFO[Container(2260023).ListItem.Artist, | , - ]$INFO[Container(2260023).ListItem.Album,, - ]$INFO[Container(2260023).ListItem.Title]$INFO[Container(2260023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2260023).ListItem.dbtype,album)">$INFO[Container(2260023).ListItem.Artist, | , - ]$INFO[Container(2260023).ListItem.Title]$INFO[Container(2260023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2260023).ListItem.dbtype,artist)">$INFO[Container(2260023).ListItem.Artist, | , ]($VAR[AlbumsCount])</value>
+		<value condition="!String.IsEmpty(Container(2260023).ListItem.Label)">$INFO[Container(2260023).ListItem.Label, | ]</value>
+	</variable>
+	<variable name="WidgetLabelFocus2270023">
+		<value condition="String.IsEqual(Container(2270023).ListItem.dbtype,set)">$INFO[Container(2270023).ListItem.Title, | ]$INFO[Window(Home).Property(SkinHelper.ListItem.Years), (,)]</value>
+		<value condition="String.IsEqual(Container(2270023).ListItem.dbtype,movie)">$INFO[Container(2270023).ListItem.Title, | ]$INFO[Container(2270023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2270023).ListItem.dbtype,episode)">$INFO[Container(2270023).ListItem.TVShowTitle, | , - ]$INFO[Container(2270023).ListItem.Season,,x]$INFO[Container(2270023).ListItem.Episode,,. ]$INFO[Container(2270023).ListItem.Title]$INFO[Container(2270023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2270023).ListItem.dbtype,tvshow)">$INFO[Container(2270023).ListItem.Title, | ]$INFO[Container(2270023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2270023).ListItem.dbtype,musicvideo)">$INFO[Container(2270023).ListItem.Artist, | , - ]$INFO[Container(2270023).ListItem.Title]$INFO[Container(2270023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2270023).ListItem.dbtype,song)">$INFO[Container(2270023).ListItem.Artist, | , - ]$INFO[Container(2270023).ListItem.Album,, - ]$INFO[Container(2270023).ListItem.Title]$INFO[Container(2270023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2270023).ListItem.dbtype,album)">$INFO[Container(2270023).ListItem.Artist, | , - ]$INFO[Container(2270023).ListItem.Title]$INFO[Container(2270023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2270023).ListItem.dbtype,artist)">$INFO[Container(2270023).ListItem.Artist, | , ]($VAR[AlbumsCount])</value>
+		<value condition="!String.IsEmpty(Container(2270023).ListItem.Label)">$INFO[Container(2270023).ListItem.Label, | ]</value>
+	</variable>
+	<variable name="WidgetLabelFocus2280023">
+		<value condition="String.IsEqual(Container(2280023).ListItem.dbtype,set)">$INFO[Container(2280023).ListItem.Title, | ]$INFO[Window(Home).Property(SkinHelper.ListItem.Years), (,)]</value>
+		<value condition="String.IsEqual(Container(2280023).ListItem.dbtype,movie)">$INFO[Container(2280023).ListItem.Title, | ]$INFO[Container(2280023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2280023).ListItem.dbtype,episode)">$INFO[Container(2280023).ListItem.TVShowTitle, | , - ]$INFO[Container(2280023).ListItem.Season,,x]$INFO[Container(2280023).ListItem.Episode,,. ]$INFO[Container(2280023).ListItem.Title]$INFO[Container(2280023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2280023).ListItem.dbtype,tvshow)">$INFO[Container(2280023).ListItem.Title, | ]$INFO[Container(2280023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2280023).ListItem.dbtype,musicvideo)">$INFO[Container(2280023).ListItem.Artist, | , - ]$INFO[Container(2280023).ListItem.Title]$INFO[Container(2280023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2280023).ListItem.dbtype,song)">$INFO[Container(2280023).ListItem.Artist, | , - ]$INFO[Container(2280023).ListItem.Album,, - ]$INFO[Container(2280023).ListItem.Title]$INFO[Container(2280023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2280023).ListItem.dbtype,album)">$INFO[Container(2280023).ListItem.Artist, | , - ]$INFO[Container(2280023).ListItem.Title]$INFO[Container(2280023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2280023).ListItem.dbtype,artist)">$INFO[Container(2280023).ListItem.Artist, | , ]($VAR[AlbumsCount])</value>
+		<value condition="!String.IsEmpty(Container(2280023).ListItem.Label)">$INFO[Container(2280023).ListItem.Label, | ]</value>
+	</variable>
+	<variable name="WidgetLabelFocus2310023">
+		<value condition="String.IsEqual(Container(2310023).ListItem.dbtype,set)">$INFO[Container(2310023).ListItem.Title, | ]$INFO[Window(Home).Property(SkinHelper.ListItem.Years), (,)]</value>
+		<value condition="String.IsEqual(Container(2310023).ListItem.dbtype,movie)">$INFO[Container(2310023).ListItem.Title, | ]$INFO[Container(2310023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2310023).ListItem.dbtype,episode)">$INFO[Container(2310023).ListItem.TVShowTitle, | , - ]$INFO[Container(2310023).ListItem.Season,,x]$INFO[Container(2310023).ListItem.Episode,,. ]$INFO[Container(2310023).ListItem.Title]$INFO[Container(2310023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2310023).ListItem.dbtype,tvshow)">$INFO[Container(2310023).ListItem.Title, | ]$INFO[Container(2310023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2310023).ListItem.dbtype,musicvideo)">$INFO[Container(2310023).ListItem.Artist, | , - ]$INFO[Container(2310023).ListItem.Title]$INFO[Container(2310023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2310023).ListItem.dbtype,song)">$INFO[Container(2310023).ListItem.Artist, | , - ]$INFO[Container(2310023).ListItem.Album,, - ]$INFO[Container(2310023).ListItem.Title]$INFO[Container(2310023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2310023).ListItem.dbtype,album)">$INFO[Container(2310023).ListItem.Artist, | , - ]$INFO[Container(2310023).ListItem.Title]$INFO[Container(2310023).ListItem.Year, (,)]</value>
+		<value condition="String.IsEqual(Container(2310023).ListItem.dbtype,artist)">$INFO[Container(2310023).ListItem.Artist, | , ]($VAR[AlbumsCount])</value>
+		<value condition="!String.IsEmpty(Container(2310023).ListItem.Label)">$INFO[Container(2310023).ListItem.Label, | ]</value>
 	</variable>
 </includes>
