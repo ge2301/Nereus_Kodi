@@ -194,6 +194,26 @@
     </definition>
   </include>
 
+  <include name="IconButton_glow_large">
+    <param name="height">85</param>
+    <param name="visible">true</param>
+    <definition>
+      <control type="button" id="$PARAM[control_id]">
+        <width>85</width>
+        <height>85</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <onclick>$PARAM[onclick]</onclick>
+        <onclick>$PARAM[onclick_2]</onclick>
+        <font></font>
+        <label>$PARAM[label]</label>
+        <texturefocus colordiffuse="FFFFFFFF">$PARAM[focus_icon]</texturefocus>
+        <texturenofocus colordiffuse="AACCCCCC">$PARAM[nofocus_icon]</texturenofocus>
+        <visible>$PARAM[visible]</visible>
+      </control>
+    </definition>
+  </include>
+
   <include name="IconButton_playing">
     <param name="height">65</param>
     <param name="visible">true</param>
